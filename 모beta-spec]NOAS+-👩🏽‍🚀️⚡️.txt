@@ -1,3 +1,4 @@
+🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️🦓️
 🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️
 ⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
 will impliment as much as PNP/PNP transistors as "chip.txt"'s (will cover resistor(lvls) and ground) + drop thru/stak <DRU
@@ -227,6 +228,20 @@ PUT THIS IN RESEARCH PAPER WHEN UR TALKING ABOUT PORTIO research preceeding "BB
 dont ever try jumping ahead again unless u have 2 . it mindfux the group 
 #🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️
  🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️
+ 
+ 
+  #🚿️APR 4 . 
+  randomly got "efi64.s" to compile super EZ < DRU PROPHIT < just by installing apt-update gnu-efi
+  (it will be ok but unfortunately isn't on "BREZ :("( really isn't anything else that big were missing...)
+ so . good news bad news...
+ (maybe we can wait till we rebuild a super basic 'cli only linux , "SOON?"' (and can automate rebuild better?)
+ 😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️
+ ❓️>this being true, do we try building out from an 'efi.kernel'? / bootloader application ??
+ >wouldn't be the worse cuz we get hands on OS learning , (AND ITS GOOD FOR CAPSTONE AS WELL...(also 4ever!)
+ 👨🏽‍🎓️would be really nice ,especially to get 2 understanding "GDT/IDT < %cr0 etc,  
+ morale. go at ur own pace, (sidestep cell violence 4 better (understanding) but keep good records of attempts)
+ 😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️😶‍🌫️️
+ 🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️
  #🚿️ APR 2 
 #🚿️ APR 1 01:32 = 🏋🏻‍♀️️ < 11.step plan created
 (buffer sorted (64bit ram created) 
