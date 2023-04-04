@@ -1,0 +1,175 @@
+🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️
+🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️
+👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️
+SOL SUPREME ? = WIFI / 5G (@ SCHEMATIC LEVEL) 
+
+SOLUTION ? : just research 5GHZ “5.G / 6.G spec from a “technical level”
+
+RND = 
+🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️
+(bluetooth 'comes from same place'(onboard) ;) mess with that first ;) 
+
+🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️🫐️
+🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️
+https://www.infineon.com/dgdl/Infineon-CYW4339_Single_Chip_5G_WiFi_IEEE_802.11ac_MAC_Baseband_Radio_with_Integrated_Bluetooth_4.1-DataSheet-v10_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee1e7d367fd
+🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️🇱🇧️
+
+🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️
+[Konfidential]
+https://file.elecfans.com/web2/M00/4D/E6/poYBAGK63ZaAB29sABX0WWyX9jw867.pdf
+[Konfidential]
+Chipbetter Microelectronics Inc. - 2 / 11 - www.chipbetter.com
+PRELIMINARY
+CB5717
+5 GHz WLAN Front-End Module
+[Konfidential]
+(wifi chips do an “all in one, and i dunno where the antena is in a laptop but im sure it lays flat just like in modern cell phone)
+(u have a signal (could be from SPI/TTL)  , and it goes 2 a “SMA”  <google img ez< antenna connector (its actually super simple , as u would imagine, but that even works for 802.11ac (5G , u just need 2 read the “CARRIER CODES” OUT for us etc <3 , we can literally set up our own ethernet protocol in JBHDL ;), wong yuan . 
+🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️🇨🇳️
+🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️
+https://www.arubanetworks.com/assets/wp/WP_80211acInDepth.pdf
+general
+🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️🇦🇼️
+
+🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️
+(antanae just uses “PCIE  card + hooking an antenna into it , even surface pro etc.
+u can buy replacements on “AMAZON
+even IPHONE .literally uses same antena as “ARDUINO” CHEAPAF 2
+https://www.google.com/search?q=replacement+iphone+antenna (IMG)
+u should just be-able 2 piece out ur computer piece by peace 2 new hardware using
+“USB 2 TTL” for example.(then 2 pcie card (on a bredboard)
+)then 2 antanae , or w/e other peripheral (sending or recieving 
+)a seperate keyboard, buttons or w/e (button interupt sub 4 "enter"
+(etc;) (even eventually HDMI , etc(
+ (EVEN EZIER 2 MKE SIMULATED VERSION first ;) 
+ofc u probably wanna test irl)
+🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️🖨️
+
+
+
+👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️
+♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️
+https://www.infineon.com/dgdl/Infineon-CYW4339_Single_Chip_5G_WiFi_IEEE_802.11ac_MAC_Baseband_Radio_with_Integrated_Bluetooth_4.1-DataSheet-v10_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee1e7d367fd 
+♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️
+ < this sort of thing is perfect. (it even has schematics 2 show u how 2 make ur own ;) <3 
+(gotta have it , str8 up) 
+🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️
+
+🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️
+SUPREME GOL >[EZ]: PROGRAMING ARCH USING ONLY TTL 
+i swear 2 god this will be way easier and u dont even need 2 think about it IF U USE UR OWN SIMULATED CHIP FIRST(add pins some basic voltage, will have a clock)<u will have had to make a soft TTL interface>  THEN TWEAK/PROVE IT ON 
+AVR, then u can just turn back around and program NANDflash  bootloader for x86/arm/riscv
+"THE WAY GOD INTENTED"
+🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️
+🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️
+> asm cmp the output of avr dude (as file and misomosiclk cycle) 
+🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️
+> astronaughts on space ships / iss dont know how 2 bitbang m8 
+⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️
+ISP communications is through three different pins (MISO, MOSI, and CLK).
+⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️
+😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️
+(does x86 have "miso mosi clk?" i think u can figure out the rest ;) 
+😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️😏️
+⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️
+SPI signals include the standard Serial Clock (SCLK), Master In Slave Out (MISO), Master Out. Slave In (MOSI), bidirectional Serial Data (SDAT)
+⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️⏲️
+
+>>>>>>>>>>>BITBANG  TTL
+🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️
+NEED TO GET USB IN "SYSCALL" OR .16/.64 BIOS/EFI mode
+
+💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️
+GOL: 2 make an led blink from usb ttl thingy using JBHDL
+(use hp or less for this tbh fam (dont wanna blow a port) 
+💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️
+🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️
+we already have a few "TTL's" the 5 pin is wut they sell
+__________________________________________________
+
+📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️
+🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️
+doing this vs having nand clock? 
+just get us usb connection ill worry about the rest
+👼️👿️better than "EFI" ;) 👼️👿️
+speaking  kindof efi type bs. if i had 2 change archs, 
+we DO have emus of z80/6502/avr in "ALPHA"
+🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️🗒️
+📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️📒️
+🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️
+🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️
+
+🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️
+🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️🗓️
+🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️
+🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️
+----------- 7400 bitbanging (BINGO!) -----------
+https://www.arxterra.com/serial-communications-and-spi/
+✡️✡️✡️✡️✡️✡️✡️✡️✡️best 2 do this after emulating the chip imo...
+OVERVIEW OF THE 74HC595
+The 74HC595 “8-bit Shift Register with Output Latches” contains an eight-bit serial-in (SER), parallel-out (QH to QA), shift register that feeds an eight-bit D-type storage register.✡️✡️✡️✡️✡️✡️✡️✡️✡️✡️✡️
+🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️
+https://stackoverflow.com/questions/69481715/initialize-serial-port-with-x86-assembly
+https://stackoverflow.com/questions/57768789/how-to-interact-with-x86-i-o-device-from-assembly-bootloader
+🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️
+
+https://stackoverflow.com/questions/8374185/how-do-i-access-the-usb-port-through-the-bios-in-16-bit-x86-real-mode
+
+According to the GRUB manual (http://www.gnu.org/software/grub/manual/html_node/Installing-GRUB-using-grub_002dinstall.html), a non-buggy BIOS will expose USB as a hard drive. So, you can use hard drive interrupts (e.g. INT 0x13) to probe for and access USB just like a normal hardware. BIOS does the same thing for CDROM (see http://wiki.osdev.org/El-Torito no emulation mode). I think BIOS will do this for all supported boot options, but I haven't found any document to support this.
+👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️
+RND -----------------------
+
+
+https://stackoverflow.com/questions/11810736/usb-control-in-x86-real-mode
+
+= 
+👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️
+
+🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️
+https://www.intel.com/content/dam/www/public/us/en/documents/datasheets/7-series-chipset-pch-datasheet.pdf
+
+------------------------------------------------------
+https://en.wikipedia.org/wiki/Input/output_base_address
+"In the x86 architecture, an input/output base address is the first I/O address of a range of consecutive read/write addresses that a device uses on the x86's I/O bus. This base address is sometimes called an I/O port. "
+------------------------------------------------------
+🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️
+https://stackoverflow.com/questions/46642384/how-to-run-code-that-uses-x86-in-and-out-i-o-instructions
+🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️🏭️
+[sys-c-linux]💻️💻️💻️💻️💻️💻️💻️💻️💻️💻️💻️💻️
+_________________________________________________________
+PORT ADAPTER EZ ? (NASM)
+https://stackoverflow.com/questions/3434827/assembly-keyboard-io-port
+
+I ASSUME 🇺🇲️ USB WOULD BE VERY SIMILAR ...🇺🇲️
+
+
+_________________________________________________________
+
+https://tldp.org/HOWTO/pdf/IO-Port-Programming.pdf  
+https://www.oreilly.com/library/view/linux-device-drivers/0596000081/ch08s02.html
+
+
+
+🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️🎳️
+👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️👽️
+
+🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️
+AVR___________________________________TTY 
+
+𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 
+The Arduino folks decided serial communications is a good way of transferring data between the Arduino and the host computer. In other words, they decided to use two pins for serial communications.
+⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️
+ISP communications is through three different pins (MISO, MOSI, and CLK).
+⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️
+𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 𓊅 
+
+🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️🥑️
+👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️👩🏻‍🔬️\\\\
+
+
+
+
+
+__________DUMP
+http://www.menuetos.net/faq.txt
+https://starkeblog.com/bios/menuetos/2022/09/22/reverse-engineering-menuetos.html

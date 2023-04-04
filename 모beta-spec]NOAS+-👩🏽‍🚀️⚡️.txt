@@ -1,0 +1,1234 @@
+🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️🌩️
+⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
+will impliment as much as PNP/PNP transistors as "chip.txt"'s (will cover resistor(lvls) and ground) + drop thru/stak <DRU
+#then back 2 nand , till we have "demo microcontrolers and we know "IDT/GDT" / kernel fs , and can "stab thru"
+⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️⚡️
+
+
+🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️
+Dont rush x86/Arm/Avr Bitbanging , dont even rush GIGATRON , it will make way more sense once u finish N@ND
+🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️🐇️🐢️
+😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️
+>the reason im saying jbhdl and not "HALO" < no asm yet
+😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️
+🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️
+5g 802.11ac wifi spec < SCHEMATIC = 
+https://www.infineon.com/dgdl/Infineon-CYW4339_Single_Chip_5G_WiFi_IEEE_802.11ac_MAC_Baseband_Radio_with_Integrated_Bluetooth_4.1-DataSheet-v10_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee1e7d367fd
+🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️
+🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️
+>>>>>>>>>>>BITBANG CROSS? <<<<<<<<<<<<<<<<
+⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️
+
+[u SHOULD expose 3 pins , if you want 2 bitbang progs into ur chips]
+CLK + MISO & MOSI (masterslaveio)
+⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️⏱️
+🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️
+----------- 7400 bitbanging (BINGO!) -----------
+https://www.arxterra.com/serial-communications-and-spi/
+✡️✡️✡️✡️✡️✡️✡️✡️✡️best 2 do this after emulating the chip imo...
+OVERVIEW OF THE 74HC595
+The 74HC595 “8-bit Shift Register with Output Latches” contains an eight-bit serial-in (SER), parallel-out (QH to QA), shift register that feeds an eight-bit D-type storage register.✡️✡️✡️✡️✡️✡️✡️✡️✡️✡️✡️
+🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️🕍️
+https://stackoverflow.com/questions/69481715/initialize-serial-port-with-x86-assembly
+https://stackoverflow.com/questions/57768789/how-to-interact-with-x86-i-o-device-from-assembly-bootloader
+
+https://stackoverflow.com/questions/20306425/write-to-port-0cf8h-fails-with-segfault
+&
+https://en.wikipedia.org/wiki/Input/output_base_address
+🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️🧪️
++
+
+https://github.com/jbro885/asmscan-tcp
+🍿️
+https://www.usenix.org/legacy/publications/library/proceedings/bsdcon02/full_papers/linden/linden_html/index.html
+🍿️
+
+
+
+__________________________________________________
+🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️
+🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️
+SUPREME BIZ > SPACE CO . as many times as possible everytiem. (u wanna go 2 space or not) 
+[build infrastruct, career position/etc]
+>caveat
+>would w8 and do uno man till funding/co-op isn't a gamble
+🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️🚀️
+#🙊️🙉️🙈️K.I.S.S. and get me the fuck off plats/planet pls. 
+(efi is just a file in NAND flash . do ur own <DRU501
+🎃️
+https://github.com/cod5-dot-com/djak/
+[this is a "j@ck computer" that runs "javascript etc?]
+*forked by itself =  https://github.com/cod5-dot-com (4 months ago)
+https://lienher.org/jean-marc/ & his contemporary http://nothings.org/ (late 90's till now)>ie:their not gonna do "anything" (tho they did this)
+[[[[[[[[ive been  2 the rodeo a few times now, ie u MUST do it ]]]]]]]]]
+[[[the whole attitude is like they guy who gives u a used boat 4 free if u can haul it away...>"i just put new seats and onboard on it ... i never take it out , its like new..." w/e (biz is "Hard". do (You) know wut 2 do with it?]][[ver fam with it its called💈️ "SP.erior Discipline"💈️
+🪳️>[:+]
+my early recordings/equip/homes/deals?etc w/e (it fucking happens m8) 
+>[:+]🪳️
+모모모모모모모모모모모모모모
+>55391401[kpureg]
+ i have to set a rule for myself to not die on purpose when i waste a bullet or arrow 조 (convo is officially over)
+ 모모모모모모모모모모
+
+>apperantly the uefi.att was only done a year ago so 
+dont beat urself up on time... (this is "right place right time")
+(if ur competiting u lost already - svb)
+🎃️
+
+
+
+#🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️
+
+#we should have taken in binary from the very begining 
+#its ok, it only feels like we wasted time cuz we paused for EFI/bit research.
+
+#just do it right now, ur xp will help u speedrun 
+
+#we literally JUST LEARNED how 2 parse out a buffer into ram so w/e 
+#u wanted 2 see how tokens would work and u did , now get srs cuz...
+#not everything will be "tokenized" right? only 4 bit? wuts the point? 
+#were gonna have more than 4 bits u need 2 figure out how 2 "HANDLE THIS"
+#with potentionall 32bit wide inputs...(to tell u what kinda chip 2 use)
+#its okay but u just need 2 do it right, u could do a c compiler in here if u 
+#had 2 so (or whole kernel) so dont sweat it, just get xp <3 
+
+
+#the real tricky question is "how do we parse from "DAY 1"
+
+#i would not go out of order from now on it creates chaos and mess in code.
+#🩰️
+#STEP 0 : PARSE HEADER? (to determine bitsize)[ u may just wanna do 1 bitsize for now just lines of "0's" and edit ur code 
+#(YES JUST DO 1 BITSIZE FOR NOW OR THINGS WILL CRAZY GOTTA DO LARGEST(32)
+#64 would be largest, but were gonna be ok, that would be unweildy #
+#🩰️
+#STEP 1 : take in "BINARY FROM BUFFER"
+#(if u put "inst" first (for every chip , may help us 2 parse 
+#which chip 2 jump 2 and how its used. 
+#we may even do thing were u can "create a new chip and name it (4let?) and it #will store in /chips/ and beable 2 be referenced? .
+#no thats crazy unless u wanted 2 loop over every file name in "chips"
+# i dunno even know if thats possible , keep it simple pls
+#we'll just add them manually  
+#(i can easily let u put in raw tokens later , good 4 knowing but cmon)
+#[at least we've been down "the block b4" know what 2 expect <3 <DRU1VK
+
+#u should use tokens as a "later luxury" while just using "decimale values
+#as the token right now , ie if "b10ck = ".equ,18" = "mux" (etc) 
+# this way u can still use ur 2-15 token values <3 (we tried it , it will work #But maybe only 4 4 bits like u said. good w/e just like u said.🤺️
+#but were doing things seriously now 4 sure 100% leading 2 step 2 
+#[ we CAN do the bitsize parsing first, get it out the way and store bitsize
+#then u dont have 2 write giant "b10cks" if u dont want 2 
+#and we always have the "ability/ dont have 2 go back and tear "floor up"
+#🩰️
+#STEP 2 : do logic on binary immedately > output binary
+#step 3 : do multiple chips. io.threading
+	# ⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️
+	#do them in "4bit tokenized" also (same time?). i wanna know if it
+	#can be "JUST 4 BITS 2 build the "half adder/ ALU etc (protip it can)
+	#how would that work ? something liek 
+	#_1=a , _0=b , 1_=c 01=d 1_=etc.(ie grabbing mult inputs "LIKE THAT")
+	#= blocks of chips (fine btw)
+	# = 1 BIT MACHINE = TX UP , why would u want anything more 
+	#u dont need it... , u dont need 2 "Get fancy"
+	#(y would u even do it the other way?)
+	#i dunno actually it seems unecissarily complex now that u explain it <3 
+	#did buffer mess us up somehow? (were gonna take mults 
+	# even if u need multiple input tho, just use ur letters
+	#however letters dont = 15 
+	#even tho theoretically the letters just represent wires...
+	#Z= $90, z = $122...16 (8bits can represent 255.sooo)
+	 8x4 = 32 <min prog size (so 64.bit ram is more than enuff)
+	 👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️
+	 PROB = u cant input 16.bit progs for very long cuz wires are letters
+	 👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️👩🏻‍🚀️
+	 #_____________________________________________
+#ㅇㅊㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ = head,inst,ioioioio
+#ALSO  (connotes supremacy order and tamadachi = kamadaki /ryo-ki.STD) 
+#"TN_0 TN_0" < can include a header and inst in 4 bit , if u just drop down ;)
+#________________________________________________________________
+#(head||no)inst ,then everything else? then ucan id inst 1rst.(no matter io#'s)
+	
+#[ㅇㅊㅎㅎ-ㅎㅎㅎㅎ,ㅎㅎㅎㅎㅎㅎㅎㅎ,ㅎㅎㅎㅎㅎㅎㅎㅎ,ㅎㅎㅎㅎㅎㅎㅎㅎ] 
+
+#>kpop horse b4 the "kart" 
+#💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️
+#>should we just do tokens after? NO try 2 do them same time(or only!
+#cuz i think it will even work , if u just chunk out chips w/e 
+#thats the point isn't it ? (2 have it all in transistors? 
+#do u even actually WANT buffer  ? < good point...
+# literally even just do token first...
+#the only thing that would stop u is "WIRING" (but not chips)
+#and wiring can be reprsented by "ASCII" REMEMBER?!??!
+#with 4 bits u still get 3max wires, cuz u wont use "header"
+#that space is for if u "CHOSE" 2 go into multibit l8er u wont
+#be scrambling for space ;) <3 
+#💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️💡️	 
+	 
+	 👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️
+	 SOLUTION = figure out how 2 string them thru w/o letters (fall thru?)
+	 ie : forking them using another not chip? (who knows, cant hurt 2 try)
+	 IE : if theres no "output letter" we will drop output 2 next chip!
+	 (dunno if this can actually build ALU , but we should try )
+	 👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️
+	 #i think u should do both ofc, but maybe get "header bin " started
+	 #and get token fallthru (no aout) started...
+	 
+	 #>token fall thru (maybe they all fall thru 2 a sudo-stack
+	 #and only get deleted if u use a "resistor or ground"?
+	 👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️👣️
+
+	# ⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️
+#step 4 : start parsing complex chips from "N@ND2" book. 
+#STEP 5 : make all the chips , alu, cpu, assembler, computer etc
+#STEP 6 : make 7400's 
+#STEP 7 : make gigatron
+#STEP 8 : make 32bit riscv emu .
+#STEP 9 : make 32bit ARM  emu   
+#STEP 10 : compare RISC/ARM and write a "jbhdlasmkernel" for arm/risc?...
+#STEP 11 : bitbang your kernel onto arm (this doesn't have 2 be done"From arm"
+#u should have a soft emulation so that shouldnt' even be your concern tbh
+#im guessing 
+#i dont ever wanna have to run "pi-linux" or any such nonsense unless its 
+#2 test my emulator lol <3 
+
+#waaah we did 4bit tokens first. its ok . that was nothing we sorted buffer faster imo and we can keep it btw. and u know how this should work , 
+#that was ALWAYS the plan... its not majic.(i dont even think we knew about mux etc when we set this up , dont sweat it😇️ < DRU1vk < ITS ALL GOOD <3😇️
+[its good u figuredout buffer in tokens, "." cuz it coulda got confusing ;) ]
+
+👯️👯️👯️👯️
+
+👯️#step 0||1👯️ were gonna take in buffer "bytesize by bytesize" into ram. 
+#then deal with it "SIMILIAR" 2 how we did with tokens, but parse as decimal
+#2 compare with ".eq" (it has 2 be done that way)
+#0 and 1 will be the same , but everything else will have 2 be "dec" 2 compare
+
+#u should have an ascii 2 dec converter done ofc already
+#(yes its even in the codebase already = "a2b_0:"
+#they will never "BE stored as .10" they will just be put on stack as ".10"
+#otherwise it would get really "STUPID"
+#dont worry cuz theres more than 4 regs (mux etc <3) 
+
+#everytings cool we didn't waste time , u could literally still 
+#try 2 push thru with the 4bit tokenized code from not 2 nand 
+# and try 2 do ur muxer using THOSE>... but... if u do , we still 
+#have plan in place for wider lane (my rec? go step by step so u dont 
+#get frustrated confused code base going back in time...
+#u could literally lose code if u delete fx. and if u dont it gets messy , see?
+
+👯️#step11 👯️do led sim first, then do "simplecli oscilliscop = _--_--_ (zoom io +-)
+THEN , u can research "USB TTL/SPI BIT BANGING" (
+THEN , u can usb 2 "antennae" and start "getting in trouble with ffc lol"
+#📡️🛰️(u will literally be airbounre/ ready 4 outer space coms ,kongrats📡️🛰️
+https://www.ndtv.com/science/scientists-capture-radio-signal-sent-from-9-billion-light-year-away-from-earth-3714532
+🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️🛰️
+(or u can probalby hijack/use onboard wifi thingy however that works ;) 
+(im sure that would be a far better use of ur time , and u may even 
+PUT THIS IN RESEARCH PAPER WHEN UR TALKING ABOUT PORTIO research preceeding "BB
+👯️
+dont ever try jumping ahead again unless u have 2 . it mindfux the group 
+#🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️🏋🏻‍♀️️
+ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️
+ #🚿️ APR 2 
+#🚿️ APR 1 01:32 = 🏋🏻‍♀️️ < 11.step plan created
+(buffer sorted (64bit ram created) 
+🦉️🦉️🦉️🦉️🦉️🦉️🦉️🦉️🦉️
+[may have u turn in paper now, its been a while and mentor called(u can let it sit after, a few days if necessary <3]
+🦉️🦉️🦉️🦉️🦉️🦉️🦉️🦉️🦉️🦉️🦉️
+ 🔴️mar 30
+ [if ur presented with chioce , do either ur ATT.s or
+ deeper into bitbang . w/e efiscam should tell u enuff already ]
+ 💩️cell needs 2 stop making / forcing trolling assumptions based on stupidity and ignorance. its time.💩️
+ 🤖️🤖️🤖️
+>robot retard. it all leads 2 nowhere. were not doing it.
+>DRUXO 
+
+>next time ur tempted 2 look up something dumb like efi/nasmw/e
+
+look up bitbanging./ chip specs for RISCV vs x86" schematics etc.
+since thats actually "REAL HARDWARE"
+👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️
+ill excuse efi since we didnt know if it was a chp and that 
+gcc wont assemble PE but time 2 move on.
+👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️👼🏽️
+👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️
+ofc im not gonna give up on the macro goal. cuz no one 
+else seems 2 be doing it "correctly / safely" and im not
+comfortable with that...
+👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️
+🤖️🤖️🤖️
+
+🔴️mar 25
+ 🔴️NNar 29. bootloader att didn't work but control(edkii) did
+ learned cool trick 2 run efi from only folder on qemu.
+ learned efi is not an img it is more like an elf, to be
+ included inside of an "ISO/img" in a directory EFI/BOOT
+ 
+ is bios really a  chip ? (megatrends" then is uefi a chip?
+ do those have 2 be emulated as hardware . ? wher are they?
+ does arm/riscv use those? can others just use them? how? 
+ 
+ > apperantly instead of being a chip like bios, 
+ efi is a "partition on the harddrive, maybe even that
+ linux/ msft slaps in there before installing itself somehow?
+ (that actually maybe cooler than a seperate bios chip...)
+ hmm...ill allow u 2 research that a bit more at a macro level
+ ofc...
+ 
+ 🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️
+ https://www.computerworld.com/article/2826910/goodbye-bios--hello-uefi.html
+ UEFI is a mini-operating system that sits on top of a computer's hardware and firmware. Instead of being stored in firmware, as is the BIOS, the UEFI code is stored in the /EFI/ directory in non-volatile memory. 
+ 🦥️
+ Thus, UEFI can be in
+  NAND flash memory 
+  🦥️
+  on the motherboard or it can reside on a hard drive, or even on a network share.
+  
+  👩🏼‍🚀️
+ 🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️🦥️
+ ////////////////
+ does xxd. dump .o files
+ (yes but nasm goes str8 from .asm 2 .efi...
+ krufting that...(or will leave it and move 2 charlie...)
+ (just when u have a x86/arm chip put /efi on nand and 
+ flash intall...
+ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️
+ HOW? mount the efi partition (fdisk then /mnt/efi) 
+ have fun dumpster diving <3 
+ https://www.quora.com/How-do-I-create-an-EFI-partition-in-Linux
+ 
+ 🧳️ 🧳️
+protip : there is only 1 "EFI" partition used for
+WINDOWS  , linux1 , liux 2 , etc...
+👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️gparted 2 view
+sudo open /boot/efi  =  3 diff directors
+
+sudo cp -r /boot/efi/ $(pwd)
+
+sudo chown jbez efi		#$(whoami)
+🪟️🪟️🪟️🪟️
+"efi is a msft pe type file... so , u may need special tools
+for dealing with that stuff but honestly its made for
+NANDFLASH. so maybe using this info u could figure out ur
+own boot spec and cut out "GRUB BS / efi.s nonsense etc , right?"
+👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️👨🏽‍💻️
+"Boot , ubuntu, and Microsoft" 
+"they contain "efi stubs" somehow 
+(BOOTX64.CSV , grub.cfg , grubx64.efi , mmx64.efi, shimx64.ef)
+  🧳️ 🧳️
+  ❗️the bootx64.efi (is all qemu needs 2 boot) from its chip
+  so... that means "the efi file on "NANDFLASH" is like "a bios chip" does that maek sense (u may wanna look at the spec
+  ofc u dont need 2 if  u make ur own "software efi partition 
+  but m8 its just a bootloader right? its just binary form 
+  for w/e reason (cuz msft pe file, but isn't that dumb even 
+  prorprietary?) 
+  
+  PECOFF (seems 2 be both object file AND executable
+(ESPlains why it can be used immediatly after -o conversion.
+🧪️
+❗️
+  💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️
+  fasm and nasm compile "EFI" so does "GCC with LD"... 
+  why wouldn't as ? its not like they dont know abou tit...
+  i am kinda sick of wasting time on this tho. 
+  if a solution presents its elf , drop it in otherwise
+  w/e . dont go 2 heavy on "ASM" anyways is the wise thing
+  cuz were literally gonna make our own standard anwyays
+  and wotn need linux ANYWAYS like i said before u need 2 ignore
+  cell even if they are violent u are right dotn even 
+  give ur self more of a headach pls. just move on 
+   💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️ 💩️
+ 
+ '''''''''''''''''''''''
+ ✳️(make a biz proposal)
+  > can we offer walmart a greatvalue "os/computer/phone/watch /smart tv type stuff?(w/e they dont have)"
+ and choke out competitive market globally eternally????
+ 😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️
+ NNAR 28 : https://github.com/cod5-dot-com/boot-loader < ATT.uefi.s 
+🎃️🎃️🎃️🎃️🎃️🎃️🎃️🎃️ 📀️
+ [32.uefi.s will probably work based on its output.
+  u may have 2 "casper/ruiz/efi it" (as in do the /efi/ partion thing (can u do it with the "MBR" file? is that what its trying 2 do ? 
+ 🎃️🎃️🎃️🎃️🎃️🎃️🎃️🎃️🎃️
+DRU PUSHED THIS UP (att.uefi)s, 
+PLUS HE PROMISED SOON (3 days) he will take care 
+of those violent lying rap stalkers [itsnot ovo]
+ 😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️😇️
+🔴️mar 27 :
+🔴️todo? : we dont even have " not tokenized" yet. do that . then do multi chip (not should make nand + all)
+(just google "nand from transistors" then we will quickly get 2 7400" so we can do gigatron whwenver we want
+(protip , there issn't 1 7400 thers a few, so do NAND at same time 4 training wheels <3(we will use all nand things 4 ref forever <3) 
+
+ looked into "kernel dev" u dont wanna do this, cuz u dont know about "VGA" drawing etc. 
+(just do N@ND/GIGATRON First, then even arm(we have emulators for arm / risc (none for x86... hint hint...)
+
+##🦒️
+ 🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️🔴️
+ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️ 🗓️
+ 
+ 
+  # 🧊️🧊️ look at this only 2 know what 2 look for in hardware . otherwise . FRZN (its impatient)dru>w8winter?🧊️🧊️🧊️🧊️
+  #💀️didn't cmp still . moving on #💀️
+  #cant loop w/o cmp but we can see if we can move into 
+  #64 just skip cmp? 
+  #🧑🏽‍💻️hacked around cmp. hacked around (,1) loading that
+  #🧑🏽‍💻️will try hooking uefi on 
+  #🧑🏽‍💻️ following daedulus still tehres only 7 w/e
+   #🧑🏽‍💻️ have keyboard io on boot. so maybe we can 
+    #🧑🏽‍💻️ wait and use that once @nand uses kbd...
+     #🧑🏽‍💻️ or u can try pushing into fs. w/e gives xp...
+     # #🧑🏽‍💻️ i dont think it would hurt 2 be neck and neck
+     #🧑🏽‍💻️ with ur n@nd computer incase "fs" is ezr on it..
+     
+     
+  #👿️👿️👿️👿️👿️👿️👿️👿️👿️👿️👿️👿️
+#XCEPTION : THIS BUT ITS IN NASM BUT THIS IS WHAT U JUST TRIED 2 DO + more
+#[start here]
+#🎬️🎬️🎬️🎬️🎬️🎬️🎬️🎬️🎬️🎬️🎬️
+#https://www.youtube.com/watch?v=APiHPkPmwwU
+#Making an OS (x86) Chapter 2 - BIOS, Printing the Alphabet, Conditional Jumps
+#Making an OS (x86) Chapter 3 - Strings, Keyboard Input in BIOS 
+#Making an OS (x86) Chapter 4 - Stack, Functions, Segmentation
+#Making an OS (x86) Chapter 5 - Reading the disk with BIOS 
+#👼️👼️👼️👼️👼️👼️👼️👼️👼️👼️👼️👼️👼️👼️👼️
+#👼️if u can achieve this it will "fulfill prophesy" kill2 birds etd
+#👼️go for it  "sticky keysS"
+#👼️👼️👼️👼️👼️👼️👼️
+#👿️👿️👿️👿️👿️👿️👿️👿️👿️👿️
+   #🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️
+
+ 🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️when u have done a few chips (u may wait till vga is required, but u will probably rather go thru
+ "QEMU / VGA PURE , than go thru "GNOME_GUI  < qemu is basically a given if u have linux , kernel is NOT. (feel me? ) "
+ [i dont think u should rush this, u dont wanna have to manually key in the code...[
+ (my arm emulators dont have vga[syscalls](nor do x86)...we can just work on laptop/qemu...)
+ >do on 6502 blah blah. soon enuff we will have N@nd/gigatron and we wil do it on that + x86.2risc
+ 🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🆎️🏳️‍🌈️🌈️🦄️🧚‍♀️️🧜‍♀️️
+ 🥅️>i have a "nasm]uefi.asm" with "booting iso"... we also have nasm...(so we can build then $"objdump -D"
+ 
+ do this with "toe , then shoe"🦶️👠️
+ 👮‍♀️️
+ [i just want 2 remind cell that "UEFI boot isnt' necessary"(esp IMMEDIATELY) incase its 2 complicated etc. 
+ [im almost 100% sure any computer that does uefi does bios (and not vice versa(surf isn't "in") w/e tho]
+ [even bios isn't necessary YET] tho it would be nice 2 have some understanding of what we may want ur fx are gonna carry over so its nothing 2 sweat...[btw i think u should go back and finish paper now][ or maybe after
+ u try rev ngn nasm.uefi.s(toe first) and seeing what ur looking at + running something on hello.bios. seeing wussup...
+
+ [[[if cell is acting out , do opposite of w/e their being crazy about or w/e u have options <3]]]]
+ 
+>keeps shit talking (if we didn't do this it woudl be just fine , its actually a distraction from tapeout & or ur beloved arm , so ur talking such fake nonsense...(not only that but its a distraction from making a jbhdl x86 emu. so...but at least ur have something for if/when u do (u shoudl for sec purposes only tbh...
+sure tho w/e do it. plan 2 . its good "practice" + w/e reason they hav einterest. so maybe they will come 2 work sooner? 
+😇️😇️😇️😇️😇️😇️😇️😇️😇️
+🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️
+>DRU do it, 2 the max, its HIS GIFT 2 YOU) 🎁️ > also be quick 2 use scripture 2 combat/explain folly 🧧️
+🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️🎁️
+📖️📖️📖️📖️📖️📖️📖️📖️📖️📖️📖️📖️📖️
+
+"Abide in me, and I will abide in you. Just as the branch cannot produce fruit by itself unless it abides in the vine, neither can you unless you abide in me. 
+	John 15:4
+
+    And I will turn thee back, and put hooks into thy jaws, and I will bring thee forth, and all thine army, horses and horsemen, all of them clothed with all sorts of armour, even a great company with bucklers and shields, all of them handling swords:
+    Ezekiel 38:4
+    📖️📖️📖️📖️📖️📖️📖️📖️📖️📖️📖️
+
+
+😇️😇️😇️😇️😇️😇️😇️😇️😇️
+ 👮‍♀️️
+ 🦉️🦉️🦉️
+ [does stage0 posix mash together hex code w/o needing assembler, wut about the x86assmbler u have ?]
+  
+   [does stage0 posix mash together hex code w/o needing assembler, wut about the x86assmbler u have ?]
+  xxd . can we get xxd , as assembly 4 science ? does xxd work on risc binaries ? < this is big boy  sec
+  so do it 4 paper <3 / ironman understanding
+  🦉️🦉️
+ 🥅️
+ #🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️🎄️
+ #🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️🧊️
+ 
+ 모모모모모모모모모모모모모모모모모모모모모모모모모모모
+🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️
+WARP DRIVE FX  = {\displaystyle ds^{2}=-\left(\alpha ^{2}-\beta _{i}\beta ^{i}\right)\,dt^{2}+2\beta _{i}\,dx^{i}\,dt+\gamma _{ij}\,dx^{i}\,dx^{j},}
+
+speed of light = 299,792,458 metres per second 
+(which means if theres a formula online , someones doing it ;) 
+🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️
+🕰️
+CONCERNS? :will take a longtime? 
+i read thru the book , "were probably not actually doing the whole book" 
+were gonna make "7400" then gigatron spec "ALU" 
+"but u can make those chips
+Not 2 nand 2 prove u can move multiple chips 
+chips can go in "seperate file" or internal w/e 
+[[[[[[[[[[[[[[[[[[
+(matter of there being different size chips?) <<<<thats gonna be the tricky part (for dogmatic 4bitter) 
+but we will figure it ou
+
+
+t, similiar way "x86 goes from 16 to 32 bit mode" << literally look at that. 
+
+
+https://coditva.github.io/Jazz/boot-loader
+https://stackoverflow.com/questions/26539603/why-bootloaders-for-x86-use-16bit-code-first
+
+🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️
+🦈️
+#💡️🤘️🧑‍🎤️🪨️🚀️
+#>can do a macro check of the "first 4bits"
+#(and if they equal anything more than 2 0001+0001
+#we will know 2 flip up into w/e 
+#🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️
+ie "  _    = (no header = token mode ) 
+#ie : 0010 = 2(&below) = 4bit mode (ignore vvvv) 
+#----------------------------------------------
+#ie : 0011 = 3 = 8bit mode 
+#ie . 0100 = 4 = 16bit mode 
+#ie . 0101 = 5 = 32bit mode
+#ie . 0110 = 6 = 64bit mode
+
+#ie : 1000 = BNN (neural net 
+#ie : Q000 = Quantum w/e 
+
+#⚔️
+#ie . 00?0 =  > https://commons.wikimedia.org/wiki/File:ASCII-Table.svg
+#wouldn't have equalled the others we can assume its tokenized
+#theres other ways but this seems best 4 now , unless u have 2 add more diverse
+#headers, then we will approach that , at that point. KISS> we may tx 2 other archs
+#⚔️
+#🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️
+🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🤕️
+sum: its GOING to have an AUTO header 
+if its more than "4bits"
+🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️🧕️
+🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️
+PROTIP : this header style is LEGIT, cuz ur assuming
+bigger prog size if header overflows from "2"
+
+# we will check for each chip in a "prog that overflows" 
+then we can just operate on the new chip w/o concern for the old + padding if needed (4 isn't gonna have mult outs)
+(i see "so much "0"padding" in "obj dumps etc... so dont sweat it"
+🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️
+🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️
+🤖️
+finally , i would check to see if u can do "gigatron" w/o 8+ bits... maybe w/e
+
+(probably better to use "real chips" than fake ones, tho theoretically u made urs from "transistors" w/e figure it out
+(and make a "real computer using risc arch that can probably tx 2 risc-v ez (and there is hardware etc)
+👑️
+🤖️
+https://gigatron.io/?page_id=482
+https://cdn.hackaday.io/files/20781889094304/Schematics%202020-03-20.pdf
+
+🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️
+u keep asking where teh "ALU" is 
+theres one right here, (compare it with nand at a 'rnd level" b4 we keep going pls <3 
+https://gigatron.io/media/gigatron-hackerhotel.pdf
+🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️🧮️
+❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️
+https://gigatron.io/media/Gigatron-manual.pdf
+❓️
+Appendix B
+Simulator
+The gigatron is so simple that it can be simulated in just a few lines of C code. We
+include it here to make it easier to understand what the TTL chips do. Hardware-wise
+there is nothing more to it! Most functionality is in fact coming out of software. You can
+find the annotated ROM source code on our website https://gigatron.io/.
+❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️
+
+this "c.compiler" will run on gigatron...[and x86, sparc,]riscv?(i still have yet 2 bridge that 'mentally'
+https://github.com/drh/lcc
+🤖️
+👑️
+
+>>>https://www.makeuseof.com/risc-vs-arm-what-is-the-difference/ <<< if u figure out the "riscv" isa 
+(it can be used on "ANY RISCV" chip (si-five , ur own / future intel/mac w/e )
+🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️🤖️
+
+🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️
+>cellmfao> wut if they did "THIS"?xhdl(QRL?) with "JS/PYTHON" already? they did alot and shared it 'al'...
+im sure they would share that 2
+Q:do u really have to be the one 2 do this everyday? 
+A: what are ur predictions  / desires for the future? 
+MYQ: at what point do u think u should "flip 2 beta" and try investors etc ? and spill privy? 
+MYA: at a sufficiently abstract product layer (ie console/pc/car etc w/e)<both = big(est) bux(T*)...
+ie : "when HAVE SOMETHING TO SELL..."
+
+🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️🐍️
+>can we just "STOP" not really(kinda) u should go faster and we can pawn of 2 "QRL"
+(btw u should at some point have qrl going along side (maybe not in c tho? maybe? python?
+i think it maybe worth lookign at even if u have to translate code (TF is in c) or just get our bearings
+(it has 2 do with CAPSTONE" and the "gigatron c compiler is in python 2 so w/e)/.. 
+
+
+w.e u wanna do aside form this his gonna be FARM LESS EFECTIVE, w/o the use of this tbh fam8...
+
+🐍️🐍️🐍️🐍️🐍️🐍️🐍️
+🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️🤡️
+""""""""""""""""probably gona keep using @ for nand (nand h@ck cpu uses it but it will be parsed good ID)
+👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️
+sol- how quick can we make risc v spec???
+[how quick 2 meaningful RL/QRL? (in HDL?) (in c/py? 2 get goin?/reference?)
+we can have 7400 and generic chips and learn 2 use them interchangabley teach QRL 2 
+🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️
+PROTIP ? : QUANTUM IS A MEME "RL/NN/ML" ISN"T 
+--------🤕️
+(if u can get "BHDL" done a bit faster , i may even be jumping the gun... (bit prematurelly)
+(we dont even have an output of binary data for it 2 work on m8 ;) 
+
+
+"look at "binary neural network" AKA "BNN's"
+ honestly youll probably have the eziest time out of anyone
+working with this stuff cuz u have raw binary ;) 
+
+🗓️>have looked at github for these "EVEN BNN / xornn" seems 2 be sparse 
+u should probably just read a tutorial on how 2 make one on ur own ;) 🗓️
+🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️
+(first job for it ? = DELI
+ look at input out put and "CHIP data" and build the chips / output /input 
+based on its knowledge
+🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️🚸️
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+>another reason besides "commercial alpha" not 2 "proliferate this tech" ? school shootings etc..
+>as much as it could be helpful it could be extremely harmful in wrong hands  2..
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+--------🤕️
+🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️🧠️
+👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️👨🏽‍🚀️
+🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️
+y not gov? death star health care? [ mars colonies? free pub transport @ lightspeed? 
+🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️🇺🇸️
+
+
+🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️🇲🇶️
+
+]]]]]]]]]]]]]
+
+REVALATIONS : 
+🐡️
+CAVEATS for attempt 2 keep it 
+"4bit" 
+ur gonna have to flip up into "Multi-bit at some point"
+🐟️
+MULTI IO 
+
+🦈️SOL :0-1111=16(headhalf of output can indicate readyness 4 new input) 
+(if thers no new input , it maynot matter but i may fill with "1111's" (not 0's cuz thats our "0" #code...)
+ use low-alphabet for io (use 8bitoutputs or tokenized outputs < no (if u have 4.half it only goes 2 16..
+(so the "header half, maybe 4 bit . 
+
+🦈️#i reserved the entire alphabet but hopefully u dont need it , try 2 only use "15"
+(ur not gonna have an alu going 2 another alu. so we have 2 see how the "Multi muxes work" 
+
+👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️
+🦈️: leaving 1 question . how will u handle jump up 2 "16 bit inputs"? 
+🦈️: HEADER? [macro header?](would destroy 16bit program...
+🦈️: count the program length somehow? (start end header? ) 
+🦈️: 8bit would allow headers = 32.bit progs... may give some breathing room...
+🦈️: token?  <NO 
+🎣️:thing about this is , i dunno how (with our desire 2 go "NOT up" this actually works out
+so were just gonna push forth with "NOT UP" for now... 
+>DRU we can transition 2 16/32 LATER if we WANT/NEED" [at least ur aware]👁️
+👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️👁️
+🐟️
+🧮️at some point were going 2 need 2 take in no more than 
+
+16bits. 
+{o=15 , p = 16} . so thats not gonna work (so were scrubbing that but they were already letters
+so its not big deal , u can actually leave them , i may autotag outputs so the computation can be "PAUSED inbetween
+chips , without relying on internat "FUNCTION" . *********
+#bascially were just gonna designate the entire alphabet 2 "IN's and OUTS" 
+	#i dont think u will have much more than "64 io after all"
+🧮️
+
+
+mux8way16 = select from 8diff 16bit inputs. 
+(necessary for doing alu . 
+🧮️
+im thinking that we can get buy on using the 4 bit
+and treating otherthings as more complex io 
+as the programs mature
+
+
+ALU is going to take in a total of 
+
+
+
+🧮️
+there is going to be a "clock" incrimenter"
+but it doesn't depend on "x86" clock it actually 
+is going to run itself "
+🧮️
+
+🐡️
+
+🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️JBHDL🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️
+SUM : u shoudl think of this as its own language set of binary
+"IE "BHDL" (OR JBHDL(as asmbinary hdl)[JBHD/L] w/e 
+LANG = BHDL 
+COMPILER = JBHDL / XBHDL / XHDL w/e 
+
+🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️
+obviously this is more useful imo than verilog 
+(in the future especially if it hooks into 
+(archs/ (x86's arleady) nvme/fpga ) 
+ ITS CERTAINLY JUST AS VALID IF NOT MORESO THAN "C/C++/Python/etc)
+ >>>>>>>>>>>>>>>>>>>>>>>>
+ (which have foundations to support them etc...
+ so u may wanna look into how that is handled [alpha/beta]
+ even tho i know u wanna continue iterating etc...
+ <<<<<<<<<<<<<<<<<<<<<<<<
+ 🔒️
+ https://pythoninstitute.org/about-python
+ https://en.wikipedia.org/wiki/ISO/IEC_JTC_1/SC_22
+ [mozilla 'maintains'(created) "RUST"]
+ "JavaScript" is a trademark of Oracle Corporation in the United States.
+ 
+ [think C#/Swift] = (BETA)
+ etc....
+ 
+(ur spec i wouldnt actually show ppl cuz it reveals
+x86 code i would just give them the binary but it could 
+aslo clearly be rev.ngn'd so u just have 2 decide what 2 do
+maybe make hardware never tell anyone w/e etc.
+ 🔒️
+ >DRU 
+ 
+
+    And Moses commanded them, saying, At the end of every seven years, in the solemnity of the year of release, in the feast of tabernacles,
+    Deuteronomy 31:10
+
+[alpha/beta/knightly (master/slave() etc]
+🔏️🔏️🔏️🔏️🔏️🔏️🔏️🔏️
+jbson? ez just parse out the {[,]} l8er we can try with "JS"w/e
+
+>literally 'MONGOD' TYPE database ? 
+hmmm... u would want to take in 'JSON' and output everthing to 
+"binary (keep {[,]}) for ez reading w/e 
+'This can probalby w8 till "JBASM" etc or else wuts the REAL POINt?
+
+>KEYVALUE QUERIES, XL AND SQL. HOPEFULL AI CAN HELP? 
+🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️🐝️
+📍️
+mini2do-spx : 
+
+🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️
+
+🗜️🗜️🗜️🗜️🗜️🗜️🗜️
+ looking forward at hdl (apperantly its gonna be like
+PHYWIRE... as in we sepcifiy which "output, goes 2 which 
+(new input)...by giving "OUT" variable names, 
+and putting them in the new "INPUT"(cuz theoretically 
+we dont "KNOW THE OUTPUTs(value) before that
+(theoretically its gonna be some ascii value? w/e its something
+we will have to deal with when the time comes) 
+🗜️🗜️🗜️🗜️🗜️🗜️🗜️
+SOLUTION : "no header" and output will be a "bin"
+that when used as input" (not 1 or 0 ofc..)
+(in future chips will indicate 2 use output as input
+(stored or something else (var nam for output as reg above output)
+🗜️🗜️🗜️🗜️🗜️🗜️
+some chips (4/5 down on chip stack are gonna require input
+as output from first chip, we will deal with that when we 
+get to it , but its good we have more than 2io...<3 
+🗜️🗜️🗜️🗜️🗜️🗜️🗜️🗜️
+👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️
+SOLU :whenver u get an output u will take "OUTPUT" and loop over 
+"REMANING BUFFER" looking for the "VAR SIG"
+then just replace that with ur output ;)(if need be)
+ EZ PZ 
+ 👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️
+ complexity ? naming parts? calling them? dunno will see
+🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️🪚️
+
+#🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️🤺️
+🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️🪀️
+#token_logic_0
+
+#token_logic_advanced_0
+
+#bin log(why do we nee tokens?(for "nand+-[cmp]" may as well ;) 
+
+
+#should !& binary just be value of "ascii? (no not gonna fit) 15.bits 
+#unless u do 127 but i rather have relevant 4 2 8bit conversion for HDL tbh fam 8bit is ez.(alredy don) 
+# https://commons.wikimedia.org/wiki/File:ASCII-Table.svg
+
+#ie before u push the "token" ask if its "same number as (decided token revalue)(
+
+#🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️
+		#🚿️
+		#⚡️
+#4bit minisys (now with VOLTAGE) (may rearange all these in lite of)
+#0 = 0
+#1 = 1
+#2 = jo   = '('= 40 # "jo" isnt really relevant 2 us right now , dont sweat it. 
+#3 = jne  = ')' = 41
+#4 = not  = !
+#5 = nand = @ ? = 
+#6 = mt   = % = resistor / ground = (how 2 cancel out drop downs)
+		#resist twice 2 cancel out? mebbe 1 is enuff? w/e
+		#number can be in header for volt and drop down
+		# 9 - 0 , can rep mult if necessary etc. 
+		#u should use this 2 make "REAL tx'not not
+		#the other input can be infinite power source
+		#and they can both drop onto stack 
+		#ground seperate, can requireground
+		#resist or cap based on number in header
+		#can chain resists/caps
+		#may shift amplitute left or right by num on sh
+		#
+#(and &  ? (storage address pointer? [decimal?]  register? 
+#7 = mt  = * = power source ?  (constant 1 signal 4 pwm) 
+#(or = | "174" ? xor =* "42" ? 	(????)		register? 
+#8 = shl  "60"  #---> we might not actually do these for "BHDL"
+#9 = shr  "62"
+#10 =  ^ =buton "switch , on or off" / button? (can link 2 keyboard interupt;
+   #can we have output as "pitched tone?"(based on ghz/pwm? synth? ) 
+	
+	#✅️ #i have designated a-z for io +- button wired 2 
+#🔡️🔠️- u should beable 2 do what to upper does , and just check "a-z" so u may free this reg up ;) <3 
+#if we literally use "lowercase" for now Its the same code identical 2 "2 UPPER"
+ #The lower boundary of our search
+  #  .equ  LOWERCASE_A, 'a'
+
+##🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️#🔡️🔠️
+#11 = "=" (will use as comparison but if compares to '_' will just be a "YR"
+#12 = mt = 
+#mt_w8ing (fx?  = % = "37"
+#13 = 	mt   
+	(fx a in ? register? 
+#14 		
+		(fx b in ? register?
+#15 = mt_END 	
+		(fx return?  register? 
+# not.gate. only takes 1 input.what about "_" for mt?
+# and 15 = 1111 
+
+# *=pow %= resistor $ = capacitor ? = ground
+
+# leave in the current order 2 reflect thot pro , may change later
+#shouldn't add more logic if anything add "hardwre parts 
+#like "button/ speaker etc" 
+#y is there any logic? (use at the back as "debug tokens") 
+#debug regs? maybe 1 or 2 after we resort
+#return (lifo)stack on cli log as well? #⚡️return volt as multimet?
+
+#⚡️ +- (in addition 2 * for "on / off switch)< may go a long way
+#(switch state taking in plus "state")+jne may create loops? 
+#im sure theres more natural way 2 loop ofc <# ;)yr w/e_)
+#think of this like an expandablebreadboard (drop downs)
+#but dont get 2 rigourous and try 2 do "colums" u already have wires
+#i just mean with "?"ground being reusable tbh. 
+#also i think +- will solve alot of ur questions "button = ^" can map 2 wires / key interups just need "speker"(as sub for light)
+#speaker will be the final one as "~"(tilde) (thats all 4 tokens)
+(~ is same as antane   / normwebsite ? = (sounds like dialup/modem)
+http://websdr.ewi.utwente.nl:8901/
+
+
+ㅇㅊㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ츄 04/03/23(Mon)10:21:37 No.55521893
+
+    >bad guitar amp picking up police radio chatter/ country western music
+
+    https://www.seattletimes.com/business/computer-speakers-capturing-radio-signal/
+
+
+
+            >>55521797
+            so why sin't wifi/bluetooth sent / recieved thru
+            the speaker?
+
+
+        because im not a bad person, you are 
+    ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ    
+        The superstitious, "bound in to saucy doubts and fears," degenerate into cowards and "die many times before their deaths." Tu Mu quotes Huang Shih-kung:
+
+“Ban all omen-taking and superstitious practices so that death is all they have to worry about.”
+
+― Sun Tzu, The Art of War
+ ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ 
+ㅇㅊㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ츄
+📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️radio active / radiation ? 
+)(dru>+(hamops are tards) ++(hamops are tards)  =  hangnail [SOV])
+📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️📻️
+#
+#if theres anything left, ill make it a registers using { or w/e
+#theoretically we dont need regs if u can map "_' 2 wireout(spkr)...
+#later we will build registers in hardware,...
+#-----------------------------------------------
+#liner token count que+-ue = in order of priority (4 reorg)
+#= 0,1,  _ , % , ? , $ , * , + ,- , = , _,^, ~ , !,@, : , ;<cam 
+# | = tx  
+= reprioritized based on over flow 
+
+= 0, 1, 
+#leg = ==================
+4]'.low', '.hi', '.resist', '.ground', 
+2]'.cap', '.dc' ,
+2] 'on switch', 'off switch',
+1] '_mt/nan/var/yr' 
+	(or condensed into 1 _ or = u pick (yes they condense 2 "_" as inst ;) 
+	(and i will add |tx bank) 
+2] button-mappable  , speaker,(speaker is also antanae (x's) (these can go close 2 ":,|"
+(11)
+#debug =  ===========
+12]  !
+13]  @
+=============== (
+15/16 NPN PNP  (tokens? left = ',",/,\,`
+	PNP = / (nah doesn't include all positiblities)
+ 	NPN = \
+ 	#super alt (could always use inst+header (like %does 
+ 						(for mult tx types)
+ 	# will use "|" + a header 2 indicate which type
+ 						
+ #thinking of using "1 token for 2/3 pin tx 
+#if 2 pin ignore 1 or drop it down w/e u need
+#when things drop down onto que i think u can put letter by 
+#them or use them in alphabet order or something we will see
+#based on ramstack) +- volt info etc w/e(as ram-header)	
+#(the things that drop thru can go into their own ram (not sa
+#(or w/e u can shave inst lenght and put them in 64 dunno)
+#the fact is we sorted this out				
+ 						
+#https://www.tutorialspoint.com/basic_electronics/basic_electronics_types_of_transistors.htm
+
+(could add if u take off ( thru /mnt and leave blank
+				(we can assume thru  "=_"
+				(or +- switches (is there diff way?
+			(im guess thru/nan is easier 2 xclude )
+		(think it thru when cell isn't acting retard/mentill)
+☢️(they feel stupid (ego affronted by "infinite ignorance")
+ so they take it out on you. 
+ but "YOU/THEY WILL NEVER "KNOW IT ALL"" no one does. 
+ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️
+> no time 2 meditate | w/e roleplay/cope (2save-face🎭️)in traffic...
+ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️ 🚑️
+(if they dont learn 2 stop this it will get u ☠️ injured/killed)☢️
+	👩🏻‍🎓️(y isn't irl? EE,CS,CE are 3 diff domains)👩🏻‍🎓️
+=======================		
+			(elecrow)
+ '{}' using a special buffer (basically sing +2)
+15] matrix display (as oled/ lcd , 7seg) (can be mults of 3 ) also can opt for color display etc?
+ 	#maybe have default matrix in mults of 10 or w/e (research it but
+ 	(its not like we need 2 reference it in capstone or something)
+ 	
+ 	always assume 3d matrix first (can use x's as gyroscope or anything in 3d tbh)
+ 				(robo arm w/e we will think this way but also
+ 		#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️
+ 			(for this reason w8 till we model out basic chip 
+ 			(EVEN USING ONLY "DEBUG "!"not (since mult ways 4 "NOT")
+ 		(maybe we will do gigatron in "VOLTS" or w/e ;) 
+ 		(ONTOP OF FAKE CPU EVEN, BOOTSTRAPPING jbhdl "on fake asm"
+ 	(THEN BOOSTRAPPING ON GIGA AGIN (NOT SUCH A BIG DEAL SINCE ITS 4EVER
+ 		(AND U CAN BOOTSTRAP RISCV/LINUX ON TOP OF THIS ETC) !& TX UP 
+ 		#🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️
+ 		(SIDE BY SIDE W/E BUT u know its better 2 peirce thru with tokens
+ 		( 2 see wut specs we will need imo
+ 		🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️#
+ 		#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️#🦾️
+ 	🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️
+ 	cli matrix = 6 x 4 ? 
+ 		12 x 8 etc ? 
+ 	OLED = 64x48 (whiteonblack or color ) 
+ 	
+ 	LCD SMOL = 640x480
+LCD SPEC - HD(normal)	1280 x720	HD, High Definition
+
+https://www.crystalfontz.com/products/smallest-lcds-oleds-and-epaper-displays.php
+
+(also consider not really getting into this till we see wut N@ND 2 specs, 
+but we made a space / fx for it (theoretically) <3 
+( i really think its simple enuff tech , that u dont even need 2 capstone it. ) 
+❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️
+🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️
+however, if u "DID" pull info in from camera' U COULD DO NATIVE "AR" like u want???
+	#even simple markers etc 
+			(so maybe clear another space for this?????(yea...
+			(even if the render starts as 1d/2d thats cool...
+			can get NN going etc.(4 mex+irl dope ish )
+			
+(may roll 7 seg into first matrix viz 2 add cam or something)
+
+
+			🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️🤳️
+			❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️
+16]  = ` (like surveillance/sec mgsv camera ;) 
+
+] - i also think u should have transistor matrix (1d/2d/3d)tranlsation
+mapped , may help u think in future (u will have 2 do it anyway..)
+(thinking of wafer , how much space would ur "code" take up etc...)
+(letting u spit out 2d.diagram of it , fast, and upload 2 ;) 
+(>u say u wanna wait, but like u said it will all translate, 
+wouldn't be that hard would it V that may... but worth trying...
+(anyways its not like its "NOT GONNA MAP" do N@nd at some point as well
+so we can see what were really looking at...in terms of fut design
+especially because quantum and nn should accomplish on its own ...
+🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️
+(so we should build quantunn and test that at same time...
+SUM = ur !⚔️ drop thru*multichip should work first and u can 
+#BEEF IT UP l8er .(stab thru first
+🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️🗡️
+(+cam , can scan drawn diagrams / code)
+🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️🖥️
+------------------------
+
+#abc's = wire 2 wire  (also abc's and numbs dont correspond 2 4-16)
+#nums = voltage levels 
+
+
+	
+#ER] not =/= "tx" [NPN/ PNP]
+# (tx can be used 2 make amplifier / not gates themselves etc...) 
+#xs] . < dont count just used end code in "64RAM" shave off 
+	but u actually dont need cuz header obsolets
+	
+�] =  no "'('jo/jne')'"  (wut can sub? ) (this isn't asm but 4 debug?)
+no "shf(r/l) <> (think this can sub for resistor / ampcap?
+  #bitshifting is kindof a big deal , but this is 4 sing digits...
+  #𝛙,u maybe able 2 may ur "BCD" using circuits 
+  #regardless this is enough 2 get u prioritizing mentally <3 
+  
+ TEMPSOL = if u have more tokens than 4bitbin. roll over 4 now w/e
+ 17+ (or try 2 reprioritize) 
+ otherwise (for things like "shfl / shr " u can try 2 use stack 
+ plus resistors or w/e anyways those things are fake and should 
+ be done in "HARDWARE" if u have 2 replace replace fake with real
+ (only xecption is "!" for quick debugging / @ for book debugging...
+ #-----------------------------------------
+ L8er-
+ 🧠️
+ map brainwaves (from usb) 2 binary ofc...(then matrix)
+ 	ofc first we need usb hooked up b4 we think about that
+ (kernel or w/e we can map brainwaves 2 language concepts 
+(maybe u can get into brain modeling one day...soon 4 anat.(DRw8
+#and do the rest till then)
+ (theres so many things 2 do later(dont forget that ofc
+)but lets stab tokens thru first pls <3
+🧠️
+#----------------------------------------------- 
+#0
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10
+#11
+#12
+#13
+#14
+#15
+
+#button / switch can correspond 2 same "abc +" 
+
+#⚡️post 15 u can even add new hardware w/e #⚡️
+#⚡️pre-post = dont become 2 obsessed with "volt sim" cuz it may change specs when we see wut we "REQUIRE" for "LOGIC" 
+#(plus  its easy 2 just leave out(and u should for quick modeling)
+#(and it should FOREVER STAYc THAT WAY , OFC!!!
+#😅️
+#post 15 ? there are gonna be 32 @nand 2 chips plus "7400" meaning hell
+#u may very well want infinite chips "i would use multi ascii 4 digit #'s (7400,4000cmos,5900 etc) 
+#(u can also just count 32 &or preface with @ for nand chip
+#🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️
+#between 1-32 will accomodate 8 bit (256) so no sweat)
+#[but u maynot beable 2 use "single token" 
+#u can use numbers tho...if there on stack...
+#so we will see how that plays out "when doing txup stuff
+#cuz it maynot be a problem stringing mutiple inputs
+#out of not/nand gates cuz they all start at NOT
+#and that would only be for 8bit+ referencing 
+#and we will figure something out 4 that. 
+#⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️
+#like using the "not combos" "mux4-16.txt" as token ? 
+#so also dont go 2 hard into tokenization 
+#literally only doing nand & not  , so no biggie ) 
+# complex chips may still condense down 2 those tokens 
+#is the point of THAT. (ie no need for more than 15.unios)
+#⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️
+#🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️🙅🏻️💦️
+
+
+#ie cmos 4000 (u may wann use 59/45(01) w/e +- for ur line)
+
+#/home/jbez/Desktop/PEDAL]BOARD]PADS]NOS]🏍️/K.1.5.5.]🛰️]PEN]💄]FRZN🧊/*.🌲LA.SK🏔️]🏴󠁵󠁳󠁡󠁫󠁿]XOR2TETRIS☃️🧮/cmos.4000[vs]7400.ttl]🧮
+
+#🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🔌️🛶️
+
+🗺️
+#lets do a token nand/ not parse first and see how far we can get with that thru "NAND2TETRIX"
+#im gonna make "not using" jne fallthrus , and we will do nand with not if possible
+#so we will be "META PREPARED" (and theoretically could make this "BHDL" on 7400 (and will tbh) 
+
+🗺️
+💡️
+u may pull each(minus -48) multiply it by (position pulled from ascii *x's 2 ;) 
+# then add them all together... = ur ascii(as binary) 2 binary 
+#what about back? im gonna do both right now as sep fx , sep folder(from main) <3 
+🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️
+#this isn't "ascii 2 decimal" 
+#its literally differnt (we will only ever have 1 or 0 
+#so u can ask "48|49"
+#we actually have no need or want for multidigit decimal so 
+#dont even worry about that
+#ascii 2 dec ?u coudl do it but its already done somewhere
+#and its not binary , actually u lost the binary cuz its "4digit" just NO
+...>arguing?
+>>>literally can just -48 or add '0" or w/e for 1 digit "decs" so...done..
+###############################################################
+#there is some "ascii 2 bin ARM code and an AVR no-decimal
+#in> sp.x/help
+#u should really be using "SHFL" 
+(y division? u may use it 2 get "DEC" (will/may be a dec/bin) back 2 ascii
+(u may even beable 2 do some weird shfl pop scheme 
+(but we will do that later)
+<<!>> no , there are no instructions for bin-2-asciibin. but
+its probably very similiar 2 reverse...
+
+#>roach.ez + assume 16+
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+https://stackoverflow.com/questions/40769766/convert-character-to-binary-assembly-language
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+Use succesive divisions by 2, that gives you binary, example : '0' char is 48 (or 30h), so : 48÷2=24 (remainder 0), 24÷2=12 (remainder 0), 12÷2=6 (remainder 0), 6÷2=3 (remainder 0), 3÷2=1 (remainder 1), 1÷2=0 (remainder 1). Now take the remainders starting from the last one = 110000 . – 
+Jose Manuel Abarca Rodríguez
+Nov 23, 2016 at 17:02
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+IE: multiply 2 go back2 asciii
+IE : u should like shift left those like in the "VIDEO"
+(try shifting on dec 2 see if its legit) 
+
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️📽️
+https://www.youtube.com/watch?v=tlnbApcf4CA
+4:36 / 18:14
+Convert Binary to ASCII and ASCII to Binary in assembly programming TASM 
+📽️
+this looks good "using shiftl's"
+ (in 'tasm' but ONLY THING IN WORLD?) 
+ 🤓️ 🤓️ 🤓️ 🤓️ 🤓️ 🤓️ 🤓️ 🤓️ 🤓️ 🤓️
+ *related
+ https://projectsgeek.com/2011/04/ascii-binary-conversion-in-assembly-language.html
+ (also uses tasm ;) 
+ 
+ 
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+it may be that they "conv 2 dec' before depending on how i may not care
+I doubt its a dumb way tho tbh (cuz 1 digit)
+👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️
+>>the one in tasm looks like it "DOES" use "sh" 2 op only on single bit...(rax/al)
++the arm one doesnt' really make sense ?Y? seems 2 keep zeroing out regs 4 no reason...
+
+0. the video is "2much" its doing 2 much , just use "geeks"🤓️
+👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️👉🏾️👈🏻️
+U DONT NEED THIS. just thumbnail from this vide =  
+#👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️
+#👍️shifting right = dividing by 2.
+       #👍️     shift left = mult by 2 ...cant u get ascii 2 dec
+ 		#👍️#with that? seems ez m8 ;) 
+ 		👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️👍️
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️
+💡️
+📍️
+
+
+
+#🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️
+#[PRE-EQ] = 
+	.equ reg_a  , 1000 
+	.equ reg_b  , 1000
+  	.equ inst , 10
+  	.equ out , 0
+  	.equ car , 0
+#🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️
+(PROTIP : = .equ = read only... w/e (can still be used as "real num
+		#u shouldn't use it for "binary" unless u 0b000 preface it
+#multi-io chips? we will when we get there. it maybe pre-abstracted...
+모모모모모모모모모모모모모모모모모모모모모모모모모모모모모모모모
+   #****************************
+    .equ FOURBITL, 4   #length of all "registars"
+    
+#❗️#looks like u can "BOOTSTRAP" this on itself soon
+   #❗️we will strap into more complex numbers etc
+   
+   
+   #we actually dont use the numbers 2 messy
+   #we convert them 2 "zero or one" 4 now 2 bootstrap
+  #probably be a cmpl scheme rather than dec conv 
+   #6️⃣️seems we only get 6 instructions(in 4 bit)w/e
+#🎛️🎛️🎛️🎛️🎛️
+  	#🎛️EQ
+   .equ lo , 0b0000  # 0b0000 ? YES the only way m8
+   .equ hi , 0b0001 
+   .equ not , 0b0100  #0b0100
+   .equ nand , 0b0110 
+   #---------------
+   .equ jne , 0b0011  #jb? add ? (SHIFT LEFT ? RIGHT?) (ele) 
+   .equ ovo , 0b0010  #jo(for4bit) #cmp? sub? or w/e we need
+   ########------3limit end
+   .equ shl , 0b1000
+   .equ shr , 0b1001
+   #🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️🎛️
+   ###im seeing that if u want 2 compare and u only have
+   ## je jne (then ur gonna do "fall thru's" 
+   ## imagine u only have jump if equal how u would do...
+   
+   #🎛️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️ = WRONG !! =🤯️
+   #if u need 2 "STORE" a decimal number for long term 
+#im pretty sure u would need "ASCII" (multi digit placing" 
+#ie : ascii 2 dec 2"ascii.dec" and back, so try not 2 do that. 
+# u might have 2 tho 2 save inst 4 next _FX_ ".equ does not "write_in"
+#ie : 1.ascii.bin2asciidec]&bac]🎹️]
+#🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️
+#w/e u might be saying i need the "asciibin 2 bin(as dec) first...
+#🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️🔟️
+#🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️🙅🏽‍♂️️
+#🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️
+#let me stop u , u dont need 2 "RESTORE" an "ENcoded dec" thats wut bin is
+#so just do what u need "WITHOUT" storing / converting "DEC" 
+#cuz honestly its actually probably "REALLY EFFING DUMB" if u have "BINARY"
+#sum: its redundant .ez
+# 🤯️ = "JUST USE "SH(r/l"{shift}
+#🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️🤯️
+   #🎛️
+   
+   #6️⃣️6️⃣️6️⃣️6️⃣️6️⃣️6️⃣️6️⃣️6️⃣️6️⃣️
+    #7️⃣️testing if we get more than "3bits"
+    .equ seventh , 1000
+    #if we get more (4bits get 16+- 
+    #  (cmp / jmp[jb] are usefl 4 loops)
+    #🛑️ this is good 4 now...
+    
+    
+    #NAND 2 
+    # ch5 page 86 = FULL(TEMPCPU) SPEC 
+    #================================
+    # cpu = (macro description of fetch execute+alureg+etc
+    # alu = x86 	(built-in chips) (eventually txmade or w/e) 
+    # registers = "ascii"
+    # control = decode .equ (not/nand ,cmp jmp etc) 2 go 2 "alu"
+    #fetch.execute = "loop" 
+    # io = fs/cli io.(+- meta memory (ram/stack w/e etc) 
+    #dont go 2 hard in2 this 4 x86, its not"real"/ NAND2 wil-b "REAL" 
+    #==================================
+    #hdl-js 
+    #https://github.com/DmitrySoshnikov/hdl-js
+    #if u look at this and read the "comands" as "_FX_" probably 
+    #'enuff info 4 now'
+    
+    
+    
+    #_________KRUFTY__________________
+    #4bit cpu commonalities? 
+   # Because instruction opcodes are 4 bits wide, there are 16 possible types of instructions.
+   #4004? wut does THAT do? 
+   #if u want "dec #'s" use BCD converter ;)
+   #4bit risc examples (gnarlier than gigatron
+  
+   #https://hackaday.com/tag/4-bit-cpu/
+    #https://github.com/edson-acordi/4bit-microcomputer (hackaday source) 
+  #strip whenever possible ;) <3 501DRU (move this 2 pre-nand2spec.
+     #💾️
+     모모모모모모모모모모모모모모모모모모모모모모모모모모모
+
+
+📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️📜️
+ 
+#🈴️
