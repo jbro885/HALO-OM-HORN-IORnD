@@ -1,0 +1,83 @@
+🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️
+APR4. FORGOT ! (cant create uefi.boot files in "ATT" if we dont have!) 
+🚿️sudo apt-get update -y
+🚿️sudo apt-get install -y gnu-efi
+
+NEW? AVRDUDE? , u want this as well . 
+🚿️sudo apt-get install avrdude 
+
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+REDO JBEZ? not yet, i wanna get 2 the point where i see if i need "RISCV / ARM" and "HOW"
+🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️🪳️
+🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️🚿️
+
+sudo os-prober   (native 2 grub) 
+sudo update-grub    (will add win/w/e entry 2 menu 4 boot < REALLY WORKS ) no hassle <3 
+-------------------------------
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
+
+all previous < 
+
+NEW
+
+--------
+if there is not enough "SPACE" u may remove sqliedb +- sqlite3 ? because we have "sqlite.c/js" < not on!
+however u can make ur own 
+_____________
+
+
+
+apt-get install flex bison build-essential
+
+apt-get install libc6:i386 libc6-dev-i386    (for as 32 compile)
+
+sudo apt-get install gcc-riscv64-linux-gnu
+
+sudo apt install qemu-user qemu-user-static gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu binutils-aarch64-linux-gnu-dbg
+
+    sudo apt-get install gcc-avr binutils-avr avr-libc   
+    
+    
+sudo apt-get install mpg123 
+
+
+sudo apt install mplayer mplayer-gui  #video 
+
+sudo apt install ncurses-dev
+
+
+sudo apt-get install libsfml-dev
+
+----------------
+maybe ? 
+sudo apt-get intel2gas
+___________
+Removing 4 4.3  2 4.2
+sudo apt-get remove nasm 
+sudo apt-get remove nmap 
+sudo apt-get remove snort 
+
+sudo apt-get install libsdl2-dev < not using = 1(0)?mb
+(if "jbez.iso" is still 2 big at least we know it wasn't THAT(ie , u tried.
+
+
+libreoffice = 773mb...  (just use google or w/e) 
+do what u want its probably better than not having 4 ever
+and having 2 rely on msft/good
+
+long term u probably just wanna make ur own in '501" (as well as sql)
+
+________________________________________________________________
+DAW? 🎚️
+
+https://discourse.ardour.org/t/tascam-us-122-and-ardour5-jack/88306
+
+sudo apt install ardour
+
+pipewire is already the newest version (0.3.48-1ubuntu2).
+(seems 2 wanna use "backed in "Ardour/ALSA"
+Ardour/ALSA supports multiple devices. This is required when using USB-microphones along with a different playback device. it is possible to correctly calibrate systemic latency when using USB devices on Linux.
+________________________________________________________________
+
+________________________________________________________________
+
