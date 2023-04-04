@@ -1,0 +1,15 @@
+#sudo apt-get update -y
+
+#sudo apt-get install -y gnu-efi
+
+
+
+as -o boot.o bootx64.s
+
+ld -dynamic-linker /usr/lib64/ld-linux-x86-
+64.so.2 -o boot boot.o -ldl
+
+objcopy -j .text -j .sdata -j .data -j .dynamic -j .dynsym  -j .rel -j .rela -j .rel.* -j .rela.* -j .reloc --target efi-app-x86_64 --subsystem=10 main.so main.efi
+
+cp bootx64.efi M/EFI/BOOT/bootx64.efi
+	qemu-system-x86_64 -cpu qemu64 -bios OVMF.fd -drive driver=vvfat,rw=on,dir=M 
