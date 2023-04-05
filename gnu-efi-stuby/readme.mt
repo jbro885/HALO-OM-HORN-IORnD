@@ -11,6 +11,14 @@ A: its the most legit thing you are ever gonna find about this...
 is this enough? 
 
 uh... not if u dont know how 2 compile it...
+👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️
+WTF HOW DO I DO THIS THEN? 
+A : just build "efi.c" but link "headers" manually from ur own folder = "THE RAW-SHIT"
+
+The traditional "Hello, world" UEFI program is shown below. 
+https://wiki.osdev.org/UEFI
+
+👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️👨🏾‍🚀️
 🏘️🏘️🏘️🏘️🏘️🏘️🏘️🏘️🏘️
 #🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️🈴️
 #https://wiki.osdev.org/GNU-EFI
