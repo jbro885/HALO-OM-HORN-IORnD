@@ -41,6 +41,14 @@ objcopy -j .text -j .sdata -j .data -j .dynamic -j .dynsym  -j .rel -j .rela -j 
 cp main.efi M/EFI/BOOT/bootx64.efi
 
 qemu-system-x86_64 -cpu qemu64 -bios OVMF.fd -drive driver=vvfat,rw=on,dir=M 
+
+#this will open a "computer efi menu" ,(go down 2 efibootmenu) u can then push thru and get 
+#Shell> fs0: ,  cd EFI cd BOOT bootx86.efi < just runs 
+#computer 2 say hello world, i wouldn't mind making a "USB BOOTABLE" and doing on surf
+#but also i rather just get "att.s" going ... 
+#will i do kernel if this works? maybe, maybe ill just use the same principles
+#2 make my own efi library with less ignorance. i still rather have mono-kernel
+#but at least no one is intimidated by efi ;) 
 #########################
 
 #as -o bootx64.o bootx64.s
