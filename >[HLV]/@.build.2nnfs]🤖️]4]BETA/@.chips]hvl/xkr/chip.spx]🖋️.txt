@@ -1,0 +1,11 @@
+
+🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️
+based on looking at "and16.cmp"
+it seems like u wanna specify mass inputs 4 a&b. 
+but u know wut i would skip that one , and move on
+2 see wut "Half adder" needs cuz that maybe niche.
+anyways lets sort out "REQUIREMENTS" 
+cuz i can don "and16" but it maynot be "the full picture"
+🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️🖋️
+
+
