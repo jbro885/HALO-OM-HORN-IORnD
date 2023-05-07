@@ -1,0 +1,29 @@
+#7400
+#INPUTS
+
+
+a__1  #y 
+b__1  #z overkill 
+
+#PINS 
+n___ m___ l___ k___ j___ i___ h___
+
+a___ b___ c___ d___ e___ f___ g___
+#PINS 
+
+#OUTPUTS 
+
+
+#INTERNAL
+
+c@ab d__c e__c 
+f@de
+h@ji
+k@ml
+
+#RESULT 
+___f 
+
+#yea, its not working , but this is as good as it gets
+#(the values are on the writes , right but 
+#the wire isn't outputting 2 "OUT"... :( 	

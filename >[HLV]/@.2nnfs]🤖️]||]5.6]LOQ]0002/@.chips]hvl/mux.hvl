@@ -1,0 +1,64 @@
+#@++
+#|   a   |   b   |  out  |
+#|   0   |   0   |   1   |
+#|   0   |   1   |   1   |
+#|   1   |   0   |   1   |
+#|   1   |   1   |   0   |
+
+#CHIP Mux {
+#    IN a, b, sel;
+#    OUT out;
+a__0
+b__1
+s__1
+#    PARTS:
+
+#    Not(in=sel, out=Notsel); #n 
+#|  in   |  out  |
+#|   0   |   1   |
+#|   1   |   0   |
+#!
+s__s
+n@ss
+#___n #0#GOOD 
+#&
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+#|   1   |   1   |   1   |
+#    And(a=a, b=Notsel, out=NotselAnda); #m
+m@an #0,0
+m@mm #?0
+#___m #0#GOOD 
+#&
+#    And(a=b, b=sel, out=selAndb);  #l
+l@bs #1,1     #was putting "BM" BUT ITS "BS!" 
+l@ll #?1
+#___l #1#GOOD 
+#    Or(a=NotselAnda, b=selAndb, out=out); #ml= o  (0,1 =1
+
+
+#to make "1" come vlom "ORE" , u need 1&0 or 1&1 (only 0&0 is bad... wussup?)
+#||
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   1   |
+#|   1   |   0   |   1   |
+#|   1   |   1   |   1   |
+p@mm
+#___p #1? GOOD
+q@ll
+#___q #0? GOOD
+o@10 #= 1 , correct output . input isn;t 1,0 ...
+___o 
+#}
+#|   a   |   b   |  sel  |  out  |
+#|   0   |   0   |   0   |   0   |
+#|   0   |   0   |   1   |   0   |
+#|   0   |   1   |   0   |   0   |
+#|   0   |   1   |   1   |   1   |
+#|   1   |   0   |   0   |   1   |
+#|   1   |   0   |   1   |   0   |
+#|   1   |   1   |   0   |   1   |
+#|   1   |   1   |   1   |   1   |

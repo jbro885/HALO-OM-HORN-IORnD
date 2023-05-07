@@ -1,0 +1,12 @@
+#@
+#digit_a
+o@01   #these giv diff results , not good...fix it!
+___o
+
+
+#@++
+#|   a   |   b   |  out  |
+#|   0   |   0   |   1   |
+#|   0   |   1   |   1   |
+#|   1   |   0   |   1   |
+#|   1   |   1   |   0   |
