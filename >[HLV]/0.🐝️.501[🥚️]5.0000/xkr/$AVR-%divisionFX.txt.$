@@ -1,0 +1,310 @@
+http://www.rjhcoding.com/avr-asm-8bit-division.php
+#==================================================
+8-Bit Division
+
+In this tutorial, we will look at 8-bit division routines in AVR Assembly. AVR does not have the ability to do hardware division (i.e., there are no division instructions), so subroutines must be written using other instructions to accomplish this task.
+
+The Atmel AVR200 Application Note provides a complete list of divide subroutines - rather than reinvent the wheel, we will take a look at how they work.
+8-Bit Unsigned Division
+
+An 8-bit unsigned division subroutine from Atmel is shown below
+
+;***************************************************************************
+;*
+;* "div8u" - 8/8 Bit Unsigned Division
+;*
+;* This subroutine divides the two register variables "dd8u" (dividend) and
+;* "dv8u" (divisor). The result is placed in "dres8u" and the remainder in
+;* "drem8u".
+;*
+;* Number of words	:14
+;* Number of cycles	:97
+;* Low registers used	:1 (drem8u)
+;* High registers used  :3 (dres8u/dd8u,dv8u,dcnt8u)
+;*
+;***************************************************************************
+
+;***** Subroutine Register Variables
+
+.def	drem8u	=r15		;remainder
+.def	dres8u	=r16		;result
+.def	dd8u	=r16		;dividend
+.def	dv8u	=r17		;divisor
+.def	dcnt8u	=r18		;loop counter
+
+;***** Code
+
+div8u:	sub	drem8u,drem8u	;clear remainder and carry
+	ldi	dcnt8u,9	;init loop counter
+d8u_1:	rol	dd8u		;shift left dividend
+	dec	dcnt8u		;decrement counter
+	brne	d8u_2		;if done
+	ret			;    return
+d8u_2:	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_3		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_1		;else
+d8u_3:	sec			;    set carry to be shifted into result
+	rjmp	d8u_1
+
+In this subroutine, the divisor is input in the register dd8u (r16) and the divisor is placed in the register dv8u (r17). When it is finished, the result will be stored in dd8u (r16) and the remainder will be in drem8u (r15).
+
+The subroutine starts by clearing the register that will hold the division's remainder, drem8u using the instruction sub.
+
+div8u:	sub	drem8u,drem8u	;clear remainder and carry
+
+You might wonder, why not just use the instruction clr instead? Well, this subroutine needs the Carry Flag cleared before it executes and clr will leave it unmodified. If clr was used instead, clc would need to follow it, e.g.
+
+div8u:	clr	drem8u		;clear remainder
+	clc			; clear carry
+
+Instead, using sub clears the register and the Carry Flag in one instruction. Pretty crafty!
+
+Next, dcnt8u is initialized as a loop count with the value 9.
+
+	ldi	dcnt8u,9	;init loop counter
+
+A For Loop is setup at the label d8u_1
+
+d8u_1:	rol	dd8u		;shift left dividend
+	dec	dcnt8u		;decrement counter
+	brne	d8u_2		;if done
+	ret			;    return
+
+In each loop, dcnt8u will be decremented, giving 8 iterations, one for each bit in the dividend. The subroutine will return when it reaches zero.
+
+Next, the most significant bit of the divisor is shifted into the least significant bit of the remainder. We check if the divisor goes into the remainder using the sub instruction. We subtract the divisor from this value, and if it is negative (checked by the brcc instruction), we know that the divisor goes into the remainder less than one time. Otherwise, we know it goes in at least once.
+
+d8u_2:	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_3		;if result negative
+
+If the divisor does not go into the remainder, we need to restore it (since it was modified with the sub instruction) and shift a zero into our result.
+
+drem8u is restored by adding dv8u back to it, the Carry Flag is cleared with the clc instruction, and rol is used to shift a zero (value of the Carry Flag) into the result. This flow is shown below with alternate branches removed.
+
+d8u_2:	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	...
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	↓
+d8u_1:	rol	dd8u		;shift zero into dividend
+
+Note that dd8u is both the input dividend and the result, which is why the Carry Flag is shifted into it instead of another register.
+
+Alternatively, if the divisor does go into the remainder, we do not need to restore it. Instead, we need to shift a one into the result by setting the Carry Flag.
+
+d8u_2:	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_3		;if result negative
+	...
+d8u_3:	sec			;    set carry to be shifted into result
+	↓
+d8u_1:	rol	dd8u		;shift one into dividend
+
+For either result, an rjmp is used to return to the beginning of the loop where another bit will be shifted out of the dividend and the cycle will repeat for all 8-bits.
+
+d8u_1:	rol	dd8u		;shift left dividend
+	...
+	rjmp	d8u_1
+
+Using this subroutine is simple. A dividend just needs to be loaded into r16 and a divisor into r17 before it is called.
+
+	ldi	r16,101			; load 101 into r16
+	ldi	r17,10			; load 10 into r17
+
+	rcall	div8u			; compute 101/10
+
+In the example above, r16 will contain the value 10 when the subroutine is finished - the result of the division, and r15 will contain 1, the remainder.
+Execution Time vs. Code Size
+
+In Assembly, you will often be faced with a tradeoff between execution time and code size. The above example is fairly compact due to the use of branches, but this introduces a few extra cycles of overhead in each loop iteration. Instead, branching could be reduced by having a separate block of code for each loop cycle - speeding things up but increasing the size of the code.
+
+The above is "size optimized", but consider instead this "speed optimized" version of the subroutine.
+
+;***************************************************************************
+;*
+;* "div8u" - 8/8 Bit Unsigned Division
+;*
+;* This subroutine divides the two register variables "dd8u" (dividend) and
+;* "dv8u" (divisor). The result is placed in "dres8u" and the remainder in
+;* "drem8u".
+;*
+;* Number of words	:66 + return
+;* Number of cycles	:50/58/66 (Min/Avg/Max) + return
+;* Low registers used	:1 (drem8u)
+;* High registers used  :2 (dres8u/dd8u,dv8u)
+;*
+;***************************************************************************
+
+;***** Subroutine Register Variables
+
+.def	drem8u	=r15		;remainder
+.def	dres8u	=r16		;result
+.def	dd8u	=r16		;dividend
+.def	dv8u	=r17		;divisor
+
+;***** Code
+
+div8u:	sub	drem8u,drem8u	;clear remainder and carry
+
+	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_1		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_2		;else
+d8u_1:	sec			;    set carry to be shifted into result
+
+d8u_2:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_3		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_4		;else
+d8u_3:	sec			;    set carry to be shifted into result
+
+d8u_4:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_5		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_6		;else
+d8u_5:	sec			;    set carry to be shifted into result
+
+d8u_6:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_7		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_8		;else
+d8u_7:	sec			;    set carry to be shifted into result
+
+d8u_8:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_9		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_10		;else
+d8u_9:	sec			;    set carry to be shifted into result
+
+d8u_10:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_11		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_12		;else
+d8u_11:	sec			;    set carry to be shifted into result
+
+d8u_12:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_13		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_14		;else
+d8u_13:	sec			;    set carry to be shifted into result
+
+d8u_14:	rol	dd8u		;shift left dividend
+	rol	drem8u		;shift dividend into remainder
+	sub	drem8u,dv8u	;remainder = remainder - divisor
+	brcc	d8u_15		;if result negative
+	add	drem8u,dv8u	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8u_16		;else
+d8u_15:	sec			;    set carry to be shifted into result
+
+d8u_16:	rol	dd8u		;shift left dividend
+	ret
+
+The "speed optimized" version is significantly longer - 66 words instead of 14. However, it can execute in 58 cycles compared to 97 for the "size optimized" version.
+
+You will have to make a decision based on the tradeoff between speed and code size for your specific application. But the amazing thing about assembly is that now, you have a choice!
+Signed 8-bit division
+
+Signed 8-bit division is actually quite simple if you know how to do unsigned division. You simply need to check if the divisor and dividend are negative, convert their Two's Complement value to a magnitude if they are, and proceed with unsigned division, just like before. At the end, if one or the other was negative (but not both!), you need to convert the result back to a signed value. This is shown below
+
+;***************************************************************************
+;*
+;* "div8s" - 8/8 Bit Signed Division
+;*
+;* This subroutine divides the two register variables "dd8s" (dividend) and
+;* "dv8s" (divisor). The result is placed in "dres8s" and the remainder in
+;* "drem8s".
+;*
+;* Number of words	:22
+;* Number of cycles	:103
+;* Low registers used	:2 (d8s,drem8s)
+;* High registers used  :3 (dres8s/dd8s,dv8s,dcnt8s)
+;*
+;***************************************************************************
+
+;***** Subroutine Register Variables
+
+.def	d8s	=r14		;sign register
+.def	drem8s	=r15		;remainder
+.def	dres8s	=r16		;result
+.def	dd8s	=r16		;dividend
+.def	dv8s	=r17		;divisor
+.def	dcnt8s	=r18		;loop counter
+
+;***** Code
+
+div8s:	mov	d8s,dd8s	;move dividend to sign register
+	eor	d8s,dv8s	;xor sign with divisor
+	sbrc	dv8s,7		;if MSB of divisor set
+	neg	dv8s		;    change sign of divisor
+	sbrc	dd8s,7		;if MSB of dividend set
+	neg	dd8s		;    change sign of divisor
+	sub	drem8s,drem8s	;clear remainder and carry
+	ldi	dcnt8s,9	;init loop counter
+d8s_1:	rol	dd8s		;shift left dividend
+	dec	dcnt8s		;decrement counter
+	brne	d8s_2		;if done
+	sbrc	d8s,7		;    if MSB of sign register set
+	neg	dres8s		;        change sign of result
+	ret			;    return
+d8s_2:	rol	drem8s		;shift dividend into remainder
+	sub	drem8s,dv8s	;remainder = remainder - divisor
+	brcc	d8s_3		;if result negative
+	add	drem8s,dv8s	;    restore remainder
+	clc			;    clear carry to be shifted into result
+	rjmp	d8s_1		;else
+d8s_3:	sec			;    set carry to be shifted into result
+	rjmp	d8s_1
+
+This signed division routine needs one more register than before - d8s (r14). d8s is used to keep track of the signs of the operands and the result.
+
+The subroutine begins by copying the dividend dd8s into the sign register d8s and performing an exclusive OR between it and the divisor dv8s. If the dividend or divisor is negative, bit 7 of the sign register will be set - otherwise it will be cleared.
+
+div8s:	mov	d8s,dd8s	;move dividend to sign register
+	eor	d8s,dv8s	;xor sign with divisor
+
+Next, the sign of the dividend and divisor are individually checked. If they are negative, they are converted to an unsigned magnitude using the neg instruction.
+
+	sbrc	dv8s,7		;if MSB of divisor set
+	neg	dv8s		;    change sign of divisor
+	sbrc	dd8s,7		;if MSB of dividend set
+	neg	dd8s		;    change sign of divisor
+
+The division routine can then continue exactly as it did before since we know we are using two unsigned values. The only difference is that before returning, we check the sign register d8s. If its most significant bit is set, one of the operands was negative, so we know the result must be negative and converted back to a signed value using neg
+
+div8s:	...
+	sbrc	d8s,7		;    if MSB of sign register set
+	neg	dres8s		;        change sign of result
+	ret			;    return
+	...
+
+Of course, if you prefer speed over code size, this subroutine can be modified exactly like the one above to reduce branching. See if you can manage to write it on your own!
+Conclusion
+
+And there you have it. 8-bit division in AVR Assembly. Not so bad right? Hopefully you see though how much more costly it is than hardware routines. Avoid it if you can, but if you must... now you know how to do it.

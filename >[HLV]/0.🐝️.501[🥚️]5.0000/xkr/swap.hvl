@@ -1,0 +1,292 @@
+#jmp ram_drop_thru_2   #emergency skip all
+#🎧️🎧️🎧️🎧️🎧️🎧️🎧️🎧️🎧️🎧️🎧️🎧️🎧️
+ # so dont go out of abc order...
+#🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️🪱️
+wire_header_ab_2_vi:
+wire_cmp_a_2_vi:
+cmp  $'_', %al
+je wire_cmp_b_2_vi
+    cmp  $'A', %rax
+    jl    wire_cmp_b_2_vi  # or a to b in this case 
+    cmp  $'z', %rax     #as if 4 regs (or less m8)
+    jg    wire_cmp_b_2_vi
+    
+
+movb %al ,  %sil 
+sub $65 , %sil #
+ 
+
+  
+   mov (%r12,%rsi,1) , %al
+   
+   
+   
+   
+   cmp $'.' , %rax 
+   jne wire_cmp_b_2_vi
+   mov $'_' , %rax
+
+      wire_cmp_b_2_vi:
+
+cmp  $'_', %bl
+je end_wire_header_ab_2_vi     
+       cmp  $'A', %rbx
+    jl    end_wire_header_ab_2_vi  # or a to b in this case 
+    cmp  $'z', %rbx     #as if 4 regs (or less m8)
+    jg    end_wire_header_ab_2_vi
+
+   # mov %rbx , %r10 
+   #  sub $97, %r10  # 48 + 50
+movb %bl ,  %sil 
+ sub $65 , %sil #
+    
+   mov (%r12,%rsi,1) , %bl
+      
+   
+   cmp $'.' , %rbx 
+   jne end_wire_header_ab_2_vi
+   mov $'_' , %rbx
+    
+    end_wire_header_ab_2_vi:
+  
+
+ 
+ #✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️✂️
+ 
+ #
+ #
+ #
+ ##👾️👾️👾️👾️👾️👾️👾️👾️👾️👾️👾️👾️👾️
+   ######################
+   mult_yr_2_a_vi:  
+
+
+   finished_2_vi:
+   #📮️---------starts
+inc %r11
+#📮️(incs at bottom postal post;)
+
+   #🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️
+ 
+   #🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️🤹‍♀️️
+
+#######################################
+   logic_switch_2_vi:
+  
+
+
+ab_valid_vars_check_2_vi: #
+##############################
+a_valid_var_check_2_vi:
+cmp $'_' ,%rax
+je end_logic_2_vi
+b_valid_var_check_2_vi:
+cmp $'_' ,%rbx 
+je end_logic_2_vi
+#########################
+   
+   
+     cmp $'_' ,%rcx  
+    je end_logic_2_vi
+  
+ cmp $'@' ,%rcx   
+   je logical_nunq_2_vi # logical_nand_2
+  
+   #@@@@@@@@@@@@@@@@@@@@@
+   logical_nunq_2_vi: 
+   #👨🏽‍🚀️
+   #new logical nand (just make using "cmp $0 & $1 )
+   #(cuz the arch is doing somethingweird(will try %al...
+    #👨🏽‍🚀️
+    sub $'0' , %rax   
+  sub $'0' , %rbx   
+  
+  unq_fx_2_vi: 
+  
+  
+ cmp_a0b0_vi:
+ cmp $0 , %al
+ jne cmp_a0b1_vi
+ cmp $0 , %bl
+ jne cmp_a0b1_vi
+ jmp nun_fx_2_vi
+ #done cmp_a0b0 =0
+ 
+ cmp_a0b1_vi:
+
+  cmp $0 , %al
+ jne cmp_a1b0_vi
+ cmp $1 , %bl
+ jne cmp_a1b0_vi
+ jmp nun_fx_2_vi
+
+ #done cmp_a0b1 = 0
+ 
+ cmp_a1b0_vi:
+ 
+   cmp $1 , %al
+ jne cmp_a1b1_vi
+ cmp $0 , %bl
+ jne cmp_a1b1_vi
+ 
+ mov %bl , %al
+ jmp nun_fx_2_vi
+
+ #done cmp_a1b0 = 0
+ 
+ cmp_a1b1_vi:
+ #al is 1 , ur done already
+
+ #done cmp_a1b1 = 1
+  
+   nun_fx_2_vi: 
+     xor $1 , %al
+ add $'0' , %al 
+  add $'0' , %bl
+  
+ 
+   end_logical_nunq_2_vi: 
+   mov $'_', %rbx
+   jmp end_logic_2_vi
+     #👨🏽‍🚀️
+   #🔥️  #also they die and burn in hell soon 4 sending me 2 shower for no reason <DRU ^^^^^^^^^^^^^^^^^
+   
+#https://kobzol.github.io/davis/
+#riscv
+#wanted to see if they booth do that (simulated)
+     
+     #&
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+#|   1   |   1   |   1   |
+
+
+
+
+
+end_logic_2_vi:
+#🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️🥢️
+
+#🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️🥈️
+
+ #
+ #
+ #
+#🪱️##🪱️##🪱️#
+ 
+scoop_wr_d_2_vi: 
+cmp $'_', %rdx
+je end_scoop_wr_d_2_vi
+
+
+match_head_tail_dab_2_vi:  
+		
+		
+	#mov %rdx , %rbx
+  	#call exit
+  	
+match_head_tail_d_2_vi:	
+	
+	cmp  $'_', %dl
+	je    end_scoop_wr_d_2_vi
+	cmp  $'A' , %dl     #0011
+	jl    end_scoop_wr_d_2_vi
+	cmp  $'z' , %dl     #0011
+	jg    end_scoop_wr_d_2_vi
+	
+	######🚕️🚕️🚕️🚕️🚕️🚕️🚕️
+	#cmp  $3, %dl     #0011
+	#jl    end_scoop_wr_d_2_vi
+	#cmp  $127, %dl     #0011
+	#jg    end_scoop_wr_d_2_vi
+	######🚕️🚕️🚕️🚕️🚕️🚕️🚕️
+    
+  # mov %rdx , %rbx
+ # 	call exit
+  
+ match_head_tail_a_2_vi: 
+  cmp_a_blank_2_vi:
+ cmp  $'_', %al
+ jne pre_rdx_2_vi
+ 
+ cmp_b_blank_2_vi:
+ cmp  $'_', %bl
+ jne pre_rdx_2_vi
+ 
+ mov $'_' , %dl  # deleting bad wiring w/e 
+ 
+ jmp end_scoop_wr_d_2_vi
+
+
+ #🐴️
+ pre_rdx_2_vi: 
+
+ movb %dl , %sil 
+ sub $65 , %sil
+ 
+ stor_rax_wr_2_vi: 
+ cmp $'_' , %al 
+ je stor_rbx_wr_2_vi
+ mov %al , (%r12,%rsi,1) 
+ mov $'_' , %rax
+ jmp end_scoop_wr_d_2_vi
+
+
+##################
+ stor_rbx_wr_2_vi: 
+
+   cmp $'_' , %bl 
+ je end_scoop_wr_d_2_vi
+ 
+ #mov %r10 , %rbx
+ #call exit
+ mov %bl , (%r12,%rsi,1) 
+ mov $'_' , %rbx
+     #vom 
+     
+      
+ 
+end_scoop_wr_d_2_vi:
+#🪱️##🪱️##🪱️#
+#👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️👖️
+patch_drop_ab_2_vi:
+#📮️
+dec %r11  #u may want this after logic but 
+ 	#when im debuging it pre everythign it decs 2 far bac <3
+#📮️
+
+ ############DEBUG#############
+  
+  post_logic_check_d_2_vi:
+ cmp  $'_', %rdx
+  je post_logic_check_c_2_vi
+ # mov %dl, (%r13,%r11,1) 
+
+ #inc %r11
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ post_logic_check_c_2_vi:
+cmp  $'_', %rcx
+  je end_patch_drop_ab_2_vi
+#mov %cl, (%r13,%r11,1) 	
+ # inc %r11
+  ############################
+
+end_patch_drop_ab_2_vi:
+
+post_logic_check_ab_2_vi:  
+	post_logic_check_a_2_vi:
+	
+ cmp  $'_', %rax
+  je post_logic_check_b_2_vi
+mov %al, (%r13,%r11,1) 
+  inc %r11
+ 
+  post_logic_check_b_2_vi:
+  
+  
+ cmp  $'_', %rbx
+  je end_post_logic_check_ab_2_vi
+  mov %bl, (%r13,%r11,1) 
+ inc %r11
