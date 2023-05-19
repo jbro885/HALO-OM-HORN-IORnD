@@ -1,0 +1,61 @@
+🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️
+🗺️legend.hvl🗾️
+🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️THE MAP
+0000 0000   = 48 =$'0'= 0 
+0000 0001   =49 = $'1'= 1
+0000 0010  = @
+0000 0011  = _
+
+}OFF{0001 0000    #64= $'@'=16
+
+}OFF{0010 1111 #95= $'_' =47= 
+
+
+		#CAPA < lowa (therefore we shall use CAP1rst-ofc.
+0001 0001 ++ 	$'A' = 65 = A = 17
+		$'Z' = 
+		(theres a few chars in between here but that 
+		(doesn't matter at this point , just roll with them
+		(as numbers 4 now) 
+0011 0001		$'a' = 97 = 49 
+		$'z' =  122 = 74
+		
+		+ is okay cuz 48 gets subtracted pre wire
+		it only depends on ur ram size.
+		if its over ram we will just "delete it " 4 now
+		by counting and just replacing it with "_"
+		(or not even counting it w/e works)
+		
+		
+64 end of ram = "NOW" 
+128 end of ram = 127 + 48 = 175			
+256 end of ram = 256(5) - 48?  (or minus 65? 17? 
+
+512 end of ram = 
+
+x86_64 REGISTER STORAGE LIMIT ? = 
+
+
+(its currently pulling "rlow" out of "registers"
+i dont know if that accords with limit we will see, look out) 
+🗾️THE TERRITORY 🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️
+
+#u can do either way
+# a&b drop and repeat (save wires)
+#or A-M & N-d (Y? just cuz it doesn't drop down doesnt' mean its not oncli?
+#A= cuz u may want 2 rewire the output into new wires
+#compromise ? just drop the a&bs into ""lowercase;"
+#TEY WILL PICK BACK UP AS UPPER CASE IN NEW FX <3
+🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️🗾️
+🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️🗺️
+
+
+
+
+
+
+
+
+KRUFT_____________
+  (mem is hvl nox '^sqi mux'
+  🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️🌏️

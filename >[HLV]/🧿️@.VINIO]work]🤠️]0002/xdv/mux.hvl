@@ -1,0 +1,31 @@
+#CHIP Mux {
+#    IN a, b, sel;
+#    OUT out;
+a___
+b___
+s___
+#    PARTS:
+
+#    Not(in=sel, out=Notsel); #n 
+#!
+s__s
+n@ss
+#!
+#    And(a=a, b=Notsel, out=NotselAnda); #m
+c@an
+m@cc
+#    And(a=b, b=sel, out=selAndb);  #o
+c@bs
+o@cc
+#    Or(a=NotselAnda, b=selAndb, out=out);
+
+#}
+#|   a   |   b   |  sel  |  out  |
+#|   0   |   0   |   0   |   0   |
+#|   0   |   0   |   1   |   0   |
+#|   0   |   1   |   0   |   0   |
+#|   0   |   1   |   1   |   1   |
+#|   1   |   0   |   0   |   1   |
+#|   1   |   0   |   1   |   0   |
+#|   1   |   1   |   0   |   1   |
+#|   1   |   1   |   1   |   1   |
