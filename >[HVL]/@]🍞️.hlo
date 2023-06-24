@@ -1,0 +1,73 @@
+#sr-latch then  clocked sr-latch{is srflipflop} (then d-flipflop
+#(if neither of those match @ make more of the flipflops, youll figure
+#something out;) <3 
+#👨🏽‍🚀️
+#! i keep seeing videos of ppl using "D-FLIPFLOP"(std) when making 'REG'
+
+#👨🏽‍🏭️
+#https://circuitdigest.com/electronic-circuits/d-flip-flops
+#lets just use "NAND2" 2 make not , its just 1 more circuit , or not w/e
+#👨🏽‍🏭️
+#
+#👨🏽‍🚀️
+#a___
+0001 0000, 0000 0010
+ 0000 0010 #
+0000 0001
+#b___
+0001 0001, 0000 0010,
+ 0000 0010 #
+0000 0001
+
+  
+#nand = 00 = 1 (were doing that first)
+#❗️
+
+#c
+0001 0010, 0000 0011, #🪢️
+
+ 0001 0001  # < b
+ 0001 0000	# < a
+
+######(1)cli##############################
+0000 0010,0000 0010,0000 0010 
+0001 0010
+######################NOT
+0000 0010
+0000 0011
+0001 0010
+0000 0010
+################
+
+#@REGISTER (important chunk)
+#| 8    |  12345 |  1  |  12345 |
+#| 8+   |      0 |  0  |  12345 |
+#| 9    |      0 |  0  |  12345 |
+#| 9+   |      0 |  1  |  12345 |
+#| 10   |      0 |  1  |      0 |
+
+#txtt	
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+#
+#|   1   |   Z   |   0   | #🦢️
+#|   0   |   Z   |   1   |#🦢️
+#|   Z   |   1   |   Z   | #0 #🦢️
+#|   Z   |   0   |   1   | #1 #🦢️
+#
+#|   1   |   1   |   Z   |
+#|   Z   |   Z   |   0   |
+
+
+
+
+
+
+
+#tristate buffer 74HC125(inverted) #X
+#  c a d
+#|0|1|0
+#|1|1|1       < if was 00 would be Z...
+#|0|X|Z
