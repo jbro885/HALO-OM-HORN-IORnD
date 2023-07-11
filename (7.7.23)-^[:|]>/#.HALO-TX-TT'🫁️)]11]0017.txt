@@ -1,0 +1,116 @@
+#🍀️
+#4State BJT Transistor Small Signal Model Truth Table	
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+#⚡️Hi-Impedance
+#|   1   |   Z   |   Z   | 
+#|   0   |   Z   |   1   |
+
+#|   Z   |   1   |   Z   |
+#|   Z   |   0   |   1   | 
+#
+#|   1   |   1   |   Z   |
+#|   Z   |   Z   |   0   |
+#⚡️
+##🚬️Small Signal Cutoff
+#|   3   |   3   |   3   | 
+#|   3   |   0   |   1   | 
+#|   3   |   1   |   0   | 
+#|   0   |   3   |   1   |  
+#|   1   |   3   |   0   | 
+#|   3   |   Z   |   0   |                      
+#|   Z   |   3   |   0   | 
+#_🚬️_)🚬️_)🚬️_)🚬️_)🚬️_)🚬️_)🚬️_)
+#🍀️
+#@++
+#|   a   |   b   |  out  |
+#|   0   |   0   |   1   |
+#|   0   |   1   |   1   |  # = high z out. 
+#|   1   |   0   |   1   |  # = GOOD 
+#|   1   |   1   |   0   |
+
+
+
+
+#❣️make sure u read the "TT"S write some have a on left, some on right ;) 
+#tristate buffer 74HC126(non-inverted) #X
+#  c a d
+#|0|1|1    Z & 1 = Z =zc0  =1
+#|0|0|0    Z & 0 = 1 = 1c0 =0 
+#|1|0|Z    Z & 0 = 1 = 1c1 =Z  
+#|1|1|Z	   Z & 1 = Z =zc1  =Z   
+
+##if it expected z in it would say on both sides ;)
+	
+
+#tristate buffer 74HC125(inverted) #X
+#  c a d
+#|0|1|0
+#|1|1|1       < if was 00 would be Z...
+#|0|X|Z
+
+   #🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️
+    Mode of operation 	[DFF]
+        S 	R 	Q 	Q 	Effect on output
+4bidn 	0 	0 	1 	1 	Prohibited or forbidden (do not use)
+Set 	0 	1 	1 	0 	Set to 1
+Reset 	1 	0 	0 	1 	Set to 0 (clear state)
+Hold 	1 	1 	Q 	Q 	Previous or last state (no change)
+      #🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️
+#___________________________________________________________________________
+#🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️
+#4 states of NPN/PNP  Transistor = c-colctr, b-base,e-emit, V-volt
+#NPN                              PNP 
+#Active = Ve < Vb < Vc		|Reverse
+#Saturation = Ve < Vb > Vc	|Cutoff
+#Cutoff = Ve > Vb < Vc		|Saturation
+#Reverser = Ve > Vb  > Vc	|Active
+#🍀️🍀️🍀️🍀️🍀️
+#🍤️
+
+#🍤️
+#🌈️🌊️
+🟩️
+🟩️R = (How hard is it for current to flow)
+🟨️🟥️=(E^2/P)🟨️🟦️=(E/I)🟥️🟦️=(P/I^2)
+🟩️
+🟦️
+🟦️I = (How much current is flowing)
+🟩️🟨️=(E/R)🟥️🟩️=(√{P/R})🟥️🟨️=(P/E)
+🟦️
+🟥️
+🟥️P = (How much power is being produced)
+🟦️🟩️=(I^2*R)🟨️🟦️=(E*I)🟨️🟩️=(E^2/R)
+🟥️
+🟨️
+🟨️E = (How strong is the flow)
+🟦️🟩️=(I*R)🟥️🟩️=(√{P*R})🟥️🟦️=(P/I)
+🟨️
+#🌈️🌊️
+
+
+⚠️OHMS LAW PYRAMID⚠️
+V|I*R
+V=Voltage (in volts)
+I=Current (in Amps)
+R= REsistance (in ohms)
+IR = is I*R (V=IR)
++
+P=I*V 
+I=P/V
+V=P/I
+-
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+
+
+
+#@++
+#|   a   |   b   |  out  |
+#|   0   |   0   |   1   |
+#|   0   |   1   |   1   |  # = high z out. 
+#|   1   |   0   |   1   |  # = GOOD 
+#|   1   |   1   |   0   |
+
+
