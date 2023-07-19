@@ -1,0 +1,125 @@
+
+#❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️
+#THIS SEEMS 2 BE]ON BUT ITS DIFFERENT THAN THE ONES I "MADE FROM SCRATCH"
+#its using the "independant "Q" states from the old ones i made, 
+#maybe i could fix the new ones just buy using "INdependant "Q" states? 
+
+#📅️ur better off trying 2 fix "THIS ONE" (organize wires) 
+#than the other <3 
+#📅️seems as if the result was diff cuz we used diff wires "not qstates"
+#but just didn't smush wires up as much... look over this and 4 fut ref!
+
+#📅️the wires could probably be a bit cleaner so u can understand this better
+#(the pre latch's are in "11's"!(can u at least dial them back right behind starting? ) 
+
+#👨🏽‍🚀️
+#i made this so u can still detach and use latch (wire order wise) 
+#since ur never gonna detatch and use "pre latch..." w/e but yea 
+
+#u will do "BIT(mux)" like this or anything else that comes "Behind" 
+#another chip 
+#also . swapping chip yr numbers coulndt be easier if u tried <3 
+#👨🏽‍🚀️
+#❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️❗️
+
+#🔘️#🔘️#🔘️#🔘️#🔘️
+#clock	= 16
+0000 0100, 0000 0100, 0000 0011 0000 0011
+#switch_0 = 17
+0000 0101, 0000 0101,0000 0011 0000 0011
+#
+#switch_1 = 18
+0000 0110, 0000 0110, 0000 0011 0000 0011
+
+#we will always fill these by default or leave mt same diff
+#🔘️#🔘️#🔘️#🔘️#🔘️
+#CLI 3
+0000 0011 0000 00110000 0011,0000 0100
+0000 0011 0000 00110000 0011,0000 0101
+#0000 0011 0000 00110000 0011,0000 0110
+########################################
+
+
+#🍄️
+#MUX1 START
+
+
+
+#🍄️
+###########################################
+
+#⏲️
+#DFF NAND CLOCKED
+
+#D-in 
+
+0001 0100 #0011 0000
+0000 0011
+0000 0011
+0000 0101
+
+#NOT 
+0001 0101 #0011 0001
+0000 1000,
+0000 0011 #
+0001 0100
+
+
+
+#top nunq(pre latch)A 
+0001 0110 #0011 0010
+0000 0111
+
+0001 0100 #0011 0000
+0000 0100
+
+######################
+#bottom nunq(pre latch)B
+0001 0111 #0011 0011
+0000 0111
+
+0001 0101 #0011 0001
+0000 0100
+
+#####################
+#⏲️
+#🛅️
+######################
+#LATCH START 
+##########################################################
+#a___
+0001 0000,
+ 0000 0011
+ 0000 0011 #
+0001 0110
+#b___
+
+0001 0001,
+ 0000 0011,
+ 0000 0011 #
+0001 0111  #< ur"a'var has to go in "B" if u want it "HI-z'd out"
+
+#################
+0001 0010,
+ 0000 0111, #🪢️
+
+ 0001 0011  # < b
+ 0001 0000	# < a
+ 
+
+######################
+
+
+0001 0011,
+ 0000 0111, #🪢️
+ 0001 0010  # < b
+ 0001 0001	# < a
+ 
+ 
+######################
+
+#pre Qstates
+0000 00110000 00110000 0011 0001 0010
+#0000 00110000 00110000 0011 0001 0011
+#🛅️
+
