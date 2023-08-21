@@ -1,0 +1,645 @@
+﻿TITLE OF YOUR PAPER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        THE UNOBTAINIUM MAN : ON-CORE
+
+
+JB M BROOKS
+Western Governors University 
+
+
+
+
+________________
+
+
+Table of Contents 
+Summary        3
+Review of Other Work         3
+Changes to the Project Environment         3
+Methodology          3
+Project Goals and Objectives          3
+Project Timeline           4
+Unanticipated Requirements             4
+Conclusions           4
+Project Deliverables           4
+References          6
+Appendix A: 
+Appendix B:           8
+Appendix C:          9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Summary
+
+
+1.  Problem Summary
+a.Platform Sprawl: 
+Multi architecture devices required different forms of maintenance creating backlog and distraction from the main goals of completing government contracts.
+b.Cryptography: 
+Vigilance towards maintaining rigorous in-house and government security compliance facing into the future. 
+2.  IT Solution:
+Stvrk Industries was able to exploit its understanding of government tax credits (R&D carbon-neutrality, restructuring and rollover incentives, among others)  to help justify and subsidize the innovative construction of “THE UNOMAN TRANSPORTATION AND LIFE SUPPORT SYSTEM” 
+
+
+3.  Implementation Plan:
+Our engineers used ubuntu linux and the x86 gnu assembler to design a binary based hardware description language which was used in conjunction with nand gates to machine native binary instructions which in turn was used to bootstrap the hardware language natively in pure binary “instruction language”,(in alternative to tokenized/symobolized classical assembly language or hexadecimal).From there the engineers created a q-reinforced learning neural net that is , not only able to do “Dynamic Programming Policy Evaluation” to bootstrap in function, but is also able to create its own policies as a macro bootstrapping in that binary assembly language , which when conjoined with that bootstrapped binary hardware compiler,  was then trained towards desired truth table outputs in order to  build a standard risc-v chip as well as x86 and armlike emulator for backwards compatibility and io.The remarkable difference between the HaloBNN and popular contemporary ai,ml and neural net tools like “tensor flow”,“Pytorch” “tinygrad” etc , powering systems such  “ChatGPT” or “LLAMA” is that those systems (as well as being bloated , unwieldy and extremely insecure from multiple angels) , when tasked to code a computer program , are trained to give any answer, even if that answer is incorrect and inconvenient , Aka “Hallucination”. The HaloBNN Neural Network is written in the same binary that the Risc V architecture is written on so it can easily compile the very code you asked it to write , instead of a hallucinated wrong answer we always receive either a correct answer or an approximate “ETA”, which can aborted if deemed to be too demanding on compute resources.   Next, the engineers spent time guiding the binary reinforced q-learning to build a kernel and filesystem that is able to bootload load onto an attached ssd drive using the USB ECHI x86 standard to communicate with a standard sata flash drive. A custom operating system was formed with the help of the binary neural net to allow for 3d/ar simulation and io networking. The operating system itself was then trained using a binary application framework to be able to program applications with very little user input. which is currently working to replace all infrastructural nodes. It’s also worth noting , that in addition to the unoman suit , the system was able to produce a commercially interesting mass market deliverable in the form of a 3d printable self driving fully open source electric automobile our brand marketing team had decided to call “Sonu”. 
+
+
+Review of Other Work
+
+
+We at Stvrk realized that if we were going to achieve our goals of planetary colonization , quantum FTL travel and bioenhancement of legacy and synthetic organisms, we  had to face the reality of the computing landscape and commit to making a meaningful impact , no matter what.
+To do this we realized that we would have to rebuild complete computing infrastructures we had come to rely on and even take for granted, from the ground up forth, starting at the  binary level. 3 major roadblocks standing in the way of the rapid expansion of computer technology as we perceived was the neuralnet enhanced design of a RiscV compliant chip and its corresponding assembler, in our binary hardware description language, bootloading a neuralnet enhanced binary kernel using UEFI,PE32+ & ISO 9660 (aka, ”El-torito”) standards, and finally using the bootstrapped version of the RISCV assembler to compile and run elf standard compliant binary executables on a standard fat format compliant file system. Once we had surmounted these macros , we could tackle micro issues like io and application development , in much more efficient,user friendly and or automated ways, such as EKG interface and neural net training of 3D Simulations.
+Architecture
+The hardware simulator was made to have the capacity to emulate wires , resistors and transistors functionality at a sub binary level , mimicking the mathematical standards of Ohms Law, used in “Small Signal/Circuit Analysis” and further simplifying ,using “Taylor Series”, the emulated transistor into four distinct states. From those four states (active, reverse,saturation and,cutoff), our scientist were able to create the nand logic gate , as well as a tristate buffer, for high z capabilities mirroring the truth table io for a 74HC125 (in order to confirm we would have the capacity for non-trivial high impedance outputs.).Though the HDL is able to emulate a BJT transistors core functionality , of which a nand chip can be constructed with great ease ,  we have also designed the system to to use a premade nand-fx which simply mirror the nand truth table, for optimal ease , speed and confident cross platformization.  We began building the 8080/6 and Risc-v Architectures, side by side. To do this we had to modify the HALO binary compiler to use a user controlled or automated step clock to execute clocked instructions. Then our scientists created the Sr-Latch/D-flip flop and registers for the nand/nor flash storage peripherals  then cpu as well as , tristate buffer, muxes , alu  and other logical units until we had a 8080/6 and RISC/V Compliant architecture .The differences between Risc and Cisc architecture really lie in the implementation of instructions used to address the machine. Because we planned to always simply address both architectures styles using the pure binary , using detailed comments, and or AI , the real heavy lifting of our compiler toolset was to be in its ability to create ISO 9660 “El-torito” Disc Images,  executable code in PE format for UEFI bootloader and finally, Elf executable format for compatibility with legacy linux fat file systems.
+ELTORITO :
+ Unfortunately the only real resource for creating ISO 9660 extended disks seemed to be its wikipedia article, however the wiki provided a comprehensive set of information that let us create bootable Disks. The important aspects of El-Torito are this, 
+“A 32-bit PC BIOS will search for boot code on an ISO 9660 CD-ROM. The standard allows for booting in two different modes. Either in hard disk emulation when the boot information can be accessed directly from the CD media, or in floppy emulation mode where the boot information is stored in an image file of a floppy disk, which is loaded from the CD and then behaves as a virtual floppy disk. This is useful for computers that were designed to boot only from a floppy drive. For modern computers the "no emulation" mode is generally the more reliable method. The BIOS will assign a BIOS drive number to the CD drive. The drive number (for INT 13H) assigned is any of 80hex (hard disk emulation), 00hex (floppy disk emulation) or an arbitrary number if the BIOS should not provide emulation. Emulation is useful for booting older operating systems from a CD, by making it appear to them as if they were booted from a hard or floppy disk.”(ISO 9660, 2023)
+PE :
+ “Portable executable file format is a type of format that is used in Windows (both x86 and x64).
+As per Wikipedia, the portable executable (PE) format is a file format for executable, object code, DLLs, FON font files, and core dumps.
+The PE file format is a data structure that contains the information necessary for the Windows OS loader to manage the wrapped executable code. Before PE file there was a format called COFF used in Windows NT systems.”(Revers3r, 2015)
+
+
+ELF : 
+“An ELF file:
+1. Begins with a small header section specifying the type and size of various parts of the ELF file, which is followed by
+2. Any number of “sections”, which can contain anything from program machine code to data to debugging information or really anything else
+3. Where some of the sections may also be “segments” that are loaded into memory when the program is executed”(Linux,2021)
+
+
+Changes to the Project Environment
+
+
+HDL : Code is simplified to always being able to reduce down to its basic logical nand and transistor functionality thereby making it much simpler to debug , automate and streamline the development process. Inspired heavily by the RISC V open standard, HALO Open Source was changed to HALO Open Standard, which allows anyone to implement the standard in whatever language they choose, while allowing us to keep certain proprietary code features associated with the nuances of our infrastructure (specifically operation, io and interface related metafunctions) , private and/or in-house.
+IO CAPABILITIES : Ability to interface directly with other chips and peripherals allows for much smoother compatibility , security and diagnostics.
+SIMULATION ENVIRONMENT: Allows modeling of quantum psychical phenomenon and model and test scientific r&d breakthroughs at a much faster clip. Such tangible breakthroughs include the “SONU” , a self-driving automobile that uses hydrogen fusion generated electricity and is able to be manufactured completely in house.
+CHALLENGES : The main challenge the team faced was att the hdl compiler design level, specifically having the static transistor emulators be capable of modeling speed of light and or sequential behavior such as the type of behaviors necessary to facilitate the functionality of an “SR-LATCH” , which is a key building block in the creation of memory units such as “Dataflip flops” and Cpu Registers. This challenge was surmounted using the “KEEP IT SIMPLE” Mentality , which was to add a minimal amount of state accounting and management to the compiler , in complement of staving off modeling of behavior of actual electrons until we had created a secure , platform independent bootstrapped 3D simulation environment. Thusly, once contemporary , industry and community wide gaps in research were surmounted by our teams, our labs were able to train our model all the way up to prompting it to (in addition to comparatively trivial achievements in os and application development) create a physical and chemical mirroring of the functionality of the C.Elegans worm(including its neurology), which is incredible in comparison to the function of basic multicellular organisms, but that is a far cry from our goals of a model of the human nervous system we wish would accompany our model of skeletal and circulatory systems (would obviously represent an monumental leap forward in medical research), or even a mirror accurate model of the common lab rat.Not only are we daily pushing to break new grounds on those goal frameworks, but we are still diligently training and tweaking the models we hope and believe will create an extremely efficient compressible/decompressable simulation of the bigbang all the way up to a accurate mirroring of our solar system and planet (informed and aligned at a macro and micro level by the chemical , biological and physical [not to mention , the obvious computation hardware simulation we have created and are currently working with] simulations we have been able to achieve). Gratefully, we have achieved many of our major infrastructural node goals, creating a hardware level simulation (comparable but far surpassing the capabilities of a “contemporary” such as “nvidia omniverse”),able to self bootstrap “robots” who are able to replicate and repair not only themselves but also other nodes along the value chain including the “SONU” self-driving automobile, which will we offer in the consumer market place, while patiently striving towards  further R&D goals.
+
+
+
+
+Methodology
+Stvrk Industries used the ADDIE model during this undertaking. The ADDIE model consists of five distinct phases: Analysis, Design, Development, Implementation, and Evaluation. The phases of  the Bootstrapping of Stvrk industries are detailed beneath:  
+
+
+
+
+Analysis – There was a preliminary multi department meeting to review and prioritize the migration processes that took place over the last several months,
+Design – Here ,Stvrk created  a priority-wise hierarchical blueprint of the infrastructure of Strvk Industries, using the intelligence gathered during the analysis phase. This functioned as a skeleton of the documentation , source code, schematics , and bill of materials necessary to complete the mission. We then fleshed out the skeleton with research nuggets and pseudo code, and even snippets of working or not working code simply to have as many tangible resources as possible at our disposal that will aid in the development of the bootstrapped infrastructure.
+
+
+Development – We then completed the process of iterative agile development , sprinting through milestones and reconvening for daily, multi-department standups to collaborate, share, strategize and support one another using the most effective manners possible in order to achieve a completely functional legacy hosted and emulated 3D/ AR model of the final environmental .
+
+
+Implementation – The organization wide bootstrapping of systems began here. The alpha stage of creation saw us bootstrapping, continuously building each new layer of the bootstrapped infrastructure , from transistors , to logic gates, to pcb boards, and eventually functional user workstations and workspaces , culminating in the ultimate workspace , The Unobtanium Man Mobile Lab and its autonomous vehicle format “Sonu”.
+
+
+
+
+Evaluation – The iterative training of the Reinforced Q-learning, Neural Net seeds against the Quantum network began in earnest at this stage. The Unobtainum Man and other machines were  tested in rigorous environment ,trained, recalibrated to be eventually placed in a  self monitoring  , self healing autonomous mode , as parts of our self bootstrapped factory environment, serving the continuous delivery life cycles of of relevant tangibles, necessitated by the value chain of our Government Aerospace and Defense contract customers. Any and all  relevant deliverables were finally evaluated by our team of human testers, and quality stamped to be made available for a public Beta launch.
+Project Goals and Objectives
+Objectives  
+
+
+
+
+	Goal
+	Supporting objectives
+	Deliverables enabling the project objectives
+	Met/Unmet 
+	1
+	Secure, Reliable, Sustainable, Self Bootstrapped Autonomous Technology Environment
+	1.a. HALO Hdl Assembly Language Open-source
+	1.a.i. HALO open source code and functioning binary
+	Met
+	1.a.ii. HALO documentation 
+	Met
+	
+
+	
+
+	1.b. Unoman Hardware Environment
+	1.b.i. Unoman hardware deliverables 
+	Met
+	1.b.ii. Unoman hardware documentation 
+	Met
+	
+
+	
+
+	1.c. Configure Unoman to be self bootstrapping, self simulating and therefore self learning ,self- repairing and self-securing. Aka Fully Autonomously Functioning Infrastructure or “FAFI”
+	1.c.i. HALO OS LINUX SUBSYS
+	Met
+	1.c.ii. LINUX HALO OS SUBSYS
+	Met
+	1.c.iii. 3D AR simulated reinforced learning environment applications 
+	Met
+	1.c.iv.  Final Documentation 
+	Met
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	1.d. Alpha testing and Beta launch.
+	1.d.i. Alpha Testing ,Training and internal utilization 
+	Met
+	
+
+	
+
+	
+
+	1.d.ii. Beta Launch
+	Met
+	
+
+Project Goals and Objectives Explanation
+Due mainly to time constraints (and in no way the fault of the team, which worked tirelessly and went above and beyond in their attempts to deliver usable, bug free deliverables), not all of of the goals and requirements were completed in a form that we would appraise as ready to deliver to the consumer market.  However because of the outstanding quality of the deliverables that were realized, we have resolved to, with the help of the current tools and frameworks delivered, continue forth working towards the realization of the full service portfolio of deliverables, on an indefinite timeline (as a top priority project) , given that the team continues to work with the same drive,vigor and fervor that they did during the 7 month period. The reason for this decision is because this was always an option from the beginning, we knew it was impossible to intuit a precise time scale to achieve much needed, albeit, groundbreaking works , and we purposefully set a strict, conservative deadline so that the team would try their best to quickly work through obstacles and find creative solutions.
+Because of the way we structured delivery of deliverables all objectives were able to deliver some sort of functional deliverable so it would be wrong to say that the objectives were not met , just that they may not reflect the original goals and objectives in a finalized manner. To be more clear a list has been prepared that will explain the specific state of the deliverables:
+i. Halo.HDL
++: The code is in a functional format and has fairly understandable standards documentation.
+- : We plan for the code to exhibit more io capabilities.        
+ii.Halo.Hardware 
++: The hardware is operational and is being used internally and externally to complete valuable tasks.
+-:We plan for the hardware to become gradually more robust yet cheaper to make , utilizing upgrades that we anticipate will become apparent as the “hard”-software models grow and refine their capabilities to simulate the real world while still being conservative towards resource consumption. We also plan on using those same models in order to source and or synthesize more of the raw materials in house as opposed to relying on external suppliers.
+iii. FAFI
++: The entire environment , both hardware and software is self bootstrapping and has usable applications in the neural net , quantum and blockchain territories , as well as being “self diagnosing” , and “self healing”.
+-: We plan to iron out and refine inefficiencies and unclarities in the functionality of the bootstrapping process in order that the process becomes quicker and more user friendly.
+For example , altho we are able to bootstrap into a UEFI bootable .ISO of our current state of own in house flavor of ubuntu (Stvrk-OS) and its files and applications , using “Casper-fs” , we still consider that far to large of a data footprint (about 5+- Gb’s) are still working towards a more pared down customized version of “Linux From Scratch” as well as a MORE feature rich, integrated, automated and cross platform compatible ground up binary “hardware/onchip” neural net quantum kernel , and accompanying neural net quantum compression key empowered on chip applications especially a graphical operating system environment and graphical web browser.  
+iv. Launch 
++: Several different products that align with the goals and objectives have been added to the Stvrk Product Portfolio.
+-: We plan to continue patching and updating those products as well as adding even more products to the portfolio.
+
+
+
+
+
+
+Project Timeline 
+
+
+7. Milestone or deliverable
+	Planned Duration 
+(hours or days)
+	Actual 
+Duration 
+(hours or days)
+	Projected start date
+	Anticipated end date
+	1.HALO Specification language and documentation
+	30 days
+	30 days
+	12-1-2022
+	1-1-2023
+	2.HALO compatible Hardware environment : 7400 RISC Gigatron and 32/64bit RISC-V Powered UNOMAN Spacesuit
+	30 days
+	30 days
+	1-2-2023
+	2-1-2023
+	3.HALO Hardware compatible software bootloader and AR-OS environment in RISCV
+	30 days
+	30 days
+	2-2-2023
+	3-1-2023
+	4.Multi architectural emulation using HALO on top of 7400 RISC-V 
+	30 days
+	30 days
+	4-2-2023
+	5-1-2023
+	5.Bootstrapping HALO bootloader and os as well as GCC and Linux onto multi arch emulators and corresponding hardware
+	30 days
+	30 days
+	5-2-2023
+	6-1-2023
+	6. Trained Neural Net begins building and testing Alpha Quantum environments and providing Alpha level cryptographic services , such as blockchain.
+	30 days
+	30 days
+	6-2-2023
+	7-1-2023
+	
+
+7.LIVE LAUNCH and Continuous Delivery
+	
+
+	
+
+	7-4-2023
+	
+
+	
+
+
+
+Project Timeline Explanation 
+As explained in the “project goals and objectives explanation” , the team was able to (as was the true management goal and nature of this project) deliver a usable product at every finish line , thought the exact robustness and functionality of the deliverables may leave some features ,functionality , efficiency and convenience to be desired, we are going to continue bootstrapping ,in practical perpetuity, up to greater levels of functionality utilizing the usable seeds and kernels delivered during the timeline . The nuances of this were adequately explained in the “project goals and objectives explanation”, but for the sake of completion we have provided a generalized itemized list that corresponds to the timeline. Specifically:
+i.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+ii.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+iii.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+iv.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+v.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+vi.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+vii.
++: Usable deliverable realized within the timeframe.
+-:Continuous integration and deployment (including patching and upgrading). 
+
+
+
+
+
+
+Unanticipated Requirements
+The reinforced learning model is still training and calibrating for more advanced levels of simulation in order to continue to renew various nodes along the infrastructure value chain, however we realize that we are a firm that must do business in order to survive and thrive , so in the meantime we have been able to provide a marketable deliverable in the form of the “Sonu” : ‘3D printable, electric , self driving, street legal, transistor bootstrappable , open source  automobile’.We have not provided any guidance on how this vehicle should be marketed or distributed , we have simply delivered it ,as is, it into the hands of management for further strategic value consideration as it may pertain to the Stvrk service portfolio. 
+Conclusions
+
+
+7. Outcome
+
+
+The “Unoman '' , is already bearing fruit for Stvrk Industries, exhibiting explosive growth in a fresh new direction , sending us throttling forth into infinite unknowns at light speed. There are a few important qualities we have quantified. The Unoman is a self bootstrapping platform , which means complete technological sovereignty. That means not only  100% of our time will be spent building, maintaining and repairing our own systems, as opposed to rival vendors , but perhaps even less time will be spent on these challenges , as the “Unoman'' Ships, calculating complex equations and testing theorems in a simulated environment powered by a quantum binary neural network. In terms of short term practicality , we hope to train our neural network operating system to not only bid for and request contractor and subcontractor work , but to self complete , self account , and even self integrate itself with open source and even close source api systems and infrastructures of our partners , using its backwards compatibility legacy layer training data , all while maintaining unrivaled confidentiality and integrity with the power of quantum cryptography and its autonomous blockchain. The unoman is already proving viable at a contractual level , as several hundred of them have been deployed as autonomous unmanned(mannable) drones in Antarctica on a scientific research mission.
+Looking forward into the long term , we foresee things such as unmanned exploration and quantum teleportation dynamically revolutionizing the logistics industry , and we believe these infrastructural evolutions will cement us as the authority in this emerging discipline. All these realized outcomes combined with the infinitely imaginable tangential deliverables that we and our partners hope to capture due to the speed and intelligence of our quantum binary q-learning neural network , unlimited by vendor updates , and incompatible or indecipherable standards  , solidifies the Unoman project to arguably be one of , if not the most groundbreaking and universe impacting technological advancements in the knowable history of the Milky Way Galaxy. 
+
+
+
+
+Project Deliverables
+
+
+Appendix A shows the Standard Legend for The “HALO” HDL. It’s a basic standard that can be implemented in any language. It consists of a compiler very similar, if not simpler than VHDL/Verilog , save the fact that it expects an input program using the minimum of a 32 bit(4 byte) binary function. The most compelling ,unique and apparently “ground-breaking” part of this standard is the 4 state BJT transistor emulator and its corresponding truth table. This transistor is a 1:1 Model of the physical functionality and small signal representation of a BJT transistor 
+
+
+Appendix B shows a demonstration of a basic Tri-state buffer, Which demonstrates the 4 State BJT’s ability to competently handle a “high impedance” signal
+Appendix C shows a demonstration of HALO.HDL’s ability to emulate “TIME” by sending a clock pulse signal onto an STD Legend Wire. This represents a significant modification to the original HALO.HDL version 0, as it allows us to emulate data storage chips such as SR-LATCH and Data Flip Flop, which are the building blocks(as registers) for all microarchitectures that are able to store and retrieve data.
+
+
+
+
+
+
+
+
+
+________________
+
+
+References
+____________________________________________________
+
+
+Wikimedia Foundation (2023, June 14) 
+https://en.wikipedia.org/wiki/ISO_9660#El_Torito
+
+
+Revers3r (2015,November 26)                
+https://resources.infosecinstitute.com/topic/2-malware-researchers-handbook-demystifying-pe-file/
+
+
+Linus (2021,February 10)
+https://dotink.co/posts/elf/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+Appendix A
+HALO LEGEND
+
+
+🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️
+#🍀️
+#4State BJT Transistor Small Signal Model Truth Table    
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+#⚡️Hi-Impedance
+#|   1   |   Z   |   Z   |
+#|   0   |   Z   |   1   |
+
+
+#|   Z   |   1   |   Z   |
+#|   Z   |   0   |   1   |
+#
+#|   1   |   1   |   Z   |
+#|   Z   |   Z   |   0   |
+#⚡️
+##🚬️Small Signal Cutoff
+#|   3   |   3   |   3   |
+#|   3   |   0   |   1   |
+#|   3   |   1   |   0   |
+#|   0   |   3   |   1   |  
+#|   1   |   3   |   0   |
+#|   3   |   Z   |   1   |                          
+#|   Z   |   3   |   1   |
+#_🚬️_)🚬️_)🚬️_)🚬️_)🚬️_)🚬️_)🚬️_)
+#🍀️
+USEFUL LOCAL REFERENCES:
+   #🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️
+        Modes of operation     [DataFlipFlop]
+            S     R     Q     Q     Fx on output
+4bidn     0     0     1     1     4bidn (do not use)
+Set               0     1     1     0     Set : 1
+Reset    1     0     0     1     Set : 0 (clear)
+Hold     1     1     Q     Q     Previous state (no change)
+          #🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️🔑️
+#___________________________________________________________________________
+#🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️🍀️
+#4 states of NPN/PNP  Transistor = c-colctr, b-base,e-emit, V-volt
+#NPN                                  PNP
+#Active = Ve < Vb < Vc            |Reverse
+#Saturation = Ve < Vb > Vc    |Cutoff
+#Cutoff = Ve > Vb < Vc            |Saturation
+#Reverser = Ve > Vb  > Vc    |Active
+#🍀️🍀️🍀️🍀️🍀️
+#🌈️🌊️
+🟩️
+🟩️R = (How hard is it for current to flow)
+🟨️🟥️=(E^2/P)🟨️🟦️=(E/I)🟥️🟦️=(P/I^2)
+🟩️
+🟦️
+🟦️I = (How much current is flowing)
+🟩️🟨️=(E/R)🟥️🟩️=(√{P/R})🟥️🟨️=(P/E)
+🟦️
+🟥️
+🟥️P = (How much power is being produced)
+🟦️🟩️=(I^2*R)🟨️🟦️=(E*I)🟨️🟩️=(E^2/R)
+🟥️
+🟨️
+🟨️E = (How strong is the flow)
+🟦️🟩️=(I*R)🟥️🟩️=(√{P*R})🟥️🟦️=(P/I)
+🟨️
+#🌈️🌊️
+
+
+
+
+⚠️OHMS LAW PYRAMID⚠️
+V|I*R
+V=Voltage (in volts)
+I=Current (in Amps)
+R= REsistance (in ohms)
+IR = is I*R (V=IR)
++
+P=I*V
+I=P/V
+V=P/I
+-
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+===============================================================
+🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️ASCII HALO LEGEND🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️
+===============================================================
+===============================================================
+Dec         Hex         Binary         HTML         Char         Description    HALO FX
+0         00         0000 0000         &#0;         NUL         Null            Binary 0
+1         01         0000 0001         &#1;         SOH         Start of Header    Binary 1
+2         02         0000 0010         &#2;         STX         Start of Text    EMPTY FIELD/ HI-Z          
+3         03         0000 0011         &#3;         ETX         End of Text            EMPTY FIELD/ CutOff   
+
+
+4     04     0000 0100     &#4;     EOT     End of              = clock oscillator ":"
+5     05     0000 0101     &#5;     ENQ     Enquiry     = switch_0 = "^"
+6     06     0000 0110     &#6;     ACK     Acknowledge         = switch_1 = "^^"
+7     07     0000 0111     &#7;     BEL     Bell                = NAND FX = "@"
+
+
+8     08     0000 1000     &#8;     BS     Backspace     = 4 State BJT Transistor FX "|"                    
+9     09     0000 1001     &#9;     HT     Horizontal Tab =
+10     0A     0000 1010     &#10;     LF     Line Feed              
+11     0B     0000 1011     &#11;     VT     Vertical Tab
+12     0C     0000 1100     &#12;     FF     Form Feed
+13     0D     0000 1101     &#13;     CR     Carriage Return
+14     0E     0000 1110     &#14;     SO     Shift Out
+15     0F     0000 1111     &#15;     SI     Shift In
+                                                            #end of HDL functions
+                                                            #beginning of HDL "wires" thru - 255
+16     10     0001 0000     &#16;     DLE     Data Link Escape
+<>
+127     7F     0111 1111     &#127;     DEL     Delete
+🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️🔠️
+🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️
+Extended ASCII table
+==========================================
+Dec     Hex     Binary     HTML     Char     
+128     80     1000 0000     -   
+<>           
+255     FF     11111111     &#255;     ÿ       ✋️
+
+
+🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️🔡️
+
+
+
+
+
+
+Appendix B
+Tri state buffer source & Result
+________________________________________
+#🔘️#🔘️#🔘️#🔘️#🔘️
+#switch_0
+0011 0101, 0000 0101,0000 0011 0000 0011
+#
+#switch_1
+0011 0110, 0000 0110, 0000 0011 0000 0011
+
+
+#CLI BOTH
+0000 0011 0000 00110000 0011,0011 0101
+0000 0011 0000 00110000 0011,0011 0110
+
+
+
+
+#a___
+0001 0000,
+ 0000 0011
+ 0000 0011 #
+0011 0101
+#b___
+
+
+0001 0001,
+ 0000 0011,
+ 0000 0011 #
+0011 0110  #
+######c-notz
+0001 0010,
+0000 1000,
+0001 0000
+0000 0010 # 
+##########################################cli result
+0000 0011,0000 1000
+0001 0001
+0001 0010  
+#tristate buffer 74HC126(non-inverted) #TT
+#  c a d
+#|0|1|1        Z & 1 = Z =zc0  =1
+#|0|0|0        Z & 0 = 1 = 1c0 =0
+#|1|0|Z        Z & 0 = 1 = 1c1 =Z  
+#|1|1|Z           Z & 1 = Z =zc1  =Z   
+
+
+
+
+
+
+
+
+    sh z.log🖨️\]64\]\$\?\]gdb\]⚱.sh 0.hllo]🧿️]0001.s
+[sudo] password for min-ez:
+0011010100000101000000110000001100110110000001100000001100000011000000110000001100000011001101010000001100000011000000110011011000010000000000110000001100110101000100010000001100000011001101100001001000001000000100000000001000000011000010000001000100010010
+................001..................................00.........................................................................................................................................................................................................
+..00...0..................................................................................................................................................................................................................................................
+00::::::
+
+
+:1=!1,:2=!2,:3=z1:,4=z2,5=Loop,6=PrintState 8=14 9=24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Appendix C
+Clock Demo (Source & Result)
+###########CLK TEST##############⏱️
+#::__
+0011 1010
+0000 0100
+0000 0011 , 0000 0011
+#dynamic cli result =###########
+0000 0011 0000 0011 0000 0011
+0011 1010
+###################################⏱️
+
+
+sh z.log🖨️\]64\]\$\?\]gdb\]⚱.sh 0.hllo
+]🧿️]0001.s
+0011101000000100000000110000001100000011000000110000001100111010
+..........................................................0.....................................................................................................................................................................................................
+.0........................................................................................................................................................................................................................................................
+00::::::
+
+
+:1=!1,:2=!2,:3=z1:,4=z2,5=Loop,6=PrintState 8=14 9=24  
+..........................................................1.....................................................................................................................................................................................................
+.1........................................................................................................................................................................................................................................................
+11::::::
+
+
+:1=!1,:2=!2,:3=z1:,4=z2,5=Loop,6=PrintState 8=14 9=24
+..........................................................0.....................................................................................................................................................................................................
+.0........................................................................................................................................................................................................................................................
+02::::::
+
+
+:1=!1,:2=!2,:3=z1:,4=z2,5=Loop,6=PrintState 8=14 9=24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________

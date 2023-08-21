@@ -1,0 +1,325 @@
+﻿TITLE OF YOUR PAPER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE UNOBTAINIUM MAN
+JB M BROOKS
+Western Governors University 
+________________
+
+
+Table of Contents
+A.        Proposal Overview        2
+A.1 Problem Summary        3
+A.2 IT Solution        3
+A.3 Implementation Plan        3
+B.        Review of Other Works and B .1 Relation of Artifacts to Project Development        3
+Review of work 1 (B)        4
+Relation of Work 1 to Project Development (B1)        4
+Review of work 2 (B)        4
+Relation of Work 2 to Project Development (B1)        4
+Review of work 3 (B)        4
+Relation of Work 3 to Project Development (B1)        4
+Review of work 4 (B)        4
+Relation of Work 4 to Project Development (B1)        5
+C.        Project Rationale        5
+D. Current Project Environment        5
+E. Methodology        5
+F. Project Goals, Objectives, and Deliverables        6
+F1. Goals, Objectives, and Deliverables Table        6
+F.2 Goals, Objectives, and Deliverables Descriptions        7
+G.        Project Timeline with Milestones        7
+H.        Outcome        8
+I.        References        8
+Appendix A        10
+Title of Appendix        11
+Appendix B        11
+Title of Appendix        12
+Appendix C        12
+Title of Appendix        13
+Appendix D        13
+Title of Appendix        14
+
+
+1. Proposal Overview 
+A.1 Problem Summary
+
+
+
+
+1.Platform Sprawl: Multi architecture devices require different forms of maintenance creating backlog and distraction from the main goals of completing government contracts
+2.Cryptography concerts for maintaining rigorous government security compliance facing into the future
+At Stvrk industries we have customarily used the state of the art offerings by the industry leaders in the field . These infrastructural tools provided to us from industry contemporaries, has enabled us to achieve fast development cycles allowing us to complete contracts and accrue research and development credits at a very competitive pace . However utilizing the tools of several different providers, has also come with many challenges and pitfalls. Oftentimes providers will update their software without warning and create corporate wide chaos and disorder. Other times there will be solutions we wish to implement but due to poor or sprawling specification documentation that has led to prolonged and sometimes even seemingly infinite scope creep, we feel this leads to an atmosphere of stifled ideas and stymied innovation.  Furthermore, there have been numerous concerns voiced that with the advent of Quantum computing, the standards of cryptography currently availed to us by our suppliers is insufficient for protecting both our internal network as well as the products we deliver to government organizations. Instead of second guessing and constantly reassuring our customers on behalf of our vendors we wish we could stop playing the middleman and simply offer the logical mathematical assurance that quantum cryptography promises. Though our legal department is navigating us through strategic antitrust proceedings as best they can in amidst a biased and unreliable regulatory environment our legal team affectionately describes as a “kangaroo court”, this is a time consuming process which may or may not always yield fruit, and a process that for all purposes of practicality, leaves us same technological position as before , beholden to the technological whims of industry oligopolies with conflicting interests than our own, oligopolies who may even perceive our achievements and ambitions as a threat to their ability to provide alpha to their pwn majority shareholder… Finally it would appear that some of our industry standard services seem to be unusually susceptible to falling prey to unpredictable and disruptive attacks from anonymous threat actors of varying levels of sophistication , which leads to loss of uptime and gives way to diminished employee morale.
+
+
+
+
+
+
+
+
+A.2 IT Solution
+
+
+The Problem? “Wildcards”…  The proposed solution ? “The Unobtainium Man” 
+What is it? We ,respectfully, wish it to be considered as a modern vision , or inspired mosaic, of the inspirational work of Leonardo Davinci, culminating tastefully with his recognized , “Vitruvian Man”, sketch. A fleet of self constructing, self repairing robots , life sustaining robots which double as human exoskeletons that allow the user to conduct non-trivial computationally intensive scientific research and development work even in harsh and inhospitable environments, such as underwater or in outer space.  Why? Historical instances of bottlenecks , manifesting as single points of failure due to incompatible specifications , make automated scripts that could be used to maintain infrastructure difficult or impossible to implement. The gross result of this is that we are able to complete less Government Department of Defense Contracts per year , thus stifling revenue and reinvestment opportunities, We foresee that this unpredictable stifling of revenue and growth could eventually lead us to lose our lead in the market place as the forefront in the domains of research and product delivery, and a multitude of such unpredictable platform failures could even completely incapacitate our ability to conduct business. We have reached a point as a corporation where our research capabilities and achievements seem to have outpaced and outgrown the contemporary marketplace . Taking stock of our innovations in the field of machine learning , and quantum computing , we feel that we are at a crossroads and that the correct and prudent path is clear and open. Instead of continually hunting and chasing and trying to fix unpredictable platform related incidents as they arise (essentially doing the work our suppliers should have done), we have decided to completely rebuild our infrastructure from the ground up , once and for all utilizing our wealth of research and development ,not just externally but now internally. By baking in, at the binary level, machine learning security and diagnostic abilities as well quantum cryptography capabilities, we believe we will sidestep all further bottlenecks associated with platform incompatibility that leads to the inability to automate infrastructure maintenance. We also believe that we will not only nullify unpredictable distractions , but that the proposed infrastructure is designed in such a way to empower us to complete projects much faster , due to automation and  leading to explosive and exponential growth in revenue which in turn will allow us to achieve personal records of growth in product delivery and R&D. Finally the Unobtainium suits themselves will allow us to explore new emerging markets in underwater and space exploration , both unmanned and eventually manned expeditions that serve our internal mission statement , “These are the voyages of the Stvrkship Enterprise. Its syndicated mission: to explore strange new dimensions, to seek out new forms of life and civilizations, and to courageously go where no entities have ever even gone as far, yet!.”
+
+
+A.3 Implementation Plan 
+
+
+Our goal is to completely rid ourselves of vendor platform dependencies, and we must succeed , so we have outlined a plan of success that is broken into phases. During the first phase, the software phase, is the design of the working title,“H.A.L.O.”, which stands for Hardware Assembler Language Open-source . It is to be a hardware description language in pure binary so as to also be able to work as a self bootstrapping self hosting assembly language , capable of addressing any architecture or electronic devices at a bit level , ie: “bitbanging” ,also because HALO will be in pure binary it will able to utilize neural net and quantum simulated technologies at the hardware level. This binary language will begin at the transistor , emulating both transistors and nand gates, as well as emulating other devices such as resistor , capacitors, 7 seg displays , lcd’s and a native 3d binary matrix graphic engine , utilized all the way to the level of kernel and application and will be able to translate directly to ethernet as well as wifi, software defined radio and other networking technologies.
+Even though we will use this language to program our kernel and applications, we will continue to use Linux Ubuntu 22.04 as the environment for development until the finalization and testing of the project and we will even seek to integrate the new system with our legacy environment , for purposes of migration and compatibility especially with external firms. The second phase , hardware , is where we will utilize the software that was created to optimize our plan for hardware creation , we will attempt to gain an edge by simulating the hardware environment in software and using neural network reinforcement learning, we will create hardware schematics that can then be 3d printed and manufactured in house. The plan is to bootstrap our own hardware , the same way we did software , from the simplest components such as atoms and chemical bonds (modeled in simulation by matrices) to sheets of plastic and metal to pcb’s, microcontrollers , transistors,(all modeled first on our transistor level simulation) in effort to create our own in house 3d printer technologies and continue folding back in on those efficiently , to have the a self sustaining factory environment while utilizing the lowest carbon footprint, using first principles thinking something along the heritage of a “Tesla Automotive” style “gigafactory”  , finally to the most realized iteration of hardware we will be calling the “UNO MAN” but we won't stop there, we will replace any and all aspects of our environment as practicality and capability dictates in order to create the most mobile, self sufficient workspaces imaginable ,we cannot anticipate material science level discoveries , only guarantee that we will be constantly iterating towards full sufficiency , therefore if at any time it would be cheaper and more efficient to obtain materials from outside suppliers in order to help us reach the next tier of bootstrapping more efficiently we will also embrace that solution  .Of course we believe that any such solution will of course be a micro solution and well within budget and time constraints . During phase three, we will revisit the software stack , no longer confined to the linux and hardware environment , but now fully bootstrapped onto hardware, and we will begin the process of software bootstrapping, giving us the ability to go from binary to compiler and bypass “THE ROOT OF TRUST “ aka “KEN THOMSON HACK” through our proprietary kernel and all the way to software defined radio and our own modified browser , which will be more integrated with the kernel and is where we will host the majority of our applications, through technologies like binarized web assembly we will be able to use the same “HARDWARE ASSEMBLY CODE” that we used to build the microchips and kernel , in the web browser allowing for extreme efficiency in development and troubleshooting and also allowing for a more nuanced and cryptography based approaches to issues such as “cross origin requests” and the sweeping limitations the browser imposes in order to try to avoid cross origin request forgery. The fourth stage will be the legacy hardware compatibility stage. Once we have our own proprietary hardware and software bootstrapped we may still need to operate the legacy hardware stack as we try to migrate operations in an orderly manner. The fifth stage will be the legacy software compatibility stage. Once we have our own proprietary hardware and software bootstrapped we may still need to operate the legacy software stack as we try to migrate operations in an orderly manner. Stages four and five will also see the completion of a verilog/vhdl compatible compiler and bitstream(bitbang) technology that will allow our proprietary FPGA technology to accommodate migration from competing industry vendors. The sixth stage is where we will begin using the neural network and reinforced learning to  train our monolithic infrastructure in the ability to guide itself in the fields of r&d , sales ,customer support and other relevant capabilities. When the infrastructure and neuralnet are at capacity we will begin “Alpha Testing”, which we be confined to internal development and implementation.When we have tested the AI’s ability to operate of its own accord and even begin supervising itself and its own generated subseeds, and we have launched the unobtanium man on a self manned space flight and subsequent landing, we will be ready to move to the final stage. The final stage is where we will enter Beta release, the launching of deliverables created and tested in alpha stage followed by continuously releasing branched and or updated deliverables as they arrive. 
+
+
+[REVIEW OF WORKS]
+Let’s get down to brass tacks …, this , or any systemic infrastructure isn’t going to operate at its maximum potential in an intangible, abstracted, gray or black boxed environment. Therein lies the fundamental principles espoused and woven through the entire body of this proposal, that any reasonably educated engineer , and even more so desirable, intra or extra AI,  can easily interface, understand, upgrade, repair and replace every system ie . white box vs black box. Security is allowed at this level to be an afterthought because the system , Security itself for this system can and should be flexible , therefore lets us instead draw our attention to the underlying hard and soft territories where with the CIA may be strategically practiced. We , as a firm , must first construct a fully white box system  that is able to be rebuilt transistor by transistor, if necessary . Therefore we should have a concrete understanding of how transistors can be used not only as amplifiers and switches, but also as building blocks for more complex logical functions such as the “NAND” Gate.
+“ The 2N3904 transistor is a very common NPN BJT transistor which can act as a switch or an amplifier. The NPN BJT transistor, just like a FET, has 3 terminals: these 3 terminals are the base, collector, and emitter. The base functions as the turn-on switch. A small amount of current flowing through the base can allow a much larger current to flow from the collector to the emitter. The BJT functions as an electrical switch, in which if we feed a small current to the base of a transistor, it turns on a larger current from the collector to the emitter.”(Learning about electronics , 2018)
+The first thing we develop once we have designed the “HALO” hardware description language, and the foundational 7400 Nand gates using soft-Transistors and soft-Resistors , is to design a soft-hardware implementation of an “FPGA", so we can reprogram the chip any time we like to emulate an updated or legacy chip , if so desired .Apparently the key to the functionality of an “FPGA” lies in the concepts of LUT’s , or “lookup tables.”  “The core of a slice, the Lookup Table, seems nearly magic - taking an array of inputs, it can be programmed to evaluate any boolean function on them and output the result. As the name implies, though, the implementation is very simple, and it's a technique also used to implement microcode and other configurable glue logic. In principle, what you do is this: take a memory IC such as some SRAM or an EEPROM. Wire up the address lines to your inputs, and the data lines to your output. Now, any combination of input states will be interpreted as an address, which the memory will look up and provide on the data outputs. By programming the memory with the state tables for the functions you want to compute, you can configure it to evaluate anything you like.”(Johnson, N. , 2012)
+
+
+
+
+Once we have our HVLO designed FPGA , we are going to want to build a nand cpu, we will model our cpu all the way up to a risc, then risc v isa compatible processor, from there we will , want to self bootstrap the HALO compiler . The wisest way to do this would be to create an operating system environment , so that we can run programs atop, specifically emulators for legacy architectures.Therefore we should create a kernel and a file system that will need to reside somewhere in nand flash memory , in order to interact with the processor. This process (the process of installing and booting a kernel and filesystem onto a nand flash memory system) is called bootloading or sometimes “bootstrapping”, depending on the functionality of the bootloader.
+“Some processors can be bootstrapped to directly execute code from an external Flash device. This normally requires the processor’s hardware to natively support the particular bus interface that communicates with the external Flash device since no software initialization has been completed yet.” (Feng, Z , 2019)
+
+
+
+
+Finally, our end point , and recursive rebirthing.If we want to utilize the world wide web , and tcp/ip stack, we must exploit the unlicensed domain of 5G , by  interfacing with wifi, cell towers, satellites and cable networks . We will need to capture frames and packets, parse them , interpret them and transmit our own frames and packets using tcp/ip ethernet and modbus protocols , using serial , binary encoding and crc error checking , therefore we need to send ethernet frames out of our antennae , and we need to accept those same frames into our antennae to be parsed interpreted and responded to . 
+Making a radio out of 1 (or even zero transistors) is easy enough but we want our chips and their io ports to the antenna, to be able to “modulate” and “demodulate”  its own encodings of binary data.
+This will allow us to transfer not only data, but the entire state of the machine and even the entire state of the infrastructure if necessary , because it was self bootstrapped in binary ! Therefore the implementation must create a voltage controlled pulse width modulation , and decode the signal. Or in simpler terms , convert digital to analog , and back  . This particular functionality is referred to as a “Modem” , which stands for “modulator-demodulator”. 
+“The earliest types of modems have been around since the 1920’s. Back then the main function of a modem was to transmit data types across dedicated telephone lines, mostly used for and by news agencies. Data could be created at one location using a paper punch, transmitted across telephone wires to another location, and printed at that location for the users to view. This was the earliest form of “instant messaging”.
+The technology behind modems became more advanced in the 1940’s when the United States Air Force determined the modem could be useful in transmitting information during the Cold War. Large quantities of radar images and other data needed to be exchanged across different locations around the globe for the United States to monitor Soviet activity, and work at the Air Force Cambridge Research Center worked to develop a modulator-demodulator as a solution.”(Rebecca, 2012)
+
+
+
+
+2. Project Rationale
+There are a number of specific incidents as well as a general justification for wanting Strvk Enterprise to function as a self bootstrapped infrastructure. First there are two major specific incidents existing at the application layer that lead us to pursue platform independence . 
+The mobile applications maintained by Stvrk Enterprise , built on the IOS and ANDROID platforms have proved to be extremely difficult, time consuming and expensive to maintain . The identified reason for these difficulties arises from “Vendor Updates''. Whenever these updates are randomly released there is a backlog created in order to identify , research and update to the current specifications of the release , across both ANDROID and IOS in both the SWIFT, and JAVA codebases they require. These cons outweigh the pro’s because the services we provide, are also available on the desktop and browser which have never experienced updated related incidents or outages, leading to the loss of interest in those platforms and majority of our service usage being confined to those environments, which has represented a loss of investment time and capital in respect to the return on investment originally projected from mobile platforms. The second drawback arises from the limitations placed on applications in the desktop browser. We would prefer to use vanilla javascript , c or even assembly language alongside our html code, but the CORS feature of most modern browsers available make it impossible to save and upload data to the “Document Object Model'' without the use of cumbersome and bloated “Server” applications such as “Nodejs , Django or ‘Ruby on Rails’” . We would like to bypass this entirely and simply create a browser native and integrated with our desktop and command line environment . This would also allow for greater more efficient web crawling, which could greatly empower our neural nets ability to provide low cost , high relevance information to us as we as our consumers. As we researched solutions towards solving these issues we would inevitably be confronted by various microcontroller architectures , diverse in both specifications and licensing requirements . The light at the end of the tunnel would seem to be simply creating our own “RISC/RISC-V'' microcontroller architecture and rebuilding our service infrastructure on top of that architecture once and for all , completely eliminating unpredictable updates and vendor restrictions, while we are building our own risc-v architecture it is very simple for us to add hardware level advancements such as binarized neural networks and quantum computing , promising to keep us ever on the cutting edge of ai as well as cryptography . Thirdly and more future facing we see that if we want to be a competitive and growing aerospace and defense corporation , we need to strategically strengthen and reinforce space exploration and the life sustaining capabilities necessary to facilitate this exploration , to our portfolio in a much more deliberate fashion . To do that not only will we need dependable platform architecture, we will need cutting edge , newfangled technologies to practically be able to not only travel further faster but to survive and sustain a far more economically efficient and productive work environment under extremely hostile and distant conditions. We see this task, however, not as a chore , or tangential burden but  more fortunately , as a natural outgrowth of the deliverable capability that our self bootstrapped quantum neural HALO infrastructure will provide.
+
+
+D. Current Project Environment
+Overview of the Stvrk Infrastructural environment :
+First, mobile hardware and software including single and multi appendage robotics manual and automatic robotics(including U.A.V.’s), 3d and 2d printers, desktops , phones and embedded devices. Second, mobile and immobile human workspaces such as , diving suits, space suits, the Stvrk Enterprise building and modular equipment such as helicopters, jets,  rocket, space-underwater modules, underwater vehicles, automotive vehicles and R&D mobile-lab trailers as well as legacy style “landlocked” buildings. Third, Infrastructure that accommodates the usage of this infrastructure including uninterruptible power supply , satellite radio transmission  ,onsite emergency medical services, that maybe due to be replaced by biol-technological advances such as nanotechnologies and even the industrial cafeteria , growing/sourcing catering and packaging the food that we would wish to replace with atomically generated and or chemically modified and enhanced biological sustenance product. Finally waste management and or recycling of the by-products produced by some of these infrastructural nodes. Additionally there exists the various softwares , (such as operating systems, networking libraries , Industrial 3D and AR software integrations such as “USD , Siemens Technomatics or NVIDIA Omniverse, environmental simulation softwares and their corresponding device driver driven peripherals (mirrored in augmented reality environments as “Digital Twins''), as well as of course, the supply chain feeding us the objects of experimentation and study as well as the micro tools used to handle those objects (relevant industrial and laboratory equipment ,such as but not limited to semiconductors, electron microscopes, vacuum tubes, power supply, chemical logistics equipment (such as plumbing , heating and air ,etc), etc,  used to conduct the research and development of various aerospace , defense and biotechnical deliverables. Superficial sales and marketing guidance  , and even prevailing industry zeitgeist suggests that these systems would be adequate and even state of the art application for industrial needs , however the reality of our unique positioning within the competitive market place would indicate that it would be far more efficient to create a monolithic, in house solution rather than to try to constantly surmount unpredictable bugs, updates, limitations and incompatibilities , because although many of these processes are mirror and automated by industry leading softwares, the software, like many other applications we seek to negate,  is often a completely closed , costly to maintain , extra-proprietary system unable to be edited, without vendor intervention , as well as presenting limitations that would be simple enough to augment in software (such as cross compatibility or latency issues that have been experienced in the past when dealing with competing vendors, IE: “Bloomberg Terminals , Stock Brokers and Blockchains/Cryptocurrency exchanges” , or lackluster “BIOLOGICAL/ANATOMICAL INTEGRATION” into “digital twin” technologies.) . In order to compensate for these shortcomings the customer must either do without a particular desired function or augment their environment to suit their “micro-need” , relying on external hardware and software applications, thus creating more and disparate “micro sprawl” . As an alternative even to the “Micro Sprawl” created by these micro environments , we propose a fully integrated monolith solution. 
+Briet-wheeler theory, discovered in the 1930’s , dictates that matter can be created out of two photon atoms colliding together at a great enough speed.  The only thing limiting the original theorists, as well as contemporary scientists, seems to be the availability of sufficiently capable technology , which, according to our research amounts to the capacity to sufficiently simulate and integrate these physical phenomena .  The inherent nature of the “Unoman '' is to be a monolithic binary AR matrix quantum neural net architecture using the same hard and soft logic gates and chips as we will be building the software and surrounding peripherals. Stvrk foresees a time when using simple principles of quantum physics , we will not only be able to power all the nodes of our discrete value chain using hydrogen fusion ignition , but will be able to use the matter generated by photon collision to craft any and all materials necessary for our and our customers operations. We will simulate and iterate this process to keep costs low , but there is theoretically no reason why this would present any difficulties , scientist in various labs, including our own have replicated this experiment numerous times and after all , all matter in our known universe is generally believed to have arisen from merely a single atom . Of course we will replace nodes along our value chain as the reality of the laws of physics dictates, the easiest and therefore primitive and indeed apriori of those being the software and micro hardware aspects of the value chain , which we will spend the bulk of the proposal discussing. The goal of course is not simply to replace inefficient software with duplicate in house software but to create next level , cutting edge software that will allow us to be safe, competitive and even dominant in the field of aerospace and underwater exploration. With the important caveat of security , non dependency , adaptability , mobility and resiliency. The most important thing to me is that in a world where there is always entropy or failure of systems , a device like “The Uno-man Suit” can always hail a cab, if it stops working and still finds its way back home , or be a self-sufficient home-cum-survival unit unto itself.  
+
+
+
+
+
+
+
+
+
+
+E. Methodology
+
+
+Stvrk Industries will adhere to the ADDIE model during this undertaking. The ADDIE model consists of five distinct phases: Analysis, Design, Development, Implementation, and Evaluation. The phases of  the Bootstrapping of Stvrk industries are detailed beneath:  
+
+
+Analysis – There will be a preliminary multi department meeting to review the priority and migration processes that will take place over the next several months, in order to identify any last minute changes to personnel , inventory , expenses and any other unforeseen obstacles . All available inventory items will be confirmed. 
+Design – Here we will create  a priority-wise hierarchical blueprint of the infrastructure of Strvk Industries, using the intelligence gathered during the analysis phase. This will function as a skeleton of the documentation , source code, schematics , and bill of materials necessary to complete the mission. We will then fill in the skeleton with research nuggets and pseudo code, and even snippets of working or not working code simply to have as many tangible resources as possible at our disposal that will aid in the development of the bootstrapped infrastructure.
+
+
+Development – We will begin the process of iterative agile development , sprinting through milestones and reconvening for daily, multi-department standups to collaborate, share, strategize and support one another using the most effective manners possible in order to achieve a completely functional legacy hosted and emulated 3D/ AR model of the final environmental .
+Implementation – The organization wide bootstrapping of systems begins here. The alpha stage of creation will commence, continuously building from a bottom up approach each new layer of the bootstrapped infrastructure , from transistors , to logic gates, to pcb boards, and eventually functional user workstations and workspaces , culminating in the ultimate workspace , The Unobtanium Man Space Suit.
+
+
+Evaluation – The iterative training of the Neural Net seeds against the Quantum network begins in earnest here. The Unobtainum Man and other machines will operate and be tested in rigorous environment ,trained, recalibrated to be eventually placed in a  self monitoring  , self healing autonomous mode , as parts of our self bootstrapped factory environment, serving the  continuous delivery  life cycles of of relevant tangibles, necessitated by the value chain of our Government Aerospace and Defense contract customers. Any and all  relevant deliverables will finally be evaluated by humans, and quality stamped to be made available for a public Beta launch.
+
+
+F. Project Goals, Objectives, and Deliverables
+F1. Goals, Objectives, and Deliverables Table
+
+
+
+
+
+
+
+
+	Goal
+	Supporting objectives
+	Deliverables enabling the project objectives
+	1
+	Secure, Reliable, Sustainable, Self Bootstrapped Autonomous Technology Environment
+	1.a. HALO Hdl Assembly Language Open-source
+	1.a.i. HALO open source code and functioning binary
+	1.a.ii. HALO documentation 
+	
+
+	1.b. Unoman Hardware Environment
+	1.b.i. Unoman hardware deliverables 
+	1.b.ii. Unoman hardware documentation 
+	
+
+	1.c. Configure Unoman to be self bootstrapping, self simulating and therefore self learning ,self- repairing and self-securing. Aka Fully Autonomously Functioning Infrastructure or “FAFI”
+	1.c.i. HALO OS LINUX SUBSYS
+	1.c.ii. LINUX HALO OS SUBSYS
+	1.c.iii. 3D AR simulated reinforced learning environment applications 
+	1.c.iv.  Final Documentation 
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	1.d. Alpha testing and Beta launch.
+	1.d.i. Alpha Testing ,Training and internal utilization 
+	
+
+	
+
+	
+
+	1.d.ii. Beta Launch
+	             
+F.2 Goals, Objectives, and Deliverables Descriptions
+ Project Outcomes and Deliverables – 
+The primary goal of this project is to deliver a reliable, self-sufficient, self-sustaining mobile workstation ala space suit ,powered by fusion energy, informed by reinforced learning and secured using quantum cryptography.
+
+
+The Unobtainium Man suits the specifications relative to Strvk Industries' supreme goal of a secure, reliable, sustainable, self-bootstrapped autonomous technology environment.
+
+
+1.a. HALO Hdl Assembly Language Open-source. Specifications for a programming language able to communicate hardware schematic diagrams in a binary fashion while also able to communicate assembly level instructions. Loosely based on the Nand To Tetris Discipline , pioneered by professors at Efi Arazi School of Computer Science,   Noam Nisan and Shimon Schocken, and documented in their co-authored book, ‘The Elements of Computing Systems : Building a Modern Computer from First Principles’.
+The documentation for the use of hardware and software will be written in an offshoot of “HLO” known as “SHML” Shell Hypertext Markup Language , this will be a simple , yet highly integrated and accessible markup language , allowing for the scripting of HALO , the demonstration of easy tutorials and examples , and the  various accessibility features such as speech recognition and even binary brain wave interpretation. The first task of this scripting language should be to prove the ability of HALO to run an automated, customizable bootstrappable backup of itself in its current state (eventually optionally incorporating bootloader, installer,  kernel , file systems and beyond) into a hardware agnostic binary of itself we will differentiate as “HVLO”.
+
+
+1.a.i. HALO open source code and functioning binary . Design specifications, develop software , to run natively and cross platform using fewest dependencies or edits possible (using the GNU assembler compiler as the foundation ) 
+
+
+
+
+1.a.ii. HALO documentation . Demonstrate ,explain  and instruct on the usage of the HALO codebase in a user friendly and intuitive manner using “SHML”.
+
+
+1.b. Unoman hardware environment. The goal is to utilize self replaceable and  bootstrappable 
+ie :self-sustaining , computers and materials at all nodes of the value chain.
+
+
+1.b.i. Unoman hardware deliverables 
+        We begin at the lowest level possible, modeling each stage from the lesser stage, in this case we will start at the transistor level , modeling the 7400 nand chip , modeling a proprietary FPGA unit using “Lookup tables” ,  and then modeling the “GIGATRON” 16 Bit risc computer ,  , modeling the modified quantum binary neural net RISC-V , ARM , X86 and other relevant architectures , and finally  modeling and or emulating NAND FLASH cells, LCD , and other relevant peripherals 
+From these emulated computer environments, we will emulate, replicate, build and or modify all infrastructural mechanisms , robots, 3d printers ,nanomachines and biomachines , with the goal of eventual full integration and interoperability of each function of each node in the value chain. Ie : smart infrastructure 
+Finally we will focus on the production of unobtanium man ,, autonomous and manned capable monolithic space suit , with the intention of supporting and empowering human life for the purposes of deep exploration and research and development.
+1.b.ii. Unoman hardware documentation 
+Demonstrate ,explain  and instruct on the usage of the Unoman and its corresponding infrastructure in a user friendly and intuitive manner using “SHML”.
+
+
+1.c. Configure Unoman to be self bootstrapping, self simulating and therefore self learning ,self- repairing and self-securing. Aka Virtualized Infrastructure or “V.I.”
+1.c.i. HALO OS LINUX SUBSYS
+1.c.ii. LINUX HALO OS SUBSYS
+replacing the GNU assembler compiler with an minimal yet compatible binary that will be labeled “QNU”
+1.c.iii. 3D AR simulated reinforced learning environment applications , Binary level Simulation empowered by  Highly compressible 3D / AR engine and data format,   that can be optionally automated and encrypted .
+1.c.iv.  Demonstrate ,explain  and instruct on the usage of the V.I. and its corresponding infrastructure in a user friendly and intuitive manner using “SHML”.
+
+
+1.d. Alpha testing and Beta launch. 
+1.d.i. Alpha Testing ,Training and internal utilization .
+        Rigorous training and testing of the binary neural net and quantum models and their corresponding infrastructural nodes as pertinent to the workspace and industrial environment. Training of the entire workforce of STVRK industries on the utilization of HALO, UNOMAN and SHML, respectively.
+1.d.ii. Beta Launch
+        Use bootstrapped Stvrk infrastructure in production of deliverables , integration with partners / vendors, and deployment on contracted missions.
+
+
+
+
+
+
+7. Project Timeline with Milestones
+Milestone or deliverable
+	Duration 
+(hours or days)
+	Projected start date
+	Anticipated end date
+	1.HALO Specification language and documentation
+	30 days
+	12-1-2022
+	1-1-2023
+	2.HALO compatible Hardware environment : 7400 RISC Gigatron and 32/64bit RISC-V Powered UNOMAN Spacesuit
+	30 days
+	1-2-2023
+	2-1-2023
+	3.HALO Hardware compatible software bootloader and AR-OS environment in RISCV
+	30 days
+	2-2-2023
+	3-1-2023
+	4.Multi architectural emulation using HALO on top of 7400 RISC-V 
+	30 days
+	4-2-2023
+	5-1-2023
+	5.Bootstrapping HALO bootloader and os as well as GCC and Linux onto multi arch emulators and corresponding hardware
+	30 days
+	5-2-2023
+	6-1-2023
+	6. Trained Neural Net begins building and testing Alpha Quantum environments and providing Alpha level cryptographic services , such as blockchain.
+	30 days
+	6-2-2023
+	7-1-2023
+	
+
+7.LIVE LAUNCH and Continuous Delivery
+	
+
+	7-4-2023
+	
+
+	
+
+8. Outcome
+
+
+The “Unoman '' , will give Stvrk Industries explosive growth in a fresh new direction , sending us throttling forth into infinite unknowns at faster than light speeds. There are a few things we do know however. The Unoman is a self bootstrapping platform , which means complete technological sovereignty. That means not only  100% of our time will be spent building maintaining and repairing our own systems, as opposed to rival vendors , but perhaps even less time will be spent on these challenges , as the “Unoman'' Ships, calculating complex equations and testing theorems in a simulated environment powered by a quantum binary neural network. In terms of short term practicality , we hope to train our neural network operating system to not only bid for and request contractor and subcontractor work , but to self complete , self account , and even self integrate itself with open source and even close source api systems and infrastructures of our partners , using its backwards compatibility legacy layer training data , all while maintaining unrivaled confidentiality and integrity with the power of quantum cryptography and its autonomous blockchain.
+Looking forward into the long term , we foresee things such as unmanned exploration and quantum teleportation dynamically revolutionizing the logistics industry , and we believe these infrastructural evolutions will cement us as the authority in this emerging discipline. All these predicted outcomes combined with the infinitely imaginable tangential deliverables that we and our partners hope to capture due to the speed and intelligence of our quantum binary neural network , unlimited by vendor updates , and incompatible or indecipherable standards  , poises the Unoman project to arguably be one of , if not the most groundbreaking and universe impacting technological advancements in the knowable history of the Milky Way Galaxy, indeed our Universe and even Multiverses, proliferated by expansive , unlimited service, non inhibiting , non competitive exploration and research infrastructure , where the functionality is completely transparent , from the hardware down to the software, because indeed they are one in the same. Thank you for your consideration of the “UnobtaniumMan Proposal'', in care of Stvrk Industries.
+
+
+
+
+
+
+References 
+Learning about Electronics (2018). How to Build a NAND Gate with Transistors
+Retrieved From : 
+http://www.learningaboutelectronics.com/Articles/How-to-build-a-NAND-gate-with-transistors.php
+Johnson, N. (October, 2012). Build your own FPGA
+Retrieved From : http://web.archive.org/web/20150621104100/http://blog.notdot.net/2012/10/Build-your-own-FPGA
+
+
+FENG, Z. (April, 2019) A Comparison of Flash Devices for Embedded System Booting
+Retrieved From :
+https://embeddedcomputing.com/technology/storage/a-comparison-of-flash-devices-for-embedded-system-booting
+Rebecca (November, 2022) The Complete History of the Modem
+https://history-computer.com/modem-complete-history-of-the-modem/
