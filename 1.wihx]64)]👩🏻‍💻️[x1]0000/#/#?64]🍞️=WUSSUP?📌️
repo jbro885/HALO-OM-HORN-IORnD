@@ -1,0 +1,67 @@
+#🤠️
+#ignoring header (in code) 4 now
+#🧕️
+#HEADER  = rdx = bitlength(unused),rcx = multiplicand,rbx= target base,rax= current base (|vv/e)
+#🧕️
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0100 0000 #64
+
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0011	#4mult (dec each time)
+
+#0000 0000 0000 0000 0000 0000 0000 0000
+#0000 0000 0000 0000 0000 0000 0000 0001 #
+
+#0000 0000 0000 0000 0000 0000 0000 0000 #this actually doesn't make sense ur base cant be 0 cuz its skipped...
+#0000 0000 0000 0000 0000 0000 0000 0000 #u actually need 2 add base PLUS more stuff <3 
+					#HOWEVER since we know base is 16+ 
+					#u can subtract -1 if u want the original sum in ur new output. 
+					#however u might not. thats why we specify a base in first place
+					#so if u DO want ur base included u need 2 minus 1 IN COMMAND
+					#so im gonna let u input 15 (as start base even tho it may cause trouble)	
+					#sort it out... 
+					
+				#🤯️>i actually want it 2 "BACK UP 
+				#🤯️ if i want , (OR START AT A LESSER NUMBER...)
+				#the thing u were doing was "MEANINGLESS" 
+				#(subbing...) 
+				#what u SHOULD be doing is subbing or something
+				#FROM "(%RSP)"
+				#🤯️#🤯️#🤯️#🤯️#🤯️#🤯️
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0001 0001
+
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0001 0000
+#🤠️
+
+###################### u need 2 do same thing u did with "base/desire"
+		#but with (%RSP)somehow sub base and add desire? 
+		#🔑️#(SEKREYT?)and also sub diff between base and desire < 🔑️
+		
+		
+#actual "SECRET FORMULA"? =
+#-1. subtract -1 from (%rsp) (or be 1 head 4 no reason [ignore this when thinking about fx]
+#0. remove "zero check from stopping add" it shoudl always add (unless rsp is under 15 (THATS IT THO) 
+#1. is %rsp bigg or smoller than BASE_a? subtract  "BASE_a" from (%rsp)  [then sub/add that from %RSP ] 
+#2. ADD "DESIRED TARGET TO (%RSP) 
+
+#3. just ignore alot of the stuff u did , it was ill informed. 
+#x3
+
+
+
+
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0001 0001
+
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0001
+
+0000 0000 0000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0000
+
+#🪞️
+
+
+ 
