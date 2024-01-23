@@ -1,0 +1,207 @@
+⛑️🔍️pipes vs socks = '
+i think u should make "p2p/chat" soon so we can see "wussup"🔍️⛑️
+
+🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️
+actually i hope u can hold out a bit longer
+so we cna get kbd. 
+
+then u can acutally "sign-up/login"
+
+(but then we will make a simple chat "IMMEDIATELY!")
+
+(i will make a directory of all users , wallet addrs 
+phone numbers, (and they have addresses/positions in universe etc
+
+(they will get stored in "localized servers")smol world
+u can probably use ip/32bit 32=4b so... nvm
+(not cuz all users , but ppl die , start corps etc...)
+🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️
+//https://viewsourcecode.org/snaptoken/kilo/02.enteringRawMode.html
+save with cntr-s 
+
+Youtube link: https://youtu.be/cUJE10XEjrU <its not very helpful tbh
+*flex window is actually more helpful imo
+//🪶️🐍️🐍️🪶️
+🤯️👨🏽‍🚀️
+even a "game mmemory of "frames" would start with "TID" & "change count ;) 
+👨🏽‍🚀️🤯️
+
+🗓️
+📅️
+jan21: u probably wanna make a fx that takes "bytes"
+and returns spec bytes (32/64 w/e)
+(cutting is super ez, add is just a concat ...so just go for it
+📅️
+
+jan20:
+💭️its probably time 2 look at cliopt 2 get ur threadign(argv) code back <3💭️
+📃️some confusion about when 2 write "tid&time&mt" 
+"0.proq.maqr[🎫️].c"
+<id rather not call an executable here tho. (cr.mt isn't real it should only have been for debug (u may use it for "blockchain 2 but w/e"...)
+
+🤯️
+we actually dont have protocol for "STARTING "txt[0000].txt"
+👩🏾‍🏭️
+just do it from "tid.txt first" 
+(can make this from "cr."or w/e ⚡️just mt "manually named" (strstr(.txt)⚡️)
+doing files first should be easier.
+
+(then u can pass the "pre-process" 2 kbd , where it can take "ownership"
+of the proc , by putting "name of program" in "header somewhere")
+
+😜️
+*at this point we probably wanna dump asci 2 bin (render will do same anyways)
+😜️
+👩🏾‍🏭️
+🤯️
+ 📃️
+🎩️[atop(rolling)= launch(targeting kbd),pass tid->"proq-maker"->pass mem addr (returned)2 kbd [run kbd in background] (or do THIS urself manually) ]
+🎩️[atop(choose-process-2-render)= launch, 'show_all_running_procs.c' ->pass choice 2 "render.c" (exiting should go back 2 all_run.c"<-cuz macro threading(example in cliopt) ]
+👑️(all cliopt does is allow u 2 try 2 launch "exe"(macro or micro)
+and remain in "macrothreads"(even SUPER MACRO THREAD)
+{u know this is tight if u can open cliopt from cliopt and not crash/overheat}
+👑️
+1.tid from cliargv.txt or "Macroprogram(pthreadder)" otherwise makeup rand 4 debug.(and can dynamically make if doesn't exit in mem..., otherwise wasn't mem maker supposed 2 make that???)
+struct = [tid,wr-cnt,{mt-symbolically}data]
+https://www.nongnu.org/ext2-doc/ext2.html
+❗️the actual struct were making so fare looks much diff/simplr than this , but dont worry, and dont forget 2 wrap in blockchain<3 ❗️
+⏳️ext2 fs doesn't record "# of changes" it records
+time since last change...(which would match with "blockchain
+tho i do think blockcahin would correspond 2 #'s of blox/txs?)
+:lets try this FIRST. and even go for "psudo-QUARTZ clock CHAINING"
+: u may keep a kbd buffer (in mem)b4 writing based on 
+(clock, u may restruct how kbd works a bit , w/e)
+
+Kell wants 2 do it "rite" coulda fooled me with all the phy assault..
+
+KLOCK will be used A TON. so just go for it...
+
+remember if EVERYTHING chains 2 clock its great for "NN/Debugging"
+⏳️
+2.?{tid goes into kbd argv}
+3. render from tid (based on tid list) [as ascii!]
+(from menu program that shows all running procs(aka tids ;)
+(they maybe labled human readable in "TXTFS STRUCTURE")
+
+4.cli's job is actually very lite. (and dependson "kbd")
+will be its own proc. but can be launched as macroproc i guess...
+
+(json should be done 4 compiler struct primiatives 
+and blockchain/versioning are literally mex... 
+
+choose 3d/2d matrix render. color or ascii. (open gl?) 
+\(more than one? splitting hdmi sig? ) 
+and thats pretty fuckin sic...
+➕️
+crm 
+soc/chat = retention 4 services offering...
+p2p /pvp
+neural net
+halo.c
+riscv- (LIVING THE DREAM AT THIS POINT?)
+bitbanging...
+stage0esqu. 
+
+➕️
+📅️
+👨🏽‍🚀️jan19: sol = strstr()👨🏽‍🚀️
+
+🤷🏻‍♀️️
+*the tid maker can scan dir first or w/e 
+🤓️
+https://www.geeksforgeeks.org/c-program-list-files-sub-directories-directory/
+🤯️we actually use this for cli wtf how did i forget that!!?🤯️
+🤓️
+(u just strstr() each "scan" or w/e
+were comparing against tid made, may not even be necessary
+🍍️for now, lets just make some tid based on real tid *input?  or hash w/e (can be random # for now)🍍️
+💋️KISS💋️
+🤷🏻‍♀️️
+📅️jan19: need 2 switch "binConverter.h" 2 use "int" instead of "8"[should be ez(CUZ PRIMS) if u readover the code again.]✅️
+
+
+then we will "input tid.txt " and front  padd.
+(this should be super simple )
+🤯️🧠️⚡️🚨️🤯️🧠️⚡️🚨️🤯️🧠️⚡️🚨️🤯️🧠️⚡️🚨️🍍️🍍️🍍️🍍️🍍️
+*[going 4th]even if u WANT 2 use "txt[0].txt" DONT pass .txt
+(just pass a "tid" and we will interpret it as a 'nonfile'
+(by doing "sizeof(and counting 4back = .txt or not)
+u actually pass 'nontxt'(tid) and strcat".txt"
+u only pass "filename, if was created file as a "FILE.tid"
+🤯️🧠️⚡️🚨️🤯️🧠️⚡️🚨️🤯️🧠️⚡️🚨️🤯️🧠️⚡️🚨️🍍️🍍️🍍️🍍️🍍️
+{😰️<kell actin fool?<Just actin fool they need 2 learn boundaries and they will 🔍️ ❌️were keeping backups all over and WILL congeal code so its all good.
+🧸️could be even better if u got our diff/git working...🧸️
+ ❌️}
+
+📅️jan18: - were gonna make aspects of kilo ourself , wuts the diff 
+between that and "SNAKE"? lets find out. 
+📅️
+🗓️
+
+🏘️🏘️🏘️
+🛖️
+>take kbd
+>render section of mem . (can render entire file
+or just call it w/e 
+💡️
+< we can really "figure out render " here
+(were not reading from "KBD buffer" were creating
+a "QILO buffer"< thats kinda a secret 
+🧝‍♂️️
+(u may need a macro program 2 read from that mem
+just create as many processes as u need. 
+i wouldnt even mind 
+'reading it as a process'
+(just like if you WERE reading "KDB BUFFER")🧝‍♂️️
+💡️
+>update in buffer <according 2 kilo 
+>update in realtime < according 2 qlockchain/teddy-git ... 
+🛖️
+◽️KILO ARCH = 
+⌨️some of this will cross over 4 basic "KBDFX"⌨️
+▫️ re-render screen after keypress
+(this has 2 do with knowing key changed 
+which we were talking about b4 i left)
+(the kbd'mem block' knowing about "itself"
+'NAMELY = KEYES PRESSED SINCE INCEPTION'
+❔️
+(how are they rendering it different than i or "snake"?{snake=fake}
+❔️
+👩🏻‍🏭️
+(ittle just take up 8bits up front, 
+and we can keep adding and pushing back 
+4 things we need and if we dont use (ext2)
+that will justtify missing space <3 
+👩🏻‍🏭️
+▫️
+▫️
+◽️
+🏘️🏘️🏘️
+
+
+🍍️
+🎫️🎟️
+can take in "proc mon file" , or just write 2 txt[0000]
+
+*i think im gonna write 2 both seperate file AND txt[0000]
+and see how it goes. 
+
+(other args will be)
+
+📽️🎞️(we can reverse engineer render to output w/e input file (which updates on its own)
+then kbd threading can update that file (or blockchain w/e)
+therefore render just needs 2 read from "id 
+eather as inode or file)
+
+(2 do fs u can just make multiple kbd instances or w/e)
+📽️🎞️
+🎟️🎫️
+process maker ? just make blank space (or file)
+(in file system , logs in filesystem header 
+(or a proc mon file? (or expects management
+by macroprograms mem? 
+
+
+>do we have ANY info about "txtfs header size? we may throw in .h or carry around? "⛓️Maybe in chain wussup⛓️
+👩🏻‍🏫️*we could reuse header if u got more lineraly organized...👩🏻‍🏫️
+🍍️
