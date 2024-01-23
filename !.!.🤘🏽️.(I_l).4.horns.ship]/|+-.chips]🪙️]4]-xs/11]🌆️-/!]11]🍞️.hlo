@@ -1,0 +1,54 @@
+
+######c-notz?(or reg not?)##############################
+#0001 0010,
+0000 0011
+0000 1000,
+
+#0001 0000
+
+0000 0001
+0000 0010 #Z
+
+#u might have to sit here and figure out the logic for it dynamically
+#protip ? try using sym and only change "Zx" if u need...
+
+
+#❣️make sure u read the "TT"S write some have a on left, some on right ;) 
+#tristate buffer 74HC126(non-inverted) #X
+#  c a d
+#|0|1|1    Z & 1 = Z =zc0  =1
+#|0|0|0    Z & 0 = 1 = 1c0 =0 
+#|1|0|Z    Z & 0 = 1 = 1c1 =Z  
+#|1|1|Z	   Z & 1 = Z =zc1  =Z   
+
+##if it expected z in it would say on both sides ;)
+	
+#txtt	
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+
+#
+#|   1   |   Z   |   0   | #🦢️
+#|   0   |   Z   |   1   |#🦢️
+
+#|   Z   |   1   |   Z   | #0 #🦢️
+#|   Z   |   0   |   1   | #1 #🦢️
+#
+#|   1   |   1   |   Z   |
+#|   Z   |   Z   |   0   |
+##🚬️
+#w8ing 4 3sv/@/nunq check
+##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️
+
+
+
+
+
+
+#tristate buffer 74HC125(inverted) #X
+#  c a d
+#|0|1|0
+#|1|1|1       < if was 00 would be Z...
+#|0|X|Z

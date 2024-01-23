@@ -1,0 +1,218 @@
+
+
+#🗓️REGISTER = (do the 16 input (with the numbers "AFTER register 1 or w/e ;) 
+#🗓️
+
+#🔘️#🔘️#🔘️#🔘️#🔘️
+#clock	= 16
+0000 0111, 0000 0111, 0000 0011 0000 0011
+
+
+
+0000 1000
+0000 1000,
+0000 0011 #
+0000 0111
+
+#switch_0 = 17
+0000 0101, 0000 0101,0000 0011 0000 0011
+#
+#switch_1 = 18
+0000 0110, 0000 0110, 0000 0011 0000 0011
+
+#we will always fill these by default or leave mt same diff
+#🔘️#🔘️#🔘️#🔘️#🔘️
+#CLI 3
+
+0000 0011 0000 00110000 0011,0000 0101
+#0000 0011 0000 00110000 0011,0000 0110
+#0000 0011 0000 00110000 0011,0000 0111
+########################################
+#SIPO8 ] ⛩️ = 8 DFF"S ]👡️ #were doing 2/4 first <3
+#we may literally beable 2 reuse "ALL WIRES if we just use " DESIGNATED OUTPUTS"
+#were gonna do "2 then 4 first <3
+#📮️cant reuse wires (for some reason , even with "DES.OUT") Y? 
+#📮️ (no empty state? (is that would "clear would do [on 74HC595]?)
+#♣️=  No, they pour new wine into new wineskins, and both are preserved” (Matthew 9:16-17)
+#u COULD do with "regex/cntrlH" 
+#(at least 2 test, tho i would like  2know why we cant reuse wires.)
+#after all u cant PHYSICALLY reuse "WIRES FROM LOGIC CHIPS in a real chip 4 diff chip , u know? i guess is the most acceptable explaination.(2me)(same clock cycle)"
+#but it actually makes me wonder why we cant do "EVERYTHING" on 1 wire (cept "CAPACITANCE)
+#and actually we kinda do ... wussup? (i did it strategically... thats y i dont get it...)
+#but yea just prove the new wires work i guess w/e (4 insite + qlu) 
+#  And I saw in a vision; and it came to pass, when I saw, that I was at Shushan in the palace, which is in the province of Elam; and I saw in a vision, and I was by the river of Ulai.
+#    Daniel 8:2
+#>immediate answers 4 all this , why have u been freaking me out with rando all rest of day? 
+# And Joab gave the sum of the number of the people unto David. And all they of Israel were a thousand thousand and an hundred thousand men that drew sword: and Judah was four hundred threescore and ten thousand men that drew sword.
+ #   1 Chronicles 21:5
+#i guess DRU likes HALO.hlo. w/e 
+
+
+
+#👡️#0
+#DFF NAND CLOCKED
+
+#D-in 
+
+0001 0100 #0011 0000
+0000 0011
+0000 0011
+0000 0101
+
+#NOT 
+0001 0101 #0011 0001
+0000 1000,
+0000 0011 #
+0001 0100
+
+
+
+#top nunq(pre latch)A 
+0001 0110 #0011 0010
+0000 1001
+
+0001 0100 #0011 0000
+0000 0111
+
+######################
+#bottom nunq(pre latch)B
+0001 0111 #0011 0011    #🪣️
+0000 1001
+
+0001 0101 #0011 0001
+0000 0111
+
+#####################
+
+
+######################
+#LATCH START 
+##########################################################
+#a___
+0001 0000,
+ 0000 0011
+ 0000 0011 #
+0001 0110
+#b___
+
+0001 0001,
+ 0000 0011,
+ 0000 0011 #
+0001 0111  #< ur"a'var has to go in "B" if u want it "HI-z'd out"
+
+#################
+0001 0010,
+ 0000 1001, #🪢️
+
+ 0001 0011  # < b
+ 0001 0000	# < a
+ 
+
+######################
+
+
+0001 0011,
+ 0000 1001, #🪢️
+ 0001 0010  # < b
+ 0001 0001	# < a
+ 
+ 
+######################
+
+#pre Qstates
+0000 00110000 00110000 0011 0001 0010
+#0000 0011,0000 00110000 0011 0001 0011
+
+#📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️0
+#DFFOUT0 = 0001 1000 #🪣️
+0001 1000 ,0000 00110000 0011 0001 0010
+#📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️0
+#👡️#0
+#❗️
+#👡️#1
+#DFF NAND CLOCKED
+
+#D-in 
+
+0001 0100 #0011 0000
+0000 0011
+0000 0011
+0001 0010
+
+#NOT 
+0001 0101 #0011 0001
+0000 1000,
+0000 0011 #
+0001 0100
+
+
+
+#top nunq(pre latch)A 
+0001 0110 #0011 0010
+0000 1001
+
+0001 0100 #0011 0000
+0000 0111
+
+######################
+#bottom nunq(pre latch)B
+0001 0111 #0011 0011
+0000 1001
+
+0001 0101 #0011 0001
+0000 0111
+
+#####################
+
+
+######################
+#LATCH START 
+##########################################################
+#a___
+0001 0000,
+ 0000 0011
+ 0000 0011 #
+0001 0110
+#b___
+
+0001 0001,
+ 0000 0011,
+ 0000 0011 #
+0001 0111  #< ur"a'var has to go in "B" if u want it "HI-z'd out"
+
+#################
+0001 0010,
+ 0000 1001, #🪢️
+
+ 0001 0011  # < b
+ 0001 0000	# < a
+ 
+
+######################
+
+
+0001 0011,
+ 0000 1001, #🪢️
+ 0001 0010  # < b
+ 0001 0001	# < a
+ 
+ 
+######################
+
+#pre Qstates
+0000 00110000 00110000 0011 0001 0010
+#0000 0011,0000 00110000 0011 0001 0011
+
+#📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️1
+#DFFOUT1 = 0001 1001 #🪣️
+0001 1001 ,0000 00110000 0011 0001 0010
+#📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️📤️1
+#👡️#1
+#❗️
+
+#📟️📟️📟️📟️📟️📟️📟️📟️📟️📟️📟️📟️
+#shfreg2 cliout
+0000 0011,0000 0011,0000 0011,0001 1000
+#0000 0011,0000 0011,0000 0011,0001 1001
+#0000 0011,0000 0011,0000 0011,0001 0110
+#📟️📟️📟️📟️📟️📟️📟️📟️📟️📟️📟️📟️

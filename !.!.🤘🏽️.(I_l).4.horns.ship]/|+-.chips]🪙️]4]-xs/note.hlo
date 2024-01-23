@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+doing?_____
+making "register & shiftreg(4DFPGA) + 8way mux (for both but DFPGA IS 8bit[vs16])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DONE___________________
+i dont think the mux u have will work ... unless it does...
+#but ur gonna be throwing a "11" into it which is gonna have side fx (ew didn't think about)
+#u may rather use a mux made of "nunq" 2 rule out edge cases !
+#"KDFF" is using nunq cept for a "NOT" which doesn't matter...
+#(nunq always auto turns "11's into 0, which doesn't explain why it doesnt' work tho...
+(who knows wut mux is doing :/ ) (will bit even work? save bad bit and we can revisit it.) 
+
+*rationally speaking the problem PROBABLY is u didn't use "TXNANDS" 2 make ur "MUX"
+u just used "W/e worked..."
+
+#👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️
+#make ur "ground 'chip'" and just do 1_3/2_3= 0 (u can even do 3_3=3 still make sense?) 
+(and its like were feeding power in THAT like our breadboard line!  
+#wow an actual realistic use case for that, what are the chances!? ;) 
+protip : reps a completed circuit instead of "off"
+
+#🧟‍♂️️
+ugly problems require ugly sols ;)
+#🧟‍♂️️
+
+#ground chip maybe cool but ur solution shouldn't be 2 turn the number 2 "0" every time...
+(that was naive af , sorry)NEVER would THAT be the answer. 
+#maybe if its 3,3...otherwise i think it should pass the "1 |  2"...
+#if 3&0 then maybe pass the 0 (honestly i think u want 3&3 2 be 3  
+but 2 take a 0 as default and pass w/o & zero...
+
+
+just "complete the circuit"
+but first get ur "DFF" back.dont even thinkg about ground...
+#👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️👩🏽‍🚀️
+
+KRUFT_______________

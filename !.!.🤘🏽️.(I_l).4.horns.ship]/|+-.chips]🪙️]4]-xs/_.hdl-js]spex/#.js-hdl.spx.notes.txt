@@ -1,0 +1,134 @@
+
+http://dmitrysoshnikov.com/hdl-hardware-simulator/
+_______________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________KRUFT______________
+
+#________________________
+
+
+what does these times "MEAN"? (From "Register.cmp")
+👨🏽‍🚀️
+its not "times" its literal (16bit)values , (some are negative based on "signed/unsigned" its literally that simple
+but yes it looks confusing at first) (read the full thing not just the ssnippet) [its nothing 2 do with the "loop"]
+(why are they "THOSE number?" i dunno maybe function necessary for its use , just figure it out (its not "time")
+(it is "DEPENDANT ON time and "input tho' ie it expects -32132 input ...(look at the TIME LINE🏁️
+							^this is random "symbol"?
+							
+SUM : go 2 http://dmitrysoshnikov.com/hdl-hardware-simulator/
+put register formula in and switch 2 "DECIMAL" mode and things will be more clear. 
+👨🏽‍🚀️
+--------------
+SUM : 1bit = 1flipflop just make a flip flop and see if it works. can u chain them for 
+16 input? or how does that register work? does it work? *shrug* 
+(do u ever SEE an example of a "LOOP" in the code they provide? just push forward pls
+if theres a problem with truth tables maybe its this. 
+
+Not (in=loop1, out=loop1)// Invalid (assumes we dont break cycle or somehting , but we cycle 1nc
+DFF (in=loop2, out=loop2)
+
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a=out, b=in, out=a);
+  
+} 
+also ran this in js-hdl and it didn't break (but maybe java is setup diff w/e move on pls) 
+(keep an eye out tho w/e) 
+(i looked up a "real shift register" and saw " real ouputs" but hey make one 
+and we will try 2 compare it 2 "real sreg" (its just 16/32 flip flops why wouldn't it work?)
+shh just do it
+
+(i think it maybe something super technical ) 
+end of discussion tho tbh 
+---------------
+
+| time |   in   |load |  out   |
+| 0+   |      0 |  0  |      0 |
+| 1    |      0 |  0  |      0 |
+| 1+   |      0 |  1  |      0 |
+| 2    |      0 |  1  |      0 |
+| 2+   | -32123 |  0  |      0 |
+| 3    | -32123 |  0  |      0 |
+| 3+   |  11111 |  0  |      0 |
+| 4    |  11111 |  0  |      0 |
+| 4+   | -32123 |  1  |      0 |
+| 5    | -32123 |  1  | -32123 |
+| 5+   | -32123 |  1  | -32123 |
+#________________________
+
+pg47&289
+Sequential Logic
+https://github.com/mebusy/notes/blob/master/dev_notes/Nand2TetrisI.md#58c4997ddbb7c4994b5cad449ca383ea
+
+but how can it output a "negative time" wut is the interpretation of that?
+(is that even what it does ? (in sim? for who/what?)
+
+(not SUPER CLEAR but i dont think it will be a problem, just make the chips and we will see then)
+(theres always other external help for clocked/cpu making (4bit8bit w/e) 
+(if necessary we can chain clock 2 sys clock &| compare clock times @ logic w/e) 
+(i dont think thats necessary )
+(it literally may not matter cux their compiler may work diff than ours tbh)
+(what is the ACTUAL truth table for a "REGISTER"? (NOT THE NAND? Compare them)
+(anyway we already have clock set up w/e it is its ez compared 2 how clk was 2 setup) <4cel ofc
+
+
+#============================================
+Not (in=loop1, out=loop1) // Invalid
+DFF (in=loop2, out=loop2) // Valid
+
+*think about this (loop means that at some point it goes back in (if nothing is clocked, 
+shouldn't be "allowed" 
+
+read page 291 for better xplain
+
+(what would it do "IRL?"
+can u make one quick and see wussup? (their acting a fool im bout 2 send them 2 bed
+im not even worried about this its not an excuse 2 torture a human
+
+(i dont htink aour compiler is set up like theirs (wire wise) 
+but ur free 2 look i think ur good tho its not magic (magic is even easier 2 code tbh ;) 
+(*ours doesn't move at lightspeed if theres nothing on wire it "_" if thers something it goes
+i really dont understand the problem could be but maybe later i will
+
+https://github.com/ryo0/nand2tetris/blob/master/project1/Mux.hdl
+(i think its a "Nothing(noprob)" and i think u should leave that garbage javascript alone) 
+#===========================================
+
+

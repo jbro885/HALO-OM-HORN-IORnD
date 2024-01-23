@@ -1,0 +1,89 @@
+#🔘️#🔘️#🔘️#🔘️#🔘️
+#switch_0
+0011 0101, 0000 0101,0000 0011 0000 0011
+#
+#switch_1
+0011 0110, 0000 0110, 0000 0011 0000 0011
+
+#CLI BOTH
+0000 0011 0000 00110000 0011,0011 0101
+0000 0011 0000 00110000 0011,0011 0110
+
+
+#a___
+0001 0000,
+ 0000 0011
+ 0000 0011 #
+0011 0101
+#b___
+
+0001 0001,
+ 0000 0011,
+ 0000 0011 #
+0011 0110  #< ur"a'var has to go in "B" if u want it "HI-z'd out"
+
+######c-notz?(or reg not?)##############################
+0001 0010,
+0000 1000,
+
+0000 0010 # # z position 4 3sv? (its same as old apperantly...
+
+0001 0000
+
+##########################################
+0000 0011,0000 1000
+
+0001 0010  
+0001 0001
+
+
+
+
+
+
+#u might have to sit here and figure out the logic for it dynamically
+#protip ? try using sym and only change "Zx" if u need...
+
+
+#❣️make sure u read the "TT"S write some have a on left, some on right ;) 
+#tristate buffer 74HC126(non-inverted) #X
+#  c a d
+#|0|1|1    Z & 1 = Z =zc0  =1
+#|0|0|0    Z & 0 = 1 = 1c0 =0 
+#|1|0|Z    Z & 0 = 1 = 1c1 =Z  
+#|1|1|Z	   Z & 1 = Z =zc1  =Z   
+
+##if it expected z in it would say on both sides ;)
+	
+
+
+
+#txtt	
+#|   a   |   b   |  out  |
+#|   0   |   0   |   0   |
+#|   0   |   1   |   0   |
+#|   1   |   0   |   0   |
+
+#
+#|   1   |   Z   |   0   | #🦢️
+#|   0   |   Z   |   1   |#🦢️
+
+#|   Z   |   1   |   Z   | #0 #🦢️
+#|   Z   |   0   |   1   | #1 #🦢️
+#
+#|   1   |   1   |   Z   |
+#|   Z   |   Z   |   0   |
+##🚬️
+#w8ing 4 3sv/@/nunq check
+##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️##🚬️
+
+
+
+
+
+
+#tristate buffer 74HC125(inverted) #X
+#  c a d
+#|0|1|0
+#|1|1|1       < if was 00 would be Z...
+#|0|X|Z
