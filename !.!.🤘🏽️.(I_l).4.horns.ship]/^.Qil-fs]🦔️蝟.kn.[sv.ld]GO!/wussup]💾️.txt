@@ -1,0 +1,60 @@
+🦑️🗄️💾️
+📅️3.27.24= 🦔️
+⁉️2 do ? create new file on "17th char" PERIOD. why not? answer that first.(is it on 18? YES)⁉️
+📅️3.25.24= 🦔️
+
+Std_inc_inode_count_H().h <- never gets called... 
+📆️📆️📆️📆️📆️📆️📆️📆️📆️📆️
+📅️3.25.24= 🦔️
+close 2 being done with write 2 new inode (still have 2 read from)
+(its writing 2 new inode acutally but with an empty 16bit offset :/
+A: = (n-16)*inodect
+
+❗️(also it skips 17 needs 18 2 create new , etc weirdness...❗️
+
+!= inode ct is defaulting @0 (should be 1) wussup? 
+and cat we "cat_inodePos.sh"? <for a quick editable pos script?(mult=ez)
+📅️
+2.qi.lngn]🖌️🦾️]0000.c
+  stdDropToProKbdMem(c); //🧠️📌️
+  📅️
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  ___________DONE AF
+//📅️2.23.24 <-saturday 00:35   = kinda lost? but i know i left a clean enviornment
+and obviously i thot it would be ez 2 pick up . 
+📰️will keep u posted📰️
+📮️?
+
+🤷🏻‍♂️️
+i THINK we need 2 go in 2.qi.lngn]🖌️🦾️]0000.c and make it read from superblock
+ and make an inode entry or something
+🤷🏻‍♂️️
+
+(inode was registering in "mom/*" but i moved it into pro🦾️ . but
+maybe thats bad cuz it was there cuz race condition . w/e ez fix. 
+
+🍍️where are we NOW!? u just need 2 work thru 2.qi.lngn]🖌️🦾️]0000.c
+and make sure its passing the right args or cheat reading them we/ 
+then u can literally run kbd again and set up inode mult. 
+(if its already on w/e no big deal)
+
+🍍️
+📮️i really wish this was at  a"FULL THRU " point... (soon was the point)
+🦑️
