@@ -1,0 +1,95 @@
+🦑️🗄️💾️
+  🗺️FS2txt.LEGEND has disk[0000] legend
+  📆️4.15.24}
+  
+  1.just replacing the old in quilo with this new one
+  2.can it load "INTO quilo?" GOAL...
+
+📆️4.13.24}
+no longer crashes , but is making new inode instead of storing , imo. 
+(was 2 diff problems , ez fix tbh, lets go)
+📮️seems like its actually writing after the "buffers limits" 
+instead of moving 2 front of new inode...
+(can we exit after inode is made or w/e first💡️ ;) ? 
+ 📮️
+📆️4.12.24 (16.15)=🏚️i dont get the top malloc error anymore. 
+maybe cuz i have been allocating and freeing memory . maybe it will return but for now
+i think everything is fine BUT
+✍️its writing out data in the wrong place (not the inodes block , just in main/dir ✍️
+obv thats all my fault somehow ; its not magic ✍️
+
+📆️4.12.24 =🤓️i dont even think its the "system(exes)" cuz they've neever been a problem 
+so it may not be that bad :/ (u could probably diagnose by swapping one of hte earlier mallocs and leaveing the later one ;) (>as opposed 2 using "GDB/GHIDRA LMFAO") ;
+ps dont use that "all free()" thats just a distraction and its gone <3z🔍️🤓️
+👨🏾‍🏫️if worse comes 2 worse, just dont use malloc. evertime i replace malloc with 
+# the code works till next malloc. (or go backwards and see which "corrupted"
+ w/e its not magic👨🏾‍🏫️
+ 📦️i wanted 2 allocate in a seperate function like i did for the 
+ "program files(they never corrupted...)
+ i think its header mallocs that "keep using or w/e same "memory /namespace"
+ make it corrupt ez. i dont think we actually ran into this b4 therefore and its a 
+ new problem. 
+ but it doesn't explain why inodes worked at some point(not provable!<but not anymore...)🏚️w/e they will work after this, they obv werent gonna work ....🏠️ 📦️
+ 
+ ❗️Heap corruption in C
+Stack Overflow
+https://stackoverflow.com › questions › heap-corruptio...
+Oct 13, 2010 — You've allocated too small a block, and then written more bytes to it than you've allocated, which overwrites bookkeeping information next to ...
+
+
+https://stackoverflow.com/questions/3923290/heap-corruption-in-c
+ ❗️
+
+*going 2bed find = (ninja)
+ printf("🥷️in if!?!=  📌️ 📌️\n");  
+📆️4.12.24 =
+malloc(): corrupted top size
+nothing works (never has!?
+
+STD_txtFS_SB_fieldlength_bin_H ?
+
+system("./+x/0.pro.maqr+[🎫️]0001.+x"); < in header? 
+🦄️
+LOCKING UP HERE (IN .H)
+in task(Std_register_block_Inode)🧟️➕️➕️
+  
+  📆️4.11.24+ = "first inode is loading/printing perfect now." i ahven't gone past that...
+  📅️4.11.24=
+ ⚙️buffer is good 2 go but im not sure that inodes were setup right or something?  
+ 📮️i nodes are fine and data wrote 2 file but file is corrupt... why?
+ 010\00\00 < this is writing at end of smoll buffer. 
+  📅️4.10.24=
+>VEry OLD comments , can be distracting. ..
+
+🍍️makes inode and first block is corrupt with ' �]��]��]��]��] '
+w/e lets printf(dump) b4 it dumps2.txt,  and we'll see wuts happening.
+📮️its going 2 file malformed. should be ez fix📮️
+🚑️incredible violence . rest=nap=RIP?, rather do work with less stress
+than go bad thru stress and be bad still... 🚑️
+🍍️
+📅️3.31.24= 🦔️
+
+everything will come in , convert 2 binary , at be in inode.]
+(inode will pass 2 load from [arg]later can make "ux")
+🏗️
+(its gonna be ascii , but if u can eventually steal "unicode/hex"
+from xxd, great, same mechanism theoretically . so ... ASCII 1rst
+
+⚙️ there was no mech for loading in asci [EVER]. 
+>so, im gonna build it from scratch taking peices from 🦾️
+only if we need them⚙️
+🏗️
+  📅️
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
